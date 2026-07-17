@@ -183,6 +183,11 @@ function latticeLengths(candidate){
   if(!Array.isArray(matrix) || matrix.length !== 3) return 'No disponible';
   return matrix.map(vector => Math.sqrt(vector.reduce((sum,value) => sum + Number(value) ** 2, 0))).map(value => value.toFixed(2)).join(' / ');
 }
+function artifactOrLedger(candidate, artifactKey, ledgerKey){
+  const artifact = Number(candidate?.[artifactKey]);
+  if(Number.isFinite(artifact) && artifact > 0) return artifact;
+  return candidate?.[ledgerKey];
+}
 
 fetch("data/candidates.json").then(r=>r.json()).then(data=>{
   candidates = data.filter(c => c.has_structure);
@@ -208,9 +213,12 @@ function load(materialId, push){
     ['q100', `${fmt(current.q100)} mg/g`],
     ['ret q050', fmt(current.ret_q050,3)],
     ['a / b / c (A)', latticeLengths(current)],
-    ['Diametro de poro Zeo++ (A)', finiteMetric(current.d_pore_ang)],
-    ['Fraccion de vacio Zeo++', finiteMetric(current.void_frac, 3)],
-    ['Densidad (g/cm3)', finiteMetric(current.rho_gcm3, 3)],
+    ['Estado Zeo++', current.zeopp_status || 'No disponible'],
+    ['Diametro limitante Zeo++ (A)', finiteMetric(artifactOrLedger(current, 'zeopp_d_pore_ang', 'd_pore_ang'))],
+    ['Area accesible Zeo++ (m2/g)', finiteMetric(current.zeopp_asa_m2_g, 0)],
+    ['Fraccion de vacio Zeo++', finiteMetric(artifactOrLedger(current, 'zeopp_void_frac', 'void_frac'), 3)],
+    ['Densidad (g/cm3)', finiteMetric(artifactOrLedger(current, 'zeopp_rho_gcm3', 'rho_gcm3'), 3)],
+    ['Separacion minima entre redes (A)', finiteMetric(current.inter_net_distance_ang, 3)],
     ['Contacto VdW minimo (A)', finiteMetric(current.min_vdw_clearance_ang, 3, '', true)]
   ].map(([key,value]) => `<div><span>${key}</span><b>${value}</b></div>`).join('');
   currentStructureKind = prefersCrystalView(current) ? "super_2x2x1" : "full";

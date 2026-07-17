@@ -104,7 +104,7 @@
           <button class="stage-tab" onclick="setStyle('stick')">Malla</button>
           <button class="stage-tab" onclick="setStyle('surface')">Poros</button>
           <button class="stage-tab" onclick="toggleCell()">Celdas</button>
-          <button class="stage-tab" onclick="loadStructure('super_2x2x1')">Supercelda</button>
+          <button class="stage-tab" onclick="loadStructure('super_2x2x2')">Supercelda</button>
         </div>
         <div class="viewer-wrap"><div id="viewer"></div><div id="loadStatus">Cargando modelo 3D...</div></div>
       </section>
@@ -120,6 +120,7 @@
             <button onclick="loadStructure('unit')"><i data-lucide="box"></i>Celda unitaria</button>
             <button onclick="loadStructure('full')"><i data-lucide="network"></i>Estructura completa</button>
             <button onclick="loadStructure('super_2x2x1')"><i data-lucide="boxes"></i>2x2x1</button>
+            <button onclick="loadStructure('super_2x2x2')"><i data-lucide="layers-3"></i>2x2x2</button>
             <button onclick="resetView()"><i data-lucide="scan"></i>Reencuadrar</button>
           </div>
         </section>
@@ -163,6 +164,7 @@ const requested = params.get("material_id");
 function fmt(v, d=2){ const n = Number(v); return Number.isFinite(n) ? n.toFixed(d) : "NA"; }
 function structurePath(c, kind){
   if(kind === "unit" && c.unit_cif) return c.unit_cif;
+  if(kind === "super_2x2x2" && c.viewer_sdf_2x2x2) return c.viewer_sdf_2x2x2;
   if(kind === "super_2x2x1" && c.viewer_sdf_2x2x1) return c.viewer_sdf_2x2x1;
   return c.viewer_sdf || c.viewer_mol2 || c.cif || `static/structures/${c.material_id}.cif`;
 }
@@ -171,6 +173,15 @@ function prefersCrystalView(c){
   const topology = String(c.topology || "").toLowerCase();
   const mid = String(c.material_id || "").toLowerCase();
   return Boolean(c.viewer_sdf_2x2x1) && !c.is_benchmark && (topology.includes("ip2") || topology.includes("interpenetrated") || mid.includes("_ip2_"));
+}
+function finiteMetric(value, digits=2, suffix='', allowNegative=false){
+  const parsed = Number(value);
+  return Number.isFinite(parsed) && (allowNegative ? parsed !== 0 : parsed > 0) ? `${parsed.toFixed(digits)}${suffix}` : 'No disponible';
+}
+function latticeLengths(candidate){
+  const matrix = candidate?.lattice?.matrix;
+  if(!Array.isArray(matrix) || matrix.length !== 3) return 'No disponible';
+  return matrix.map(vector => Math.sqrt(vector.reduce((sum,value) => sum + Number(value) ** 2, 0))).map(value => value.toFixed(2)).join(' / ');
 }
 
 fetch("data/candidates.json").then(r=>r.json()).then(data=>{
@@ -195,7 +206,12 @@ function load(materialId, push){
     ['Metal / SBU', current.sbu || '--'],
     ['Estado', current.is_benchmark ? 'Referencia' : (current.validation_status || '--')],
     ['q100', `${fmt(current.q100)} mg/g`],
-    ['ret q050', fmt(current.ret_q050,3)]
+    ['ret q050', fmt(current.ret_q050,3)],
+    ['a / b / c (A)', latticeLengths(current)],
+    ['Diametro de poro Zeo++ (A)', finiteMetric(current.d_pore_ang)],
+    ['Fraccion de vacio Zeo++', finiteMetric(current.void_frac, 3)],
+    ['Densidad (g/cm3)', finiteMetric(current.rho_gcm3, 3)],
+    ['Contacto VdW minimo (A)', finiteMetric(current.min_vdw_clearance_ang, 3, '', true)]
   ].map(([key,value]) => `<div><span>${key}</span><b>${value}</b></div>`).join('');
   currentStructureKind = prefersCrystalView(current) ? "super_2x2x1" : "full";
   loadStructure(currentStructureKind);
@@ -203,6 +219,10 @@ function load(materialId, push){
 
 function loadStructure(kind){
   if(!current) return;
+  if(kind === "super_2x2x2" && !current.viewer_sdf_2x2x2){
+    kind = current.viewer_sdf_2x2x1 ? "super_2x2x1" : "full";
+    document.getElementById('loadStatus').textContent = 'La supercelda 2x2x2 supera el limite seguro del archivo; se muestra la representacion mas grande disponible.';
+  }
   currentStructureKind = kind;
   viewer.clear();
   surfaceId = null;

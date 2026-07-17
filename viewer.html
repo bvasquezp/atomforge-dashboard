@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AtomForge 3D Viewer</title>
+  <style>
+    body { margin:0; font-family:"Aptos","Segoe UI",Arial,sans-serif; background:#10161d; color:#e5edf8; }
+    header { padding:14px 18px; display:flex; gap:12px; align-items:center; border-bottom:1px solid rgba(148,163,184,.22); background:rgba(15,23,42,.88); }
+    a { color:#99f6e4; text-decoration:none; font-weight:800; }
+    #title { font-weight:900; }
+    .metric { color:#9fb0c7; }
+    main { display:grid; grid-template-columns:1fr 310px; gap:14px; padding:14px; }
+    #viewer { height:calc(100vh - 96px); min-height:560px; border:1px solid rgba(148,163,184,.24); border-radius:16px; background:white; overflow:hidden; }
+    .viewer-wrap { position:relative; }
+    #loadStatus { position:absolute; left:18px; bottom:18px; z-index:10; max-width:560px; padding:10px 12px; border-radius:12px; background:rgba(15,23,42,.84); color:#e5edf8; border:1px solid rgba(148,163,184,.28); font-size:13px; }
+    aside { display:flex; flex-direction:column; gap:8px; }
+    button, select { min-height:38px; border:1px solid rgba(148,163,184,.28); border-radius:10px; background:rgba(15,23,42,.86); color:#e5edf8; padding:8px 10px; text-align:left; }
+    button:hover { border-color:#99f6e4; background:rgba(20,184,166,.16); }
+    label { display:flex; flex-direction:column; gap:4px; font-size:12px; color:#9fb0c7; }
+    input[type="range"] { width:100%; }
+    .panel { padding:12px; border:1px solid rgba(148,163,184,.22); border-radius:14px; background:rgba(15,23,42,.72); }
+    .legend { display:grid; grid-template-columns:repeat(2,1fr); gap:6px; color:#9fb0c7; font-size:12px; }
+    .swatch { display:inline-block; width:12px; height:12px; border-radius:3px; margin-right:6px; vertical-align:-2px; border:1px solid rgba(255,255,255,.35); }
+    @media(max-width:900px){ main{grid-template-columns:1fr;} #viewer{height:70vh;} }
+  </style>
+</head>
+<body>
+<header>
+  <a href="index.html">← Dashboard</a>
+  <div id="title">Cargando estructura...</div>
+  <div class="metric" id="metrics"></div>
+</header>
+<main>
+  <div class="viewer-wrap"><div id="viewer"></div><div id="loadStatus">Cargando modelo 3D...</div></div>
+  <aside>
+    <select id="candidateSelect"></select>
+    <button onclick="setStyle('stick')">Stick</button>
+    <button onclick="setStyle('inspection')">Inspection</button>
+    <button onclick="setStyle('ballstick')">Ball-stick</button>
+    <button onclick="setStyle('vdw')">VDW</button>
+    <button onclick="setStyle('sphere')">Sphere</button>
+    <button onclick="setStyle('surface')">Poro / surface</button>
+    <button onclick="loadStructure('unit')">Solo celda unitaria</button>
+    <button onclick="loadStructure('full')">Estructura completa</button>
+    <button onclick="loadStructure('super_2x2x1')">Supercelda 2x2x1</button>
+    <button onclick="toggleHydrogen()">Toggle H</button>
+    <button onclick="toggleCell()">Toggle celda</button>
+    <button onclick="toggleLabels()">Toggle labels</button>
+    <button onclick="resetView()">Reset zoom</button>
+    <label>Color
+      <select id="colorScheme" onchange="setColorScheme(this.value)">
+        <option value="atomforge">AtomForge metal</option>
+        <option value="jmol">Jmol/CPK</option>
+        <option value="rasmol">Rasmol/default</option>
+      </select>
+    </label>
+    <label>Zoom
+      <input type="range" min="0.1" max="3" step="0.1" value="1" oninput="setZoom(this.value)">
+    </label>
+    <label>Opacidad poro
+      <input type="range" min="0.1" max="0.95" step="0.05" value="0.6" oninput="setSurfOpacity(this.value)">
+    </label>
+    <div class="panel">
+      <strong>Leyenda AtomForge</strong>
+      <div class="legend" style="margin-top:8px">
+        <span><i class="swatch" style="background:#F2C94C"></i>C</span><span><i class="swatch" style="background:#FFFFFF"></i>H</span>
+        <span><i class="swatch" style="background:#E53935"></i>O</span><span><i class="swatch" style="background:#4169E1"></i>N</span>
+        <span><i class="swatch" style="background:#00A6D6"></i>Al</span><span><i class="swatch" style="background:#E8753A"></i>Fe</span>
+        <span><i class="swatch" style="background:#9B7EDE"></i>Cr</span><span><i class="swatch" style="background:#B8C0CC"></i>Ti</span>
+        <span><i class="swatch" style="background:#54B948"></i>Mg</span><span><i class="swatch" style="background:#6C63B5"></i>Zn</span>
+        <span><i class="swatch" style="background:#C47A44"></i>Cu</span><span><i class="swatch" style="background:#36B7B4"></i>Zr</span>
+      </div>
+    </div>
+  </aside>
+</main>
+<script src="https://3dmol.org/build/3Dmol-min.js"></script>
+<script>
+let viewer = $3Dmol.createViewer("viewer", {backgroundColor:"white"});
+let candidates = [];
+let current = null;
+let hydrogens = false;
+let cellOn = true;
+let labelsOn = false;
+let surfaceId = null;
+let currentMode = "inspection";
+let currentStructureKind = "full";
+let currentColorScheme = "atomforge";
+const params = new URLSearchParams(location.search);
+const requested = params.get("material_id");
+
+function fmt(v, d=2){ const n = Number(v); return Number.isFinite(n) ? n.toFixed(d) : "NA"; }
+function structurePath(c, kind){
+  if(kind === "unit" && c.unit_cif) return c.unit_cif;
+  if(kind === "super_2x2x1" && c.viewer_sdf_2x2x1) return c.viewer_sdf_2x2x1;
+  return c.viewer_sdf || c.viewer_mol2 || c.cif || `static/structures/${c.material_id}.cif`;
+}
+function modelFormat(path){ if(path.endsWith('.sdf')) return 'sdf'; if(path.endsWith('.mol2')) return 'mol2'; return 'cif'; }
+function prefersCrystalView(c){
+  const topology = String(c.topology || "").toLowerCase();
+  const mid = String(c.material_id || "").toLowerCase();
+  return Boolean(c.viewer_sdf_2x2x1) && !c.is_benchmark && (topology.includes("ip2") || topology.includes("interpenetrated") || mid.includes("_ip2_"));
+}
+
+fetch("data/candidates.json").then(r=>r.json()).then(data=>{
+  candidates = data.filter(c => c.has_structure);
+  const sel = document.getElementById("candidateSelect");
+  sel.innerHTML = candidates.map(c => `<option value="${c.material_id}">${c.material_id} (q100=${fmt(c.q100,1)})${c.is_benchmark?' [benchmark]':''}</option>`).join('');
+  sel.onchange = () => load(sel.value, true);
+  const first = candidates.find(c => c.material_id === requested) || candidates[0];
+  if(first) { sel.value = first.material_id; load(first.material_id, false); }
+});
+
+function load(materialId, push){
+  current = candidates.find(c => c.material_id === materialId);
+  if(!current) return;
+  if(push) history.replaceState(null, '', `viewer.html?material_id=${encodeURIComponent(materialId)}`);
+  document.getElementById('title').textContent = current.material_id;
+  document.getElementById('metrics').textContent = `q100=${fmt(current.q100)} mg/g · ret_q050=${fmt(current.ret_q050,3)}`;
+  currentStructureKind = prefersCrystalView(current) ? "super_2x2x1" : "full";
+  loadStructure(currentStructureKind);
+}
+
+function loadStructure(kind){
+  if(!current) return;
+  currentStructureKind = kind;
+  viewer.clear();
+  surfaceId = null;
+  labelsOn = false;
+  cellOn = true;
+  const path = structurePath(current, kind);
+  document.getElementById('loadStatus').textContent = `Cargando ${path}...`;
+  fetch(path).then(r=>{
+    if(!r.ok) throw new Error(`HTTP ${r.status} al cargar ${path}`);
+    return r.text();
+  }).then(txt=>{
+    try {
+      viewer.addModel(txt, modelFormat(path));
+    } catch(err) {
+      throw new Error(`3Dmol no pudo parsear ${path}: ${err.message || err}`);
+    }
+    setStyle(currentMode);
+    if(cellOn) viewer.addUnitCell();
+    viewer.zoomTo();
+    viewer.render();
+    document.getElementById('loadStatus').textContent = `Modelo cargado: ${path}`;
+  }).catch(err=>{
+    document.getElementById('loadStatus').textContent = `No se pudo cargar el modelo 3D: ${err.message}`;
+  });
+}
+
+function atomSel(){ return hydrogens ? {} : {not:{elem:'H'}}; }
+function clearSurface(){ if(surfaceId !== null){ viewer.removeSurface(surfaceId); surfaceId = null; } }
+function schemeName(){ return currentColorScheme === "rasmol" ? "default" : "Jmol"; }
+function setStyle(mode){
+  currentMode = mode;
+  clearSurface();
+  viewer.setStyle({}, {});
+  const sel = atomSel();
+  const scheme = schemeName();
+  if(mode === 'vdw') viewer.setStyle(sel, {sphere:{scale:1.0, colorscheme:scheme}});
+  else if(mode === 'ballstick') viewer.setStyle(sel, {stick:{radius:0.085, colorscheme:scheme}, sphere:{scale:0.22, colorscheme:scheme}});
+  else if(mode === 'sphere') viewer.setStyle(sel, {sphere:{scale:0.25, colorscheme:scheme}});
+  else if(mode === 'surface'){
+    viewer.setStyle(sel, {stick:{radius:0.045, colorscheme:scheme}, sphere:{scale:0.09, colorscheme:scheme}});
+    surfaceId = viewer.addSurface($3Dmol.SurfaceType.VDW, {opacity:0.65, color:"lightblue"});
+  }
+  else if(mode === 'inspection') viewer.setStyle(sel, {stick:{radius:0.055, colorscheme:scheme}, sphere:{scale:0.10, colorscheme:scheme}});
+  else viewer.setStyle(sel, {stick:{radius:0.065, colorscheme:scheme}, sphere:{scale:0.13, colorscheme:scheme}});
+  if(currentColorScheme === "atomforge") applyElementOverrides(mode);
+  viewer.render();
+}
+function atomStyle(mode, color){
+  if(mode === "sphere") return {sphere:{scale:0.28, color}};
+  if(mode === "surface") return {stick:{radius:0.045, color}, sphere:{scale:0.10, color}};
+  if(mode === "inspection") return {stick:{radius:0.065, color}, sphere:{scale:0.16, color}};
+  return {stick:{radius:0.075, color}, sphere:{scale:0.18, color}};
+}
+function applyElementOverrides(mode){
+  const colors = {C:"#F2C94C", H:"#FFFFFF", O:"#E53935", N:"#4169E1", Al:"#00A6D6", Fe:"#E8753A", Cr:"#9B7EDE", Ti:"#B8C0CC", V:"#A6A6AB", Mg:"#54B948", Zn:"#6C63B5", Cu:"#C47A44", Zr:"#36B7B4", Mn:"#B06CCB"};
+  Object.entries(colors).forEach(([elem, color]) => viewer.setStyle({elem}, atomStyle(mode, color)));
+  if(!hydrogens) viewer.setStyle({elem:"H"}, {});
+}
+function setColorScheme(scheme){ currentColorScheme = scheme; setStyle(currentMode); }
+function toggleHydrogen(){ hydrogens = !hydrogens; setStyle(currentMode); }
+function toggleCell(){
+  cellOn = !cellOn;
+  if(cellOn) viewer.addUnitCell();
+  else viewer.removeAllShapes();
+  viewer.render();
+}
+function toggleLabels(){
+  labelsOn = !labelsOn;
+  viewer.removeAllLabels();
+  if(labelsOn && viewer.getModel()){
+    viewer.getModel().selectedAtoms({}).forEach(a => {
+      viewer.addLabel(a.elem, {position:{x:a.x,y:a.y,z:a.z}, fontSize:10, showBackground:false});
+    });
+  }
+  viewer.render();
+}
+function setZoom(value){ viewer.zoom(parseFloat(value), 200); viewer.render(); }
+function setSurfOpacity(value){ if(surfaceId !== null) viewer.setSurfaceMaterialStyle(surfaceId, {opacity:parseFloat(value)}); viewer.render(); }
+function resetView(){ viewer.zoomTo(); viewer.render(); }
+window.setStyle = setStyle;
+window.loadStructure = loadStructure;
+window.toggleHydrogen = toggleHydrogen;
+window.toggleCell = toggleCell;
+window.toggleLabels = toggleLabels;
+window.setColorScheme = setColorScheme;
+window.setZoom = setZoom;
+window.setSurfOpacity = setSurfOpacity;
+window.resetView = resetView;
+</script>
+</body>
+</html>

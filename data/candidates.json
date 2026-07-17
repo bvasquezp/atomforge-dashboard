@@ -1,0 +1,1837 @@
+[
+  {
+    "material_id": "nh2_bdc_al_o6_mono_pcu_mono_ip2_off038",
+    "linker": "nh2_bdc",
+    "sbu": "al_o6_mono",
+    "topology": "pcu_periodic_mono_o6_interpenetrated",
+    "campaign_id": "day11_ip2_offset_sweep_v1",
+    "validation_status": "GREEN",
+    "application_label": "ROBUST_LEAD_CANDIDATE",
+    "q100": 112.494258,
+    "q075": 106.146647,
+    "q050": 99.29489,
+    "ret_q075": 0.9435739111235348,
+    "ret_q050": 0.8826662957321786,
+    "d_pore_ang": null,
+    "rho_gcm3": null,
+    "source_cif": "E:\\AtomForge\\results\\paso1_ip2_038\\cifs\\nh2_bdc_al_o6_mono_pcu_mono_ip2_off380.cif",
+    "has_structure": true,
+    "cif": "static/structures/nh2_bdc_al_o6_mono_pcu_mono_ip2_off038.cif",
+    "unit_cif": "static/structures/nh2_bdc_al_o6_mono_pcu_mono_ip2_off038_unit.cif",
+    "viewer_mol2": "static/structures/nh2_bdc_al_o6_mono_pcu_mono_ip2_off038.mol2",
+    "viewer_sdf": "static/structures/nh2_bdc_al_o6_mono_pcu_mono_ip2_off038.sdf",
+    "viewer_sdf_2x2x1": "static/structures/nh2_bdc_al_o6_mono_pcu_mono_ip2_off038_2x2x1.sdf",
+    "structure_json": "static/structures/nh2_bdc_al_o6_mono_pcu_mono_ip2_off038.json",
+    "n_sites": 110,
+    "n_bonds": 359,
+    "lattice": {
+      "@module": "pymatgen.core.lattice",
+      "@class": "Lattice",
+      "matrix": [
+        [
+          10.74,
+          0.0,
+          6.576353311421287e-16
+        ],
+        [
+          1.7271237257527077e-15,
+          10.74,
+          6.576353311421287e-16
+        ],
+        [
+          0.0,
+          0.0,
+          10.74
+        ]
+      ],
+      "pbc": [
+        true,
+        true,
+        true
+      ]
+    },
+    "export_error": "",
+    "viewer_n_sites": 377,
+    "visual_supercell": [
+      1,
+      1,
+      1
+    ],
+    "linker_usd_g": 0.45,
+    "linker_sa_score": 2.3,
+    "metal_usd_g": 0.05,
+    "econ_score": 1918.7418357487923,
+    "econ_label": "cost_favorable"
+  },
+  {
+    "material_id": "oh_bdc_fe_o6_mono_pcu_mono_ip2_off380",
+    "linker": "oh_bdc",
+    "sbu": "fe_o6_mono",
+    "topology": "pcu_periodic_mono_o6_interpenetrated",
+    "campaign_id": "paso1_fe_expansion_oh_bdc_fe",
+    "validation_status": "GREEN",
+    "application_label": "ROBUST_LEAD_CANDIDATE",
+    "q100": 120.585252,
+    "q075": 115.123513,
+    "q050": 111.573881,
+    "ret_q075": 0.9547064097025728,
+    "ret_q050": 0.9252697087700243,
+    "d_pore_ang": null,
+    "rho_gcm3": null,
+    "source_cif": "E:\\AtomForge\\results\\paso1_ip2_038\\gfn2_interpenetration_gate\\relaxed_cifs\\oh_bdc_fe_o6_mono_pcu_mono_ip2_off380_gfn2_pbc_relaxed.cif",
+    "has_structure": true,
+    "cif": "static/structures/oh_bdc_fe_o6_mono_pcu_mono_ip2_off380.cif",
+    "unit_cif": "static/structures/oh_bdc_fe_o6_mono_pcu_mono_ip2_off380_unit.cif",
+    "viewer_mol2": "static/structures/oh_bdc_fe_o6_mono_pcu_mono_ip2_off380.mol2",
+    "viewer_sdf": "static/structures/oh_bdc_fe_o6_mono_pcu_mono_ip2_off380.sdf",
+    "viewer_sdf_2x2x1": "static/structures/oh_bdc_fe_o6_mono_pcu_mono_ip2_off380_2x2x1.sdf",
+    "structure_json": "static/structures/oh_bdc_fe_o6_mono_pcu_mono_ip2_off380.json",
+    "n_sites": 104,
+    "n_bonds": 346,
+    "lattice": {
+      "@module": "pymatgen.core.lattice",
+      "@class": "Lattice",
+      "matrix": [
+        [
+          10.96,
+          0.0,
+          6.711064459327496e-16
+        ],
+        [
+          1.7625024240455938e-15,
+          10.96,
+          6.711064459327496e-16
+        ],
+        [
+          0.0,
+          0.0,
+          10.96
+        ]
+      ],
+      "pbc": [
+        true,
+        true,
+        true
+      ]
+    },
+    "export_error": "",
+    "viewer_n_sites": 343,
+    "visual_supercell": [
+      1,
+      1,
+      1
+    ],
+    "linker_usd_g": 0.8,
+    "linker_sa_score": 2.6,
+    "metal_usd_g": 0.03,
+    "econ_score": 1788.04296474359,
+    "econ_label": "cost_favorable"
+  },
+  {
+    "material_id": "bpdc_al_o6_mono_pcu_mono_ip2_off380",
+    "linker": "bpdc",
+    "sbu": "al_o6_mono",
+    "topology": "pcu_periodic_mono_o6_interpenetrated",
+    "campaign_id": "paso6_bpdc_al_ip2_off380",
+    "validation_status": "GREEN",
+    "application_label": "ROBUST_LEAD_CANDIDATE",
+    "q100": 301.56202,
+    "q075": 253.651262,
+    "q050": 220.325956,
+    "ret_q075": 0.8411246946813793,
+    "ret_q050": 0.7306157320474242,
+    "d_pore_ang": null,
+    "rho_gcm3": null,
+    "source_cif": "E:\\AtomForge\\results\\paso6_ip2_diversity_off380\\gfn2_interpenetration_gate_wsl\\relaxed_cifs\\bpdc_al_o6_mono_pcu_mono_ip2_off380_gfn2_pbc_relaxed.cif",
+    "has_structure": true,
+    "cif": "static/structures/bpdc_al_o6_mono_pcu_mono_ip2_off380.cif",
+    "unit_cif": "static/structures/bpdc_al_o6_mono_pcu_mono_ip2_off380_unit.cif",
+    "viewer_mol2": "static/structures/bpdc_al_o6_mono_pcu_mono_ip2_off380.mol2",
+    "viewer_sdf": "static/structures/bpdc_al_o6_mono_pcu_mono_ip2_off380.sdf",
+    "viewer_sdf_2x2x1": "static/structures/bpdc_al_o6_mono_pcu_mono_ip2_off380_2x2x1.sdf",
+    "structure_json": "static/structures/bpdc_al_o6_mono_pcu_mono_ip2_off380.json",
+    "n_sites": 158,
+    "n_bonds": 577,
+    "lattice": {
+      "@module": "pymatgen.core.lattice",
+      "@class": "Lattice",
+      "matrix": [
+        [
+          14.64,
+          0.0,
+          8.964414569758626e-16
+        ],
+        [
+          2.354291559126596e-15,
+          14.64,
+          8.964414569758626e-16
+        ],
+        [
+          0.0,
+          0.0,
+          14.64
+        ]
+      ],
+      "pbc": [
+        true,
+        true,
+        true
+      ]
+    },
+    "export_error": "",
+    "viewer_n_sites": 526,
+    "visual_supercell": [
+      1,
+      1,
+      1
+    ],
+    "linker_usd_g": 3.2,
+    "linker_sa_score": 3.1,
+    "metal_usd_g": 0.05,
+    "econ_score": 444.20555645161284,
+    "econ_label": "balanced"
+  },
+  {
+    "material_id": "bdc_cr_o6_mono_pcu_mono_ip2_off380",
+    "linker": "bdc",
+    "sbu": "cr_o6_mono",
+    "topology": "pcu_periodic_mono_o6_interpenetrated",
+    "campaign_id": "paso10_bdc_cr_ti_ip2_long",
+    "validation_status": "GREEN",
+    "application_label": "ROBUST_LEAD_CANDIDATE",
+    "q100": 118.029377,
+    "q075": 107.286764,
+    "q050": 100.149726,
+    "ret_q075": 0.9089835660150948,
+    "ret_q050": 0.8485152471829112,
+    "d_pore_ang": 0.0,
+    "rho_gcm3": 0.0,
+    "source_cif": "E:\\AtomForge\\results\\paso10_parallel_batch\\bdc_cr_off380\\phase_3_4_gfn2_gate\\off380\\relaxed_cifs\\bdc_cr_o6_mono_pcu_mono_ip2_off380_gfn2_pbc_relaxed.cif",
+    "has_structure": true,
+    "cif": "static/structures/bdc_cr_o6_mono_pcu_mono_ip2_off380.cif",
+    "unit_cif": "static/structures/bdc_cr_o6_mono_pcu_mono_ip2_off380_unit.cif",
+    "viewer_mol2": "static/structures/bdc_cr_o6_mono_pcu_mono_ip2_off380.mol2",
+    "viewer_sdf": "static/structures/bdc_cr_o6_mono_pcu_mono_ip2_off380.sdf",
+    "viewer_sdf_2x2x1": "static/structures/bdc_cr_o6_mono_pcu_mono_ip2_off380_2x2x1.sdf",
+    "structure_json": "static/structures/bdc_cr_o6_mono_pcu_mono_ip2_off380.json",
+    "n_sites": 98,
+    "n_bonds": 327,
+    "lattice": {
+      "@module": "pymatgen.core.lattice",
+      "@class": "Lattice",
+      "matrix": [
+        [
+          10.88,
+          0.0,
+          6.662078587361601e-16
+        ],
+        [
+          1.7496374428481808e-15,
+          10.88,
+          6.662078587361601e-16
+        ],
+        [
+          0.0,
+          0.0,
+          10.88
+        ]
+      ],
+      "pbc": [
+        true,
+        true,
+        true
+      ]
+    },
+    "export_error": "",
+    "viewer_n_sites": 330,
+    "visual_supercell": [
+      1,
+      1,
+      1
+    ],
+    "linker_usd_g": 0.15,
+    "linker_sa_score": 1.8,
+    "metal_usd_g": 0.25,
+    "econ_score": 1483.6996444444444,
+    "econ_label": "cost_favorable"
+  },
+  {
+    "material_id": "bdc_ti_o6_mono_pcu_mono_ip2_off380",
+    "linker": "bdc",
+    "sbu": "ti_o6_mono",
+    "topology": "pcu_periodic_mono_o6_interpenetrated",
+    "campaign_id": "paso10_bdc_cr_ti_ip2_long",
+    "validation_status": "GREEN",
+    "application_label": "ROBUST_LEAD_CANDIDATE",
+    "q100": 111.951623,
+    "q075": 107.12322,
+    "q050": 104.970264,
+    "ret_q075": 0.9568706297362032,
+    "ret_q050": 0.9376395016622492,
+    "d_pore_ang": 0.0,
+    "rho_gcm3": 0.0,
+    "source_cif": "E:\\AtomForge\\results\\paso10_parallel_batch\\bdc_ti_off380\\phase_3_4_gfn2_gate\\off380\\relaxed_cifs\\bdc_ti_o6_mono_pcu_mono_ip2_off380_gfn2_pbc_relaxed.cif",
+    "has_structure": true,
+    "cif": "static/structures/bdc_ti_o6_mono_pcu_mono_ip2_off380.cif",
+    "unit_cif": "static/structures/bdc_ti_o6_mono_pcu_mono_ip2_off380_unit.cif",
+    "viewer_mol2": "static/structures/bdc_ti_o6_mono_pcu_mono_ip2_off380.mol2",
+    "viewer_sdf": "static/structures/bdc_ti_o6_mono_pcu_mono_ip2_off380.sdf",
+    "viewer_sdf_2x2x1": "static/structures/bdc_ti_o6_mono_pcu_mono_ip2_off380_2x2x1.sdf",
+    "structure_json": "static/structures/bdc_ti_o6_mono_pcu_mono_ip2_off380.json",
+    "n_sites": 98,
+    "n_bonds": 338,
+    "lattice": {
+      "@module": "pymatgen.core.lattice",
+      "@class": "Lattice",
+      "matrix": [
+        [
+          10.9,
+          0.0,
+          6.674325055353075e-16
+        ],
+        [
+          1.752853688147534e-15,
+          10.9,
+          6.674325055353075e-16
+        ],
+        [
+          0.0,
+          0.0,
+          10.9
+        ]
+      ],
+      "pbc": [
+        true,
+        true,
+        true
+      ]
+    },
+    "export_error": "",
+    "viewer_n_sites": 343,
+    "visual_supercell": [
+      1,
+      1,
+      1
+    ],
+    "linker_usd_g": 0.15,
+    "linker_sa_score": 1.8,
+    "metal_usd_g": 0.15,
+    "econ_score": 2591.85837037037,
+    "econ_label": "cost_favorable"
+  },
+  {
+    "material_id": "bdc_fe_o6_mono_pcu_mono_ip2_off380",
+    "linker": "bdc",
+    "sbu": "fe_o6_mono",
+    "topology": "pcu_periodic_mono_o6_interpenetrated",
+    "campaign_id": "paso17_accumulated_l3_long",
+    "validation_status": "GREEN",
+    "application_label": "ROBUST_LEAD_CANDIDATE",
+    "q100": 124.646582,
+    "q075": 114.173209,
+    "q050": 106.889222,
+    "ret_q075": 0.9159754496918336,
+    "ret_q050": 0.857538331857347,
+    "d_pore_ang": 0.0,
+    "rho_gcm3": 0.0,
+    "source_cif": "E:\\AtomForge\\results\\paso14_fe_new_buckets_pre_gate\\bdc_fe_off380_gfn2\\phase_3_4_gfn2_gate\\off380\\relaxed_cifs\\bdc_fe_o6_mono_pcu_mono_ip2_off380_gfn2_pbc_relaxed.cif",
+    "has_structure": true,
+    "cif": "static/structures/bdc_fe_o6_mono_pcu_mono_ip2_off380.cif",
+    "unit_cif": "static/structures/bdc_fe_o6_mono_pcu_mono_ip2_off380_unit.cif",
+    "viewer_mol2": "static/structures/bdc_fe_o6_mono_pcu_mono_ip2_off380.mol2",
+    "viewer_sdf": "static/structures/bdc_fe_o6_mono_pcu_mono_ip2_off380.sdf",
+    "viewer_sdf_2x2x1": "static/structures/bdc_fe_o6_mono_pcu_mono_ip2_off380_2x2x1.sdf",
+    "structure_json": "static/structures/bdc_fe_o6_mono_pcu_mono_ip2_off380.json",
+    "n_sites": 98,
+    "n_bonds": 325,
+    "lattice": {
+      "@module": "pymatgen.core.lattice",
+      "@class": "Lattice",
+      "matrix": [
+        [
+          10.96,
+          0.0,
+          6.711064459327496e-16
+        ],
+        [
+          1.7625024240455938e-15,
+          10.96,
+          6.711064459327496e-16
+        ],
+        [
+          0.0,
+          0.0,
+          10.96
+        ]
+      ],
+      "pbc": [
+        true,
+        true,
+        true
+      ]
+    },
+    "export_error": "",
+    "viewer_n_sites": 339,
+    "visual_supercell": [
+      1,
+      1,
+      1
+    ],
+    "linker_usd_g": 0.15,
+    "linker_sa_score": 1.8,
+    "metal_usd_g": 0.03,
+    "econ_score": 13196.200246913582,
+    "econ_label": "cost_favorable"
+  },
+  {
+    "material_id": "bdc_v_o6_mono_pcu_mono_ip2_off380",
+    "linker": "bdc",
+    "sbu": "v_o6_mono",
+    "topology": "pcu_periodic_mono_o6_interpenetrated",
+    "campaign_id": "paso17_accumulated_l3_long",
+    "validation_status": "GREEN",
+    "application_label": "ROBUST_LEAD_CANDIDATE",
+    "q100": 128.552978,
+    "q075": 110.913609,
+    "q050": 99.99237,
+    "ret_q075": 0.8627852168465517,
+    "ret_q050": 0.7778300554033062,
+    "d_pore_ang": 0.0,
+    "rho_gcm3": 0.0,
+    "source_cif": "E:\\AtomForge\\results\\paso16_v_mn_smoke_pre_gate\\bdc_v_off380_gfn2\\phase_3_4_gfn2_gate\\off380\\relaxed_cifs\\bdc_v_o6_mono_pcu_mono_ip2_off380_gfn2_pbc_relaxed.cif",
+    "has_structure": true,
+    "cif": "static/structures/bdc_v_o6_mono_pcu_mono_ip2_off380.cif",
+    "unit_cif": "static/structures/bdc_v_o6_mono_pcu_mono_ip2_off380_unit.cif",
+    "viewer_mol2": "static/structures/bdc_v_o6_mono_pcu_mono_ip2_off380.mol2",
+    "viewer_sdf": "static/structures/bdc_v_o6_mono_pcu_mono_ip2_off380.sdf",
+    "viewer_sdf_2x2x1": "static/structures/bdc_v_o6_mono_pcu_mono_ip2_off380_2x2x1.sdf",
+    "structure_json": "static/structures/bdc_v_o6_mono_pcu_mono_ip2_off380.json",
+    "n_sites": 98,
+    "n_bonds": 331,
+    "lattice": {
+      "@module": "pymatgen.core.lattice",
+      "@class": "Lattice",
+      "matrix": [
+        [
+          10.9,
+          0.0,
+          6.674325055353075e-16
+        ],
+        [
+          1.752853688147534e-15,
+          10.9,
+          6.674325055353075e-16
+        ],
+        [
+          0.0,
+          0.0,
+          10.9
+        ]
+      ],
+      "pbc": [
+        true,
+        true,
+        true
+      ]
+    },
+    "export_error": "",
+    "viewer_n_sites": 328,
+    "visual_supercell": [
+      1,
+      1,
+      1
+    ],
+    "linker_usd_g": 0.15,
+    "linker_sa_score": 1.8,
+    "metal_usd_g": 0.18,
+    "econ_score": 2057.456172839506,
+    "econ_label": "cost_favorable"
+  },
+  {
+    "material_id": "nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off390",
+    "linker": "nh2_bpdc",
+    "sbu": "cr_o6_mono",
+    "topology": "pcu_periodic_mono_o6_interpenetrated",
+    "campaign_id": "paso17_accumulated_l3_long",
+    "validation_status": "GREEN",
+    "application_label": "ROBUST_LEAD_CANDIDATE",
+    "q100": 333.040404,
+    "q075": 277.10523,
+    "q050": 230.70924,
+    "ret_q075": 0.8320468828160561,
+    "ret_q050": 0.6927364885132675,
+    "d_pore_ang": 0.0,
+    "rho_gcm3": 0.0,
+    "source_cif": "E:\\AtomForge\\results\\paso15_cr_ti_offset_neighbors_pre_gate\\nh2_bpdc_cr_off390_gfn2\\phase_3_4_gfn2_gate\\off390\\relaxed_cifs\\nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off390_gfn2_pbc_relaxed.cif",
+    "has_structure": true,
+    "cif": "static/structures/nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off390.cif",
+    "unit_cif": "static/structures/nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off390_unit.cif",
+    "viewer_mol2": "static/structures/nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off390.mol2",
+    "viewer_sdf": "static/structures/nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off390.sdf",
+    "viewer_sdf_2x2x1": "static/structures/nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off390_2x2x1.sdf",
+    "structure_json": "static/structures/nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off390.json",
+    "n_sites": 170,
+    "n_bonds": 610,
+    "lattice": {
+      "@module": "pymatgen.core.lattice",
+      "@class": "Lattice",
+      "matrix": [
+        [
+          14.78,
+          0.0,
+          9.05013984569894e-16
+        ],
+        [
+          2.3768052762220687e-15,
+          14.78,
+          9.05013984569894e-16
+        ],
+        [
+          0.0,
+          0.0,
+          14.78
+        ]
+      ],
+      "pbc": [
+        true,
+        true,
+        true
+      ]
+    },
+    "export_error": "",
+    "viewer_n_sites": 572,
+    "visual_supercell": [
+      1,
+      1,
+      1
+    ],
+    "linker_usd_g": 12.0,
+    "linker_sa_score": 4.4,
+    "metal_usd_g": 0.25,
+    "econ_score": 17.477972727272725,
+    "econ_label": "premium_precursor"
+  },
+  {
+    "material_id": "nh2_bpdc_fe_o6_mono_pcu_mono_ip2_off380",
+    "linker": "nh2_bpdc",
+    "sbu": "fe_o6_mono",
+    "topology": "pcu_periodic_mono_o6_interpenetrated",
+    "campaign_id": "paso17_accumulated_l3_long",
+    "validation_status": "GREEN",
+    "application_label": "ROBUST_LEAD_CANDIDATE",
+    "q100": 277.723096,
+    "q075": 229.542567,
+    "q050": 192.934776,
+    "ret_q075": 0.826515944500345,
+    "ret_q050": 0.6947019487352971,
+    "d_pore_ang": 0.0,
+    "rho_gcm3": 0.0,
+    "source_cif": "E:\\AtomForge\\results\\paso14_fe_new_buckets_pre_gate\\nh2_bpdc_fe_off380_gfn2\\phase_3_4_gfn2_gate\\off380\\relaxed_cifs\\nh2_bpdc_fe_o6_mono_pcu_mono_ip2_off380_gfn2_pbc_relaxed.cif",
+    "has_structure": true,
+    "cif": "static/structures/nh2_bpdc_fe_o6_mono_pcu_mono_ip2_off380.cif",
+    "unit_cif": "static/structures/nh2_bpdc_fe_o6_mono_pcu_mono_ip2_off380_unit.cif",
+    "viewer_mol2": "static/structures/nh2_bpdc_fe_o6_mono_pcu_mono_ip2_off380.mol2",
+    "viewer_sdf": "static/structures/nh2_bpdc_fe_o6_mono_pcu_mono_ip2_off380.sdf",
+    "viewer_sdf_2x2x1": "static/structures/nh2_bpdc_fe_o6_mono_pcu_mono_ip2_off380_2x2x1.sdf",
+    "structure_json": "static/structures/nh2_bpdc_fe_o6_mono_pcu_mono_ip2_off380.json",
+    "n_sites": 170,
+    "n_bonds": 608,
+    "lattice": {
+      "@module": "pymatgen.core.lattice",
+      "@class": "Lattice",
+      "matrix": [
+        [
+          14.86,
+          0.0,
+          9.099125717664834e-16
+        ],
+        [
+          2.3896702574194817e-15,
+          14.86,
+          9.099125717664834e-16
+        ],
+        [
+          0.0,
+          0.0,
+          14.86
+        ]
+      ],
+      "pbc": [
+        true,
+        true,
+        true
+      ]
+    },
+    "export_error": "",
+    "viewer_n_sites": 571,
+    "visual_supercell": [
+      1,
+      1,
+      1
+    ],
+    "linker_usd_g": 12.0,
+    "linker_sa_score": 4.4,
+    "metal_usd_g": 0.03,
+    "econ_score": 121.80225757575757,
+    "econ_label": "premium_precursor"
+  },
+  {
+    "material_id": "nh2_bpdc_ti_o6_mono_pcu_mono_ip2_off380",
+    "linker": "nh2_bpdc",
+    "sbu": "ti_o6_mono",
+    "topology": "pcu_periodic_mono_o6_interpenetrated",
+    "campaign_id": "paso17_accumulated_l3_long",
+    "validation_status": "GREEN",
+    "application_label": "ROBUST_LEAD_CANDIDATE",
+    "q100": 287.771363,
+    "q075": 238.63815,
+    "q050": 202.19807,
+    "ret_q075": 0.8292630215606269,
+    "ret_q050": 0.7026344382988519,
+    "d_pore_ang": 0.0,
+    "rho_gcm3": 0.0,
+    "source_cif": "E:\\AtomForge\\results\\paso13_cr_ti_new_linkers_pre_gate\\nh2_bpdc_ti_off380_gfn2\\phase_3_4_gfn2_gate\\off380\\relaxed_cifs\\nh2_bpdc_ti_o6_mono_pcu_mono_ip2_off380_gfn2_pbc_relaxed.cif",
+    "has_structure": true,
+    "cif": "static/structures/nh2_bpdc_ti_o6_mono_pcu_mono_ip2_off380.cif",
+    "unit_cif": "static/structures/nh2_bpdc_ti_o6_mono_pcu_mono_ip2_off380_unit.cif",
+    "viewer_mol2": "static/structures/nh2_bpdc_ti_o6_mono_pcu_mono_ip2_off380.mol2",
+    "viewer_sdf": "static/structures/nh2_bpdc_ti_o6_mono_pcu_mono_ip2_off380.sdf",
+    "viewer_sdf_2x2x1": "static/structures/nh2_bpdc_ti_o6_mono_pcu_mono_ip2_off380_2x2x1.sdf",
+    "structure_json": "static/structures/nh2_bpdc_ti_o6_mono_pcu_mono_ip2_off380.json",
+    "n_sites": 170,
+    "n_bonds": 609,
+    "lattice": {
+      "@module": "pymatgen.core.lattice",
+      "@class": "Lattice",
+      "matrix": [
+        [
+          14.8,
+          0.0,
+          9.062386313690414e-16
+        ],
+        [
+          2.3800215215214225e-15,
+          14.8,
+          9.062386313690414e-16
+        ],
+        [
+          0.0,
+          0.0,
+          14.8
+        ]
+      ],
+      "pbc": [
+        true,
+        true,
+        true
+      ]
+    },
+    "export_error": "",
+    "viewer_n_sites": 572,
+    "visual_supercell": [
+      1,
+      1,
+      1
+    ],
+    "linker_usd_g": 12.0,
+    "linker_sa_score": 4.4,
+    "metal_usd_g": 0.15,
+    "econ_score": 25.530059343434345,
+    "econ_label": "premium_precursor"
+  },
+  {
+    "material_id": "nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off400",
+    "linker": "nh2_bpdc",
+    "sbu": "cr_o6_mono",
+    "topology": "pcu_periodic_mono_o6_interpenetrated",
+    "campaign_id": "paso21_accumulated_l3_long",
+    "validation_status": "GREEN",
+    "application_label": "ROBUST_LEAD_CANDIDATE",
+    "q100": 354.780008,
+    "q075": 303.757924,
+    "q050": 260.05911,
+    "ret_q075": 0.8561866992234805,
+    "ret_q050": 0.733015119611813,
+    "d_pore_ang": 0.0,
+    "rho_gcm3": 0.0,
+    "source_cif": "E:\\AtomForge\\results\\paso21_accumulated_l3_long\\nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off400\\q050\\raspa_inputs\\nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off400_rep01\\nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off400_rep01.cif",
+    "has_structure": true,
+    "cif": "static/structures/nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off400.cif",
+    "unit_cif": "static/structures/nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off400_unit.cif",
+    "viewer_mol2": "static/structures/nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off400.mol2",
+    "viewer_sdf": "static/structures/nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off400.sdf",
+    "viewer_sdf_2x2x1": "static/structures/nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off400_2x2x1.sdf",
+    "structure_json": "static/structures/nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off400.json",
+    "n_sites": 170,
+    "n_bonds": 607,
+    "lattice": {
+      "@module": "pymatgen.core.lattice",
+      "@class": "Lattice",
+      "matrix": [
+        [
+          14.78,
+          0.0,
+          9.05013984569894e-16
+        ],
+        [
+          2.3768052762220687e-15,
+          14.78,
+          9.05013984569894e-16
+        ],
+        [
+          0.0,
+          0.0,
+          14.78
+        ]
+      ],
+      "pbc": [
+        true,
+        true,
+        true
+      ]
+    },
+    "export_error": "",
+    "viewer_n_sites": 569,
+    "visual_supercell": [
+      1,
+      1,
+      1
+    ],
+    "linker_usd_g": 12.0,
+    "linker_sa_score": 4.4,
+    "metal_usd_g": 0.25,
+    "econ_score": 19.701447727272726,
+    "econ_label": "premium_precursor"
+  },
+  {
+    "material_id": "nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off410",
+    "linker": "nh2_bpdc",
+    "sbu": "cr_o6_mono",
+    "topology": "pcu_periodic_mono_o6_interpenetrated",
+    "campaign_id": "paso21_accumulated_l3_long",
+    "validation_status": "GREEN",
+    "application_label": "ROBUST_LEAD_CANDIDATE",
+    "q100": 388.037329,
+    "q075": 333.969569,
+    "q050": 289.512419,
+    "ret_q075": 0.8606635084842571,
+    "ret_q050": 0.7460942475459623,
+    "d_pore_ang": 0.0,
+    "rho_gcm3": 0.0,
+    "source_cif": "E:\\AtomForge\\results\\paso21_accumulated_l3_long\\nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off410\\q050\\raspa_inputs\\nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off410_rep01\\nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off410_rep01.cif",
+    "has_structure": true,
+    "cif": "static/structures/nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off410.cif",
+    "unit_cif": "static/structures/nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off410_unit.cif",
+    "viewer_mol2": "static/structures/nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off410.mol2",
+    "viewer_sdf": "static/structures/nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off410.sdf",
+    "viewer_sdf_2x2x1": "static/structures/nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off410_2x2x1.sdf",
+    "structure_json": "static/structures/nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off410.json",
+    "n_sites": 170,
+    "n_bonds": 605,
+    "lattice": {
+      "@module": "pymatgen.core.lattice",
+      "@class": "Lattice",
+      "matrix": [
+        [
+          14.78,
+          0.0,
+          9.05013984569894e-16
+        ],
+        [
+          2.3768052762220687e-15,
+          14.78,
+          9.05013984569894e-16
+        ],
+        [
+          0.0,
+          0.0,
+          14.78
+        ]
+      ],
+      "pbc": [
+        true,
+        true,
+        true
+      ]
+    },
+    "export_error": "",
+    "viewer_n_sites": 567,
+    "visual_supercell": [
+      1,
+      1,
+      1
+    ],
+    "linker_usd_g": 12.0,
+    "linker_sa_score": 4.4,
+    "metal_usd_g": 0.25,
+    "econ_score": 21.932759015151515,
+    "econ_label": "premium_precursor"
+  },
+  {
+    "material_id": "nh2_bpdc_fe_o6_mono_pcu_mono_ip2_off390",
+    "linker": "nh2_bpdc",
+    "sbu": "fe_o6_mono",
+    "topology": "pcu_periodic_mono_o6_interpenetrated",
+    "campaign_id": "paso21_accumulated_l3_long",
+    "validation_status": "GREEN",
+    "application_label": "ROBUST_LEAD_CANDIDATE",
+    "q100": 294.599288,
+    "q075": 249.403348,
+    "q050": 212.029224,
+    "ret_q075": 0.8465850331586681,
+    "ret_q050": 0.7197207618505853,
+    "d_pore_ang": 0.0,
+    "rho_gcm3": 0.0,
+    "source_cif": "E:\\AtomForge\\results\\paso21_accumulated_l3_long\\nh2_bpdc_fe_o6_mono_pcu_mono_ip2_off390\\q050\\raspa_inputs\\nh2_bpdc_fe_o6_mono_pcu_mono_ip2_off390_rep01\\nh2_bpdc_fe_o6_mono_pcu_mono_ip2_off390_rep01.cif",
+    "has_structure": true,
+    "cif": "static/structures/nh2_bpdc_fe_o6_mono_pcu_mono_ip2_off390.cif",
+    "unit_cif": "static/structures/nh2_bpdc_fe_o6_mono_pcu_mono_ip2_off390_unit.cif",
+    "viewer_mol2": "static/structures/nh2_bpdc_fe_o6_mono_pcu_mono_ip2_off390.mol2",
+    "viewer_sdf": "static/structures/nh2_bpdc_fe_o6_mono_pcu_mono_ip2_off390.sdf",
+    "viewer_sdf_2x2x1": "static/structures/nh2_bpdc_fe_o6_mono_pcu_mono_ip2_off390_2x2x1.sdf",
+    "structure_json": "static/structures/nh2_bpdc_fe_o6_mono_pcu_mono_ip2_off390.json",
+    "n_sites": 170,
+    "n_bonds": 614,
+    "lattice": {
+      "@module": "pymatgen.core.lattice",
+      "@class": "Lattice",
+      "matrix": [
+        [
+          14.86,
+          0.0,
+          9.099125717664834e-16
+        ],
+        [
+          2.3896702574194817e-15,
+          14.86,
+          9.099125717664834e-16
+        ],
+        [
+          0.0,
+          0.0,
+          14.86
+        ]
+      ],
+      "pbc": [
+        true,
+        true,
+        true
+      ]
+    },
+    "export_error": "",
+    "viewer_n_sites": 573,
+    "visual_supercell": [
+      1,
+      1,
+      1
+    ],
+    "linker_usd_g": 12.0,
+    "linker_sa_score": 4.4,
+    "metal_usd_g": 0.03,
+    "econ_score": 133.85683333333333,
+    "econ_label": "premium_precursor"
+  },
+  {
+    "material_id": "nh2_bpdc_fe_o6_mono_pcu_mono_ip2_off400",
+    "linker": "nh2_bpdc",
+    "sbu": "fe_o6_mono",
+    "topology": "pcu_periodic_mono_o6_interpenetrated",
+    "campaign_id": "paso21_accumulated_l3_long",
+    "validation_status": "GREEN",
+    "application_label": "ROBUST_LEAD_CANDIDATE",
+    "q100": 328.998087,
+    "q075": 281.818207,
+    "q050": 245.671176,
+    "ret_q075": 0.8565952755828637,
+    "ret_q050": 0.7467252415969216,
+    "d_pore_ang": 0.0,
+    "rho_gcm3": 0.0,
+    "source_cif": "E:\\AtomForge\\results\\paso21_accumulated_l3_long\\nh2_bpdc_fe_o6_mono_pcu_mono_ip2_off400\\q050\\raspa_inputs\\nh2_bpdc_fe_o6_mono_pcu_mono_ip2_off400_rep01\\nh2_bpdc_fe_o6_mono_pcu_mono_ip2_off400_rep01.cif",
+    "has_structure": true,
+    "cif": "static/structures/nh2_bpdc_fe_o6_mono_pcu_mono_ip2_off400.cif",
+    "unit_cif": "static/structures/nh2_bpdc_fe_o6_mono_pcu_mono_ip2_off400_unit.cif",
+    "viewer_mol2": "static/structures/nh2_bpdc_fe_o6_mono_pcu_mono_ip2_off400.mol2",
+    "viewer_sdf": "static/structures/nh2_bpdc_fe_o6_mono_pcu_mono_ip2_off400.sdf",
+    "viewer_sdf_2x2x1": "static/structures/nh2_bpdc_fe_o6_mono_pcu_mono_ip2_off400_2x2x1.sdf",
+    "structure_json": "static/structures/nh2_bpdc_fe_o6_mono_pcu_mono_ip2_off400.json",
+    "n_sites": 170,
+    "n_bonds": 609,
+    "lattice": {
+      "@module": "pymatgen.core.lattice",
+      "@class": "Lattice",
+      "matrix": [
+        [
+          14.86,
+          0.0,
+          9.099125717664834e-16
+        ],
+        [
+          2.3896702574194817e-15,
+          14.86,
+          9.099125717664834e-16
+        ],
+        [
+          0.0,
+          0.0,
+          14.86
+        ]
+      ],
+      "pbc": [
+        true,
+        true,
+        true
+      ]
+    },
+    "export_error": "",
+    "viewer_n_sites": 570,
+    "visual_supercell": [
+      1,
+      1,
+      1
+    ],
+    "linker_usd_g": 12.0,
+    "linker_sa_score": 4.4,
+    "metal_usd_g": 0.03,
+    "econ_score": 155.0954393939394,
+    "econ_label": "premium_precursor"
+  },
+  {
+    "material_id": "nh2_bpdc_v_o6_mono_pcu_mono_ip2_off380",
+    "linker": "nh2_bpdc",
+    "sbu": "v_o6_mono",
+    "topology": "pcu_periodic_mono_o6_interpenetrated",
+    "campaign_id": "paso21_accumulated_l3_long",
+    "validation_status": "GREEN",
+    "application_label": "ROBUST_LEAD_CANDIDATE",
+    "q100": 290.315535,
+    "q075": 241.285539,
+    "q050": 202.706302,
+    "ret_q075": 0.8311148041044376,
+    "ret_q050": 0.6982275405964754,
+    "d_pore_ang": 0.0,
+    "rho_gcm3": 0.0,
+    "source_cif": "E:\\AtomForge\\results\\paso21_accumulated_l3_long\\nh2_bpdc_v_o6_mono_pcu_mono_ip2_off380\\q050\\raspa_inputs\\nh2_bpdc_v_o6_mono_pcu_mono_ip2_off380_rep01\\nh2_bpdc_v_o6_mono_pcu_mono_ip2_off380_rep01.cif",
+    "has_structure": true,
+    "cif": "static/structures/nh2_bpdc_v_o6_mono_pcu_mono_ip2_off380.cif",
+    "unit_cif": "static/structures/nh2_bpdc_v_o6_mono_pcu_mono_ip2_off380_unit.cif",
+    "viewer_mol2": "static/structures/nh2_bpdc_v_o6_mono_pcu_mono_ip2_off380.mol2",
+    "viewer_sdf": "static/structures/nh2_bpdc_v_o6_mono_pcu_mono_ip2_off380.sdf",
+    "viewer_sdf_2x2x1": "static/structures/nh2_bpdc_v_o6_mono_pcu_mono_ip2_off380_2x2x1.sdf",
+    "structure_json": "static/structures/nh2_bpdc_v_o6_mono_pcu_mono_ip2_off380.json",
+    "n_sites": 170,
+    "n_bonds": 610,
+    "lattice": {
+      "@module": "pymatgen.core.lattice",
+      "@class": "Lattice",
+      "matrix": [
+        [
+          14.8,
+          0.0,
+          9.062386313690414e-16
+        ],
+        [
+          2.3800215215214225e-15,
+          14.8,
+          9.062386313690414e-16
+        ],
+        [
+          0.0,
+          0.0,
+          14.8
+        ]
+      ],
+      "pbc": [
+        true,
+        true,
+        true
+      ]
+    },
+    "export_error": "",
+    "viewer_n_sites": 576,
+    "visual_supercell": [
+      1,
+      1,
+      1
+    ],
+    "linker_usd_g": 12.0,
+    "linker_sa_score": 4.4,
+    "metal_usd_g": 0.18,
+    "econ_score": 21.32852504208754,
+    "econ_label": "premium_precursor"
+  },
+  {
+    "material_id": "nh2_bpdc_v_o6_mono_pcu_mono_ip2_off390",
+    "linker": "nh2_bpdc",
+    "sbu": "v_o6_mono",
+    "topology": "pcu_periodic_mono_o6_interpenetrated",
+    "campaign_id": "paso21_accumulated_l3_long",
+    "validation_status": "GREEN",
+    "application_label": "ROBUST_LEAD_CANDIDATE",
+    "q100": 323.376186,
+    "q075": 269.477844,
+    "q050": 225.799088,
+    "ret_q075": 0.833326186857804,
+    "ret_q050": 0.6982551522826111,
+    "d_pore_ang": 0.0,
+    "rho_gcm3": 0.0,
+    "source_cif": "E:\\AtomForge\\results\\paso21_accumulated_l3_long\\nh2_bpdc_v_o6_mono_pcu_mono_ip2_off390\\q050\\raspa_inputs\\nh2_bpdc_v_o6_mono_pcu_mono_ip2_off390_rep01\\nh2_bpdc_v_o6_mono_pcu_mono_ip2_off390_rep01.cif",
+    "has_structure": true,
+    "cif": "static/structures/nh2_bpdc_v_o6_mono_pcu_mono_ip2_off390.cif",
+    "unit_cif": "static/structures/nh2_bpdc_v_o6_mono_pcu_mono_ip2_off390_unit.cif",
+    "viewer_mol2": "static/structures/nh2_bpdc_v_o6_mono_pcu_mono_ip2_off390.mol2",
+    "viewer_sdf": "static/structures/nh2_bpdc_v_o6_mono_pcu_mono_ip2_off390.sdf",
+    "viewer_sdf_2x2x1": "static/structures/nh2_bpdc_v_o6_mono_pcu_mono_ip2_off390_2x2x1.sdf",
+    "structure_json": "static/structures/nh2_bpdc_v_o6_mono_pcu_mono_ip2_off390.json",
+    "n_sites": 170,
+    "n_bonds": 610,
+    "lattice": {
+      "@module": "pymatgen.core.lattice",
+      "@class": "Lattice",
+      "matrix": [
+        [
+          14.8,
+          0.0,
+          9.062386313690414e-16
+        ],
+        [
+          2.3800215215214225e-15,
+          14.8,
+          9.062386313690414e-16
+        ],
+        [
+          0.0,
+          0.0,
+          14.8
+        ]
+      ],
+      "pbc": [
+        true,
+        true,
+        true
+      ]
+    },
+    "export_error": "",
+    "viewer_n_sites": 572,
+    "visual_supercell": [
+      1,
+      1,
+      1
+    ],
+    "linker_usd_g": 12.0,
+    "linker_sa_score": 4.4,
+    "metal_usd_g": 0.18,
+    "econ_score": 23.758321548821552,
+    "econ_label": "premium_precursor"
+  },
+  {
+    "material_id": "nh2_bpdc_v_o6_mono_pcu_mono_ip2_off400",
+    "linker": "nh2_bpdc",
+    "sbu": "v_o6_mono",
+    "topology": "pcu_periodic_mono_o6_interpenetrated",
+    "campaign_id": "paso21_accumulated_l3_long",
+    "validation_status": "GREEN",
+    "application_label": "ROBUST_LEAD_CANDIDATE",
+    "q100": 355.823087,
+    "q075": 302.960704,
+    "q050": 259.572291,
+    "ret_q075": 0.851436331898273,
+    "ret_q050": 0.7294981705332685,
+    "d_pore_ang": 0.0,
+    "rho_gcm3": 0.0,
+    "source_cif": "E:\\AtomForge\\results\\paso21_accumulated_l3_long\\nh2_bpdc_v_o6_mono_pcu_mono_ip2_off400\\q050\\raspa_inputs\\nh2_bpdc_v_o6_mono_pcu_mono_ip2_off400_rep01\\nh2_bpdc_v_o6_mono_pcu_mono_ip2_off400_rep01.cif",
+    "has_structure": true,
+    "cif": "static/structures/nh2_bpdc_v_o6_mono_pcu_mono_ip2_off400.cif",
+    "unit_cif": "static/structures/nh2_bpdc_v_o6_mono_pcu_mono_ip2_off400_unit.cif",
+    "viewer_mol2": "static/structures/nh2_bpdc_v_o6_mono_pcu_mono_ip2_off400.mol2",
+    "viewer_sdf": "static/structures/nh2_bpdc_v_o6_mono_pcu_mono_ip2_off400.sdf",
+    "viewer_sdf_2x2x1": "static/structures/nh2_bpdc_v_o6_mono_pcu_mono_ip2_off400_2x2x1.sdf",
+    "structure_json": "static/structures/nh2_bpdc_v_o6_mono_pcu_mono_ip2_off400.json",
+    "n_sites": 170,
+    "n_bonds": 607,
+    "lattice": {
+      "@module": "pymatgen.core.lattice",
+      "@class": "Lattice",
+      "matrix": [
+        [
+          14.8,
+          0.0,
+          9.062386313690414e-16
+        ],
+        [
+          2.3800215215214225e-15,
+          14.8,
+          9.062386313690414e-16
+        ],
+        [
+          0.0,
+          0.0,
+          14.8
+        ]
+      ],
+      "pbc": [
+        true,
+        true,
+        true
+      ]
+    },
+    "export_error": "",
+    "viewer_n_sites": 569,
+    "visual_supercell": [
+      1,
+      1,
+      1
+    ],
+    "linker_usd_g": 12.0,
+    "linker_sa_score": 4.4,
+    "metal_usd_g": 0.18,
+    "econ_score": 27.311899305555556,
+    "econ_label": "premium_precursor"
+  },
+  {
+    "material_id": "bdc_zn4o_pcu_ip2_off380",
+    "linker": "bdc",
+    "sbu": "zn4o",
+    "topology": "pcu_periodic_zn4o_ip2",
+    "campaign_id": "smoke_zn4o_pcu_ip2_long_v1",
+    "validation_status": "GREEN",
+    "application_label": "ROBUST_LEAD_CANDIDATE",
+    "q100": 109.597753,
+    "q075": 94.729402,
+    "q050": 85.02854,
+    "ret_q075": 0.864337081801303,
+    "ret_q050": 0.775823752517992,
+    "d_pore_ang": 0.0,
+    "rho_gcm3": 0.0,
+    "source_cif": "E:\\AtomForge\\results\\smoke_zn4o_pcu\\gfn2_gate_ip2\\relaxed_cifs\\bdc_zn4o_pcu_ip2_off380_gfn2_pbc_relaxed.cif",
+    "has_structure": true,
+    "cif": "static/structures/bdc_zn4o_pcu_ip2_off380.cif",
+    "unit_cif": "static/structures/bdc_zn4o_pcu_ip2_off380_unit.cif",
+    "viewer_mol2": "static/structures/bdc_zn4o_pcu_ip2_off380.mol2",
+    "viewer_sdf": "static/structures/bdc_zn4o_pcu_ip2_off380.sdf",
+    "viewer_sdf_2x2x1": "static/structures/bdc_zn4o_pcu_ip2_off380_2x2x1.sdf",
+    "structure_json": "static/structures/bdc_zn4o_pcu_ip2_off380.json",
+    "n_sites": 106,
+    "n_bonds": 402,
+    "lattice": {
+      "@module": "pymatgen.core.lattice",
+      "@class": "Lattice",
+      "matrix": [
+        [
+          12.916,
+          0.0,
+          7.9087690288936075e-16
+        ],
+        [
+          2.077051214322344e-15,
+          12.916,
+          7.9087690288936075e-16
+        ],
+        [
+          0.0,
+          0.0,
+          12.916
+        ]
+      ],
+      "pbc": [
+        true,
+        true,
+        true
+      ]
+    },
+    "export_error": "",
+    "viewer_n_sites": 339,
+    "visual_supercell": [
+      1,
+      1,
+      1
+    ],
+    "linker_usd_g": 0.15,
+    "linker_sa_score": 1.8,
+    "metal_usd_g": 0.08,
+    "econ_score": 3936.5064814814814,
+    "econ_label": "cost_favorable"
+  },
+  {
+    "material_id": "bdc_zn4o_pcu_ip2_off400",
+    "linker": "bdc",
+    "sbu": "zn4o",
+    "topology": "pcu_periodic_zn4o_ip2",
+    "campaign_id": "smoke_zn4o_pcu_ip2_long_v1",
+    "validation_status": "GREEN",
+    "application_label": "ROBUST_LEAD_CANDIDATE",
+    "q100": 122.314195,
+    "q075": 109.227133,
+    "q050": 98.636876,
+    "ret_q075": 0.8930045527422226,
+    "ret_q050": 0.8064221491217761,
+    "d_pore_ang": 0.0,
+    "rho_gcm3": 0.0,
+    "source_cif": "E:\\AtomForge\\results\\smoke_zn4o_pcu\\gfn2_gate_ip2\\relaxed_cifs\\bdc_zn4o_pcu_ip2_off400_gfn2_pbc_relaxed.cif",
+    "has_structure": true,
+    "cif": "static/structures/bdc_zn4o_pcu_ip2_off400.cif",
+    "unit_cif": "static/structures/bdc_zn4o_pcu_ip2_off400_unit.cif",
+    "viewer_mol2": "static/structures/bdc_zn4o_pcu_ip2_off400.mol2",
+    "viewer_sdf": "static/structures/bdc_zn4o_pcu_ip2_off400.sdf",
+    "viewer_sdf_2x2x1": "static/structures/bdc_zn4o_pcu_ip2_off400_2x2x1.sdf",
+    "structure_json": "static/structures/bdc_zn4o_pcu_ip2_off400.json",
+    "n_sites": 106,
+    "n_bonds": 402,
+    "lattice": {
+      "@module": "pymatgen.core.lattice",
+      "@class": "Lattice",
+      "matrix": [
+        [
+          12.916,
+          0.0,
+          7.9087690288936075e-16
+        ],
+        [
+          2.077051214322344e-15,
+          12.916,
+          7.9087690288936075e-16
+        ],
+        [
+          0.0,
+          0.0,
+          12.916
+        ]
+      ],
+      "pbc": [
+        true,
+        true,
+        true
+      ]
+    },
+    "export_error": "",
+    "viewer_n_sites": 339,
+    "visual_supercell": [
+      1,
+      1,
+      1
+    ],
+    "linker_usd_g": 0.15,
+    "linker_sa_score": 1.8,
+    "metal_usd_g": 0.08,
+    "econ_score": 4566.522037037037,
+    "econ_label": "cost_favorable"
+  },
+  {
+    "material_id": "bpdc_zn4o_pcu_ip2_off380",
+    "linker": "bpdc",
+    "sbu": "zn4o",
+    "topology": "pcu_periodic_zn4o_ip2",
+    "campaign_id": "smoke_zn4o_bpdc_ip2_long_v1",
+    "validation_status": "GREEN",
+    "application_label": "ROBUST_LEAD_CANDIDATE",
+    "q100": 158.967059,
+    "q075": 136.105472,
+    "q050": 121.920937,
+    "ret_q075": 0.8561866392709698,
+    "ret_q050": 0.7669572411225145,
+    "d_pore_ang": 7.6167,
+    "rho_gcm3": 0.697154,
+    "source_cif": "E:\\AtomForge\\results\\smoke_zn4o_pcu\\bpdc_ip2_gfn2\\relaxed_cifs\\bpdc_zn4o_pcu_ip2_off380_gfn2_pbc_relaxed.cif",
+    "has_structure": true,
+    "cif": "static/structures/bpdc_zn4o_pcu_ip2_off380.cif",
+    "unit_cif": "static/structures/bpdc_zn4o_pcu_ip2_off380_unit.cif",
+    "viewer_mol2": "static/structures/bpdc_zn4o_pcu_ip2_off380.mol2",
+    "viewer_sdf": "static/structures/bpdc_zn4o_pcu_ip2_off380.sdf",
+    "viewer_sdf_2x2x1": "static/structures/bpdc_zn4o_pcu_ip2_off380_2x2x1.sdf",
+    "structure_json": "static/structures/bpdc_zn4o_pcu_ip2_off380.json",
+    "n_sites": 166,
+    "n_bonds": 642,
+    "lattice": {
+      "@module": "pymatgen.core.lattice",
+      "@class": "Lattice",
+      "matrix": [
+        [
+          16.816,
+          0.0,
+          1.0296830287230946e-15
+        ],
+        [
+          2.704219047696232e-15,
+          16.816,
+          1.0296830287230946e-15
+        ],
+        [
+          0.0,
+          0.0,
+          16.816
+        ]
+      ],
+      "pbc": [
+        true,
+        true,
+        true
+      ]
+    },
+    "export_error": "",
+    "viewer_n_sites": 561,
+    "visual_supercell": [
+      1,
+      1,
+      1
+    ],
+    "linker_usd_g": 3.2,
+    "linker_sa_score": 3.1,
+    "metal_usd_g": 0.08,
+    "econ_score": 153.63021295362898,
+    "econ_label": "premium_precursor"
+  },
+  {
+    "material_id": "bpdc_zn4o_pcu_ip2_off400",
+    "linker": "bpdc",
+    "sbu": "zn4o",
+    "topology": "pcu_periodic_zn4o_ip2",
+    "campaign_id": "smoke_zn4o_bpdc_ip2_long_v1",
+    "validation_status": "GREEN",
+    "application_label": "ROBUST_LEAD_CANDIDATE",
+    "q100": 168.376064,
+    "q075": 146.429083,
+    "q050": 130.800026,
+    "ret_q075": 0.869654982551439,
+    "ret_q050": 0.7768326619156508,
+    "d_pore_ang": 7.42159,
+    "rho_gcm3": 0.697154,
+    "source_cif": "E:\\AtomForge\\results\\smoke_zn4o_pcu\\bpdc_ip2_gfn2\\relaxed_cifs\\bpdc_zn4o_pcu_ip2_off400_gfn2_pbc_relaxed.cif",
+    "has_structure": true,
+    "cif": "static/structures/bpdc_zn4o_pcu_ip2_off400.cif",
+    "unit_cif": "static/structures/bpdc_zn4o_pcu_ip2_off400_unit.cif",
+    "viewer_mol2": "static/structures/bpdc_zn4o_pcu_ip2_off400.mol2",
+    "viewer_sdf": "static/structures/bpdc_zn4o_pcu_ip2_off400.sdf",
+    "viewer_sdf_2x2x1": "static/structures/bpdc_zn4o_pcu_ip2_off400_2x2x1.sdf",
+    "structure_json": "static/structures/bpdc_zn4o_pcu_ip2_off400.json",
+    "n_sites": 166,
+    "n_bonds": 600,
+    "lattice": {
+      "@module": "pymatgen.core.lattice",
+      "@class": "Lattice",
+      "matrix": [
+        [
+          16.816,
+          0.0,
+          1.0296830287230946e-15
+        ],
+        [
+          2.704219047696232e-15,
+          16.816,
+          1.0296830287230946e-15
+        ],
+        [
+          0.0,
+          0.0,
+          16.816
+        ]
+      ],
+      "pbc": [
+        true,
+        true,
+        true
+      ]
+    },
+    "export_error": "",
+    "viewer_n_sites": 537,
+    "visual_supercell": [
+      1,
+      1,
+      1
+    ],
+    "linker_usd_g": 3.2,
+    "linker_sa_score": 3.1,
+    "metal_usd_g": 0.08,
+    "econ_score": 164.8185811491935,
+    "econ_label": "premium_precursor"
+  },
+  {
+    "material_id": "nh2_bdc_zn4o_pcu_ip2_off380",
+    "linker": "nh2_bdc",
+    "sbu": "zn4o",
+    "topology": "pcu_periodic_zn4o_ip2",
+    "campaign_id": "functionalized_zn4o_pcu_ip2_long_v1",
+    "validation_status": "GREEN",
+    "application_label": "ROBUST_LEAD_CANDIDATE",
+    "q100": 110.604385,
+    "q075": 98.080317,
+    "q050": 88.851532,
+    "ret_q075": 0.8867669848713503,
+    "ret_q050": 0.8033273906816625,
+    "d_pore_ang": 5.18621,
+    "rho_gcm3": 1.25611,
+    "source_cif": "E:\\AtomForge\\results\\smoke_zn4o_pcu\\functionalized_ip2_v1\\gfn2\\nh2_bdc_zn4o_pcu_ip2_off380\\relaxed_cifs\\nh2_bdc_zn4o_pcu_ip2_off380_gfn2_pbc_relaxed.cif",
+    "has_structure": true,
+    "cif": "static/structures/nh2_bdc_zn4o_pcu_ip2_off380.cif",
+    "unit_cif": "static/structures/nh2_bdc_zn4o_pcu_ip2_off380_unit.cif",
+    "viewer_mol2": "static/structures/nh2_bdc_zn4o_pcu_ip2_off380.mol2",
+    "viewer_sdf": "static/structures/nh2_bdc_zn4o_pcu_ip2_off380.sdf",
+    "viewer_sdf_2x2x1": "static/structures/nh2_bdc_zn4o_pcu_ip2_off380_2x2x1.sdf",
+    "structure_json": "static/structures/nh2_bdc_zn4o_pcu_ip2_off380.json",
+    "n_sites": 118,
+    "n_bonds": 440,
+    "lattice": {
+      "@module": "pymatgen.core.lattice",
+      "@class": "Lattice",
+      "matrix": [
+        [
+          12.916,
+          0.0,
+          7.9087690288936075e-16
+        ],
+        [
+          2.077051214322344e-15,
+          12.916,
+          7.9087690288936075e-16
+        ],
+        [
+          0.0,
+          0.0,
+          12.916
+        ]
+      ],
+      "pbc": [
+        true,
+        true,
+        true
+      ]
+    },
+    "export_error": "",
+    "viewer_n_sites": 377,
+    "visual_supercell": [
+      1,
+      1,
+      1
+    ],
+    "linker_usd_g": 0.45,
+    "linker_sa_score": 2.3,
+    "metal_usd_g": 0.08,
+    "econ_score": 1073.0861352657005,
+    "econ_label": "cost_favorable"
+  },
+  {
+    "material_id": "oh_bdc_zn4o_pcu_ip2_off400",
+    "linker": "oh_bdc",
+    "sbu": "zn4o",
+    "topology": "pcu_periodic_zn4o_ip2",
+    "campaign_id": "functionalized_zn4o_pcu_ip2_long_v1",
+    "validation_status": "GREEN",
+    "application_label": "ROBUST_LEAD_CANDIDATE",
+    "q100": 130.907193,
+    "q075": 110.088219,
+    "q050": 95.743854,
+    "ret_q075": 0.8409638651407031,
+    "ret_q050": 0.7313872660916348,
+    "d_pore_ang": 5.0423,
+    "rho_gcm3": 1.26066,
+    "source_cif": "E:\\AtomForge\\results\\smoke_zn4o_pcu\\functionalized_ip2_v1\\gfn2\\oh_bdc_zn4o_pcu_ip2_off400\\relaxed_cifs\\oh_bdc_zn4o_pcu_ip2_off400_gfn2_pbc_relaxed.cif",
+    "has_structure": true,
+    "cif": "static/structures/oh_bdc_zn4o_pcu_ip2_off400.cif",
+    "unit_cif": "static/structures/oh_bdc_zn4o_pcu_ip2_off400_unit.cif",
+    "viewer_mol2": "static/structures/oh_bdc_zn4o_pcu_ip2_off400.mol2",
+    "viewer_sdf": "static/structures/oh_bdc_zn4o_pcu_ip2_off400.sdf",
+    "viewer_sdf_2x2x1": "static/structures/oh_bdc_zn4o_pcu_ip2_off400_2x2x1.sdf",
+    "structure_json": "static/structures/oh_bdc_zn4o_pcu_ip2_off400.json",
+    "n_sites": 112,
+    "n_bonds": 423,
+    "lattice": {
+      "@module": "pymatgen.core.lattice",
+      "@class": "Lattice",
+      "matrix": [
+        [
+          12.916,
+          0.0,
+          7.9087690288936075e-16
+        ],
+        [
+          2.077051214322344e-15,
+          12.916,
+          7.9087690288936075e-16
+        ],
+        [
+          0.0,
+          0.0,
+          12.916
+        ]
+      ],
+      "pbc": [
+        true,
+        true,
+        true
+      ]
+    },
+    "export_error": "",
+    "viewer_n_sites": 360,
+    "visual_supercell": [
+      1,
+      1,
+      1
+    ],
+    "linker_usd_g": 0.8,
+    "linker_sa_score": 2.6,
+    "metal_usd_g": 0.08,
+    "econ_score": 575.3837379807692,
+    "econ_label": "balanced"
+  },
+  {
+    "material_id": "nh2_bdc_al_o6_mono_pcu_mono_clean",
+    "linker": "nh2_bdc",
+    "sbu": "al_o6_mono",
+    "topology": "pcu_periodic_mono_o6",
+    "campaign_id": "factorial_al_o6_single_nh2_v1",
+    "validation_status": "GREEN",
+    "application_label": "ROBUST_LEAD_CANDIDATE",
+    "q100": 325.169868,
+    "q075": 270.163416,
+    "q050": 232.088002,
+    "ret_q075": 0.8308377946015588,
+    "ret_q050": 0.7137438761699777,
+    "d_pore_ang": 6.28724,
+    "rho_gcm3": 0.756491,
+    "source_cif": "E:\\AtomForge\\results\\factorial_completion\\al_o6_single_gfn2_wsl\\nh2_bdc_al_o6_mono_pcu_mono\\relaxed_cifs\\nh2_bdc_al_o6_mono_pcu_mono_gfn2_pbc_relaxed.cif",
+    "has_structure": true,
+    "cif": "static/structures/nh2_bdc_al_o6_mono_pcu_mono_clean.cif",
+    "unit_cif": "static/structures/nh2_bdc_al_o6_mono_pcu_mono_clean_unit.cif",
+    "viewer_mol2": "static/structures/nh2_bdc_al_o6_mono_pcu_mono_clean.mol2",
+    "viewer_sdf": "static/structures/nh2_bdc_al_o6_mono_pcu_mono_clean.sdf",
+    "viewer_sdf_2x2x1": "static/structures/nh2_bdc_al_o6_mono_pcu_mono_clean_2x2x1.sdf",
+    "structure_json": "static/structures/nh2_bdc_al_o6_mono_pcu_mono_clean.json",
+    "n_sites": 55,
+    "n_bonds": 276,
+    "lattice": {
+      "@module": "pymatgen.core.lattice",
+      "@class": "Lattice",
+      "matrix": [
+        [
+          10.74,
+          0.0,
+          6.576353311421287e-16
+        ],
+        [
+          1.7271237257527077e-15,
+          10.74,
+          6.576353311421287e-16
+        ],
+        [
+          0.0,
+          0.0,
+          10.74
+        ]
+      ],
+      "pbc": [
+        true,
+        true,
+        true
+      ]
+    },
+    "export_error": "",
+    "viewer_n_sites": 242,
+    "visual_supercell": [
+      1,
+      1,
+      1
+    ],
+    "linker_usd_g": 0.45,
+    "linker_sa_score": 2.3,
+    "metal_usd_g": 0.05,
+    "econ_score": 4484.792309178744,
+    "econ_label": "cost_favorable"
+  },
+  {
+    "material_id": "Cu-BTC",
+    "is_benchmark": true,
+    "validation_status": "BENCHMARK",
+    "application_label": "EXTERNAL_BENCHMARK",
+    "q100": 146.19,
+    "q075": null,
+    "q050": null,
+    "ret_q075": null,
+    "ret_q050": null,
+    "source_cif": "E:\\AtomForge\\results\\candidate003_auto_followup\\benchmarks_same_protocol\\benchmark_sources\\Cu-BTC.cif",
+    "has_structure": true,
+    "cif": "static/structures/Cu-BTC.cif",
+    "unit_cif": "static/structures/Cu-BTC_unit.cif",
+    "viewer_mol2": "static/structures/Cu-BTC.mol2",
+    "viewer_sdf": "static/structures/Cu-BTC.sdf",
+    "viewer_sdf_2x2x1": "",
+    "structure_json": "static/structures/Cu-BTC.json",
+    "n_sites": 624,
+    "n_bonds": 720,
+    "lattice": {
+      "@module": "pymatgen.core.lattice",
+      "@class": "Lattice",
+      "matrix": [
+        [
+          26.343,
+          0.0,
+          1.6130435314969364e-15
+        ],
+        [
+          4.2362774960431636e-15,
+          26.343,
+          1.6130435314969364e-15
+        ],
+        [
+          0.0,
+          0.0,
+          26.343
+        ]
+      ],
+      "pbc": [
+        true,
+        true,
+        true
+      ]
+    },
+    "export_error": "",
+    "viewer_n_sites": 624,
+    "visual_supercell": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "material_id": "UiO-66",
+    "is_benchmark": true,
+    "validation_status": "BENCHMARK",
+    "application_label": "EXTERNAL_BENCHMARK",
+    "q100": 96.52,
+    "q075": null,
+    "q050": null,
+    "ret_q075": null,
+    "ret_q050": null,
+    "source_cif": "E:\\AtomForge\\results\\candidate003_auto_followup\\benchmarks_same_protocol\\benchmark_sources\\UIO-66.cif",
+    "has_structure": true,
+    "cif": "static/structures/UiO-66.cif",
+    "unit_cif": "static/structures/UiO-66_unit.cif",
+    "viewer_mol2": "static/structures/UiO-66.mol2",
+    "viewer_sdf": "static/structures/UiO-66.sdf",
+    "viewer_sdf_2x2x1": "",
+    "structure_json": "static/structures/UiO-66.json",
+    "n_sites": 432,
+    "n_bonds": 498,
+    "lattice": {
+      "@module": "pymatgen.core.lattice",
+      "@class": "Lattice",
+      "matrix": [
+        [
+          20.7004,
+          0.0,
+          1.2675339300534934e-15
+        ],
+        [
+          3.3288782097366247e-15,
+          20.7004,
+          1.2675339300534934e-15
+        ],
+        [
+          0.0,
+          0.0,
+          20.7004
+        ]
+      ],
+      "pbc": [
+        true,
+        true,
+        true
+      ]
+    },
+    "export_error": "",
+    "viewer_n_sites": 432,
+    "visual_supercell": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "material_id": "MgMOF-74",
+    "is_benchmark": true,
+    "validation_status": "BENCHMARK",
+    "application_label": "EXTERNAL_BENCHMARK",
+    "q100": 75.02,
+    "q075": null,
+    "q050": null,
+    "ret_q075": null,
+    "ret_q050": null,
+    "source_cif": "E:\\AtomForge\\results\\candidate003_auto_followup\\benchmarks_same_protocol\\benchmark_sources\\MgMOF-74.cif",
+    "has_structure": true,
+    "cif": "static/structures/MgMOF-74.cif",
+    "unit_cif": "static/structures/MgMOF-74_unit.cif",
+    "viewer_mol2": "static/structures/MgMOF-74.mol2",
+    "viewer_sdf": "static/structures/MgMOF-74.sdf",
+    "viewer_sdf_2x2x1": "static/structures/MgMOF-74_2x2x1.sdf",
+    "structure_json": "static/structures/MgMOF-74.json",
+    "n_sites": 162,
+    "n_bonds": 174,
+    "lattice": {
+      "@module": "pymatgen.core.lattice",
+      "@class": "Lattice",
+      "matrix": [
+        [
+          26.136,
+          0.0,
+          1.6003684371257611e-15
+        ],
+        [
+          -13.067999999999996,
+          22.63443995331009,
+          1.6003684371257611e-15
+        ],
+        [
+          0.0,
+          0.0,
+          6.942
+        ]
+      ],
+      "pbc": [
+        true,
+        true,
+        true
+      ]
+    },
+    "export_error": "",
+    "viewer_n_sites": 162,
+    "visual_supercell": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "material_id": "MOF-177",
+    "is_benchmark": true,
+    "validation_status": "BENCHMARK",
+    "application_label": "EXTERNAL_BENCHMARK",
+    "q100": 56.08,
+    "q075": null,
+    "q050": null,
+    "ret_q075": null,
+    "ret_q050": null,
+    "source_cif": "E:\\AtomForge\\results\\colab_l2_generation_silent_robust_v3\\_debug_corrected_pacmof_q100\\benchmark_sources\\MOF-177.cif",
+    "has_structure": false,
+    "cif": "",
+    "unit_cif": "",
+    "viewer_mol2": "",
+    "viewer_sdf": "",
+    "viewer_sdf_2x2x1": "",
+    "structure_json": "",
+    "n_sites": null,
+    "n_bonds": null,
+    "lattice": null,
+    "export_error": "Invalid CIF file with no structures!",
+    "viewer_n_sites": null,
+    "visual_supercell": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "material_id": "ZnMOF-74",
+    "is_benchmark": true,
+    "validation_status": "BENCHMARK",
+    "application_label": "EXTERNAL_BENCHMARK",
+    "q100": 53.51,
+    "q075": null,
+    "q050": null,
+    "ret_q075": null,
+    "ret_q050": null,
+    "source_cif": "E:\\AtomForge\\results\\paso5_benchmarks_source_q100_missing\\benchmark_sources\\ZnMOF-74.cif",
+    "has_structure": true,
+    "cif": "static/structures/ZnMOF-74.cif",
+    "unit_cif": "static/structures/ZnMOF-74_unit.cif",
+    "viewer_mol2": "static/structures/ZnMOF-74.mol2",
+    "viewer_sdf": "static/structures/ZnMOF-74.sdf",
+    "viewer_sdf_2x2x1": "static/structures/ZnMOF-74_2x2x1.sdf",
+    "structure_json": "static/structures/ZnMOF-74.json",
+    "n_sites": 162,
+    "n_bonds": 174,
+    "lattice": {
+      "@module": "pymatgen.core.lattice",
+      "@class": "Lattice",
+      "matrix": [
+        [
+          26.19,
+          0.0,
+          1.603674983483459e-15
+        ],
+        [
+          -13.094999999999997,
+          22.68120532511445,
+          1.603674983483459e-15
+        ],
+        [
+          0.0,
+          0.0,
+          6.935
+        ]
+      ],
+      "pbc": [
+        true,
+        true,
+        true
+      ]
+    },
+    "export_error": "",
+    "viewer_n_sites": 162,
+    "visual_supercell": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "material_id": "IRMOF-1",
+    "is_benchmark": true,
+    "validation_status": "BENCHMARK",
+    "application_label": "EXTERNAL_BENCHMARK",
+    "q100": 30.22,
+    "q075": null,
+    "q050": null,
+    "ret_q075": null,
+    "ret_q050": null,
+    "source_cif": "E:\\AtomForge\\results\\paso5_benchmarks_source_q100_missing\\benchmark_sources\\IRMOF-1.cif",
+    "has_structure": true,
+    "cif": "static/structures/IRMOF-1.cif",
+    "unit_cif": "static/structures/IRMOF-1_unit.cif",
+    "viewer_mol2": "static/structures/IRMOF-1.mol2",
+    "viewer_sdf": "static/structures/IRMOF-1.sdf",
+    "viewer_sdf_2x2x1": "",
+    "structure_json": "static/structures/IRMOF-1.json",
+    "n_sites": 424,
+    "n_bonds": 488,
+    "lattice": {
+      "@module": "pymatgen.core.lattice",
+      "@class": "Lattice",
+      "matrix": [
+        [
+          25.832,
+          0.0,
+          1.5817538057787215e-15
+        ],
+        [
+          4.154102428644688e-15,
+          25.832,
+          1.5817538057787215e-15
+        ],
+        [
+          0.0,
+          0.0,
+          25.832
+        ]
+      ],
+      "pbc": [
+        true,
+        true,
+        true
+      ]
+    },
+    "export_error": "",
+    "viewer_n_sites": 424,
+    "visual_supercell": [
+      1,
+      1,
+      1
+    ]
+  }
+]

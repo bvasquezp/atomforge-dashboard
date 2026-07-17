@@ -1,0 +1,301 @@
+[
+  {
+    "material_id": "Cu-BTC",
+    "is_benchmark": true,
+    "validation_status": "BENCHMARK",
+    "application_label": "EXTERNAL_BENCHMARK",
+    "q100": 146.19,
+    "q075": null,
+    "q050": null,
+    "ret_q075": null,
+    "ret_q050": null,
+    "source_cif": "E:\\AtomForge\\results\\candidate003_auto_followup\\benchmarks_same_protocol\\benchmark_sources\\Cu-BTC.cif",
+    "has_structure": true,
+    "cif": "structures/Cu-BTC.cif",
+    "unit_cif": "structures/Cu-BTC_unit.cif",
+    "viewer_mol2": "structures/Cu-BTC.mol2",
+    "viewer_sdf": "structures/Cu-BTC.sdf",
+    "viewer_sdf_2x2x1": "",
+    "structure_json": "structures/Cu-BTC.json",
+    "n_sites": 624,
+    "n_bonds": 720,
+    "lattice": {
+      "@module": "pymatgen.core.lattice",
+      "@class": "Lattice",
+      "matrix": [
+        [
+          26.343,
+          0.0,
+          1.6130435314969364e-15
+        ],
+        [
+          4.2362774960431636e-15,
+          26.343,
+          1.6130435314969364e-15
+        ],
+        [
+          0.0,
+          0.0,
+          26.343
+        ]
+      ],
+      "pbc": [
+        true,
+        true,
+        true
+      ]
+    },
+    "export_error": "",
+    "viewer_n_sites": 624,
+    "visual_supercell": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "material_id": "UiO-66",
+    "is_benchmark": true,
+    "validation_status": "BENCHMARK",
+    "application_label": "EXTERNAL_BENCHMARK",
+    "q100": 96.52,
+    "q075": null,
+    "q050": null,
+    "ret_q075": null,
+    "ret_q050": null,
+    "source_cif": "E:\\AtomForge\\results\\candidate003_auto_followup\\benchmarks_same_protocol\\benchmark_sources\\UIO-66.cif",
+    "has_structure": true,
+    "cif": "structures/UiO-66.cif",
+    "unit_cif": "structures/UiO-66_unit.cif",
+    "viewer_mol2": "structures/UiO-66.mol2",
+    "viewer_sdf": "structures/UiO-66.sdf",
+    "viewer_sdf_2x2x1": "",
+    "structure_json": "structures/UiO-66.json",
+    "n_sites": 432,
+    "n_bonds": 498,
+    "lattice": {
+      "@module": "pymatgen.core.lattice",
+      "@class": "Lattice",
+      "matrix": [
+        [
+          20.7004,
+          0.0,
+          1.2675339300534934e-15
+        ],
+        [
+          3.3288782097366247e-15,
+          20.7004,
+          1.2675339300534934e-15
+        ],
+        [
+          0.0,
+          0.0,
+          20.7004
+        ]
+      ],
+      "pbc": [
+        true,
+        true,
+        true
+      ]
+    },
+    "export_error": "",
+    "viewer_n_sites": 432,
+    "visual_supercell": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "material_id": "MgMOF-74",
+    "is_benchmark": true,
+    "validation_status": "BENCHMARK",
+    "application_label": "EXTERNAL_BENCHMARK",
+    "q100": 75.02,
+    "q075": null,
+    "q050": null,
+    "ret_q075": null,
+    "ret_q050": null,
+    "source_cif": "E:\\AtomForge\\results\\candidate003_auto_followup\\benchmarks_same_protocol\\benchmark_sources\\MgMOF-74.cif",
+    "has_structure": true,
+    "cif": "structures/MgMOF-74.cif",
+    "unit_cif": "structures/MgMOF-74_unit.cif",
+    "viewer_mol2": "structures/MgMOF-74.mol2",
+    "viewer_sdf": "structures/MgMOF-74.sdf",
+    "viewer_sdf_2x2x1": "structures/MgMOF-74_2x2x1.sdf",
+    "structure_json": "structures/MgMOF-74.json",
+    "n_sites": 162,
+    "n_bonds": 174,
+    "lattice": {
+      "@module": "pymatgen.core.lattice",
+      "@class": "Lattice",
+      "matrix": [
+        [
+          26.136,
+          0.0,
+          1.6003684371257611e-15
+        ],
+        [
+          -13.067999999999996,
+          22.63443995331009,
+          1.6003684371257611e-15
+        ],
+        [
+          0.0,
+          0.0,
+          6.942
+        ]
+      ],
+      "pbc": [
+        true,
+        true,
+        true
+      ]
+    },
+    "export_error": "",
+    "viewer_n_sites": 162,
+    "visual_supercell": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "material_id": "MOF-177",
+    "is_benchmark": true,
+    "validation_status": "BENCHMARK",
+    "application_label": "EXTERNAL_BENCHMARK",
+    "q100": 56.08,
+    "q075": null,
+    "q050": null,
+    "ret_q075": null,
+    "ret_q050": null,
+    "source_cif": "E:\\AtomForge\\results\\colab_l2_generation_silent_robust_v3\\_debug_corrected_pacmof_q100\\benchmark_sources\\MOF-177.cif",
+    "has_structure": false,
+    "cif": "",
+    "unit_cif": "",
+    "viewer_mol2": "",
+    "viewer_sdf": "",
+    "viewer_sdf_2x2x1": "",
+    "structure_json": "",
+    "n_sites": null,
+    "n_bonds": null,
+    "lattice": null,
+    "export_error": "Invalid CIF file with no structures!",
+    "viewer_n_sites": null,
+    "visual_supercell": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "material_id": "ZnMOF-74",
+    "is_benchmark": true,
+    "validation_status": "BENCHMARK",
+    "application_label": "EXTERNAL_BENCHMARK",
+    "q100": 53.51,
+    "q075": null,
+    "q050": null,
+    "ret_q075": null,
+    "ret_q050": null,
+    "source_cif": "E:\\AtomForge\\results\\paso5_benchmarks_source_q100_missing\\benchmark_sources\\ZnMOF-74.cif",
+    "has_structure": true,
+    "cif": "structures/ZnMOF-74.cif",
+    "unit_cif": "structures/ZnMOF-74_unit.cif",
+    "viewer_mol2": "structures/ZnMOF-74.mol2",
+    "viewer_sdf": "structures/ZnMOF-74.sdf",
+    "viewer_sdf_2x2x1": "structures/ZnMOF-74_2x2x1.sdf",
+    "structure_json": "structures/ZnMOF-74.json",
+    "n_sites": 162,
+    "n_bonds": 174,
+    "lattice": {
+      "@module": "pymatgen.core.lattice",
+      "@class": "Lattice",
+      "matrix": [
+        [
+          26.19,
+          0.0,
+          1.603674983483459e-15
+        ],
+        [
+          -13.094999999999997,
+          22.68120532511445,
+          1.603674983483459e-15
+        ],
+        [
+          0.0,
+          0.0,
+          6.935
+        ]
+      ],
+      "pbc": [
+        true,
+        true,
+        true
+      ]
+    },
+    "export_error": "",
+    "viewer_n_sites": 162,
+    "visual_supercell": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "material_id": "IRMOF-1",
+    "is_benchmark": true,
+    "validation_status": "BENCHMARK",
+    "application_label": "EXTERNAL_BENCHMARK",
+    "q100": 30.22,
+    "q075": null,
+    "q050": null,
+    "ret_q075": null,
+    "ret_q050": null,
+    "source_cif": "E:\\AtomForge\\results\\paso5_benchmarks_source_q100_missing\\benchmark_sources\\IRMOF-1.cif",
+    "has_structure": true,
+    "cif": "structures/IRMOF-1.cif",
+    "unit_cif": "structures/IRMOF-1_unit.cif",
+    "viewer_mol2": "structures/IRMOF-1.mol2",
+    "viewer_sdf": "structures/IRMOF-1.sdf",
+    "viewer_sdf_2x2x1": "",
+    "structure_json": "structures/IRMOF-1.json",
+    "n_sites": 424,
+    "n_bonds": 488,
+    "lattice": {
+      "@module": "pymatgen.core.lattice",
+      "@class": "Lattice",
+      "matrix": [
+        [
+          25.832,
+          0.0,
+          1.5817538057787215e-15
+        ],
+        [
+          4.154102428644688e-15,
+          25.832,
+          1.5817538057787215e-15
+        ],
+        [
+          0.0,
+          0.0,
+          25.832
+        ]
+      ],
+      "pbc": [
+        true,
+        true,
+        true
+      ]
+    },
+    "export_error": "",
+    "viewer_n_sites": 424,
+    "visual_supercell": [
+      1,
+      1,
+      1
+    ]
+  }
+]

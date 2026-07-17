@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AtomForge Project Report</title>
+  <style>
+    :root { --ink:#e5edf8; --muted:#9fb0c7; --line:rgba(148,163,184,.24); --blue:#38bdf8; --green:#2dd4bf; --amber:#fbbf24; --red:#fb7185; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:linear-gradient(115deg, rgba(16,22,29,.72), rgba(28,36,45,.62) 52%, rgba(39,55,60,.46)), url('static/assets/atomforge_mof_lab_minimal_background.png') center top / cover fixed, #10161d; color:var(--ink); font-family:"Aptos", "Segoe UI Variable", Inter, ui-sans-serif, system-ui, Segoe UI, sans-serif; }
+    main { max-width:1180px; margin:0 auto; padding:34px; }
+    header { display:grid; grid-template-columns:1.4fr .8fr; gap:24px; margin-bottom:22px; }
+    h1 { margin:0; font-size:42px; line-height:1.02; letter-spacing:-.035em; }
+    h2 { margin:0 0 10px; font-size:18px; }
+    h3 { margin:0 0 8px; font-size:14px; color:#dbeafe; }
+    p { color:var(--muted); line-height:1.5; }
+    strong { color:#f8fafc; }
+    .eyebrow { color:#7dd3fc; font-weight:900; text-transform:uppercase; letter-spacing:.08em; font-size:12px; margin-bottom:10px; }
+    .panel, .metric { background:linear-gradient(180deg, rgba(15,23,42,.86), rgba(15,23,42,.72)); border:1px solid var(--line); border-radius:20px; box-shadow:0 22px 70px rgba(0,0,0,.38); backdrop-filter:blur(14px); }
+    .panel { padding:20px; }
+    .metrics { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-bottom:18px; }
+    .metric { padding:18px; }
+    .metric span { display:block; color:var(--muted); font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.06em; }
+    .metric strong { display:block; margin-top:8px; font-size:30px; letter-spacing:-.03em; }
+    .grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px; }
+    .grid3 { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:16px; }
+    ul { margin:0; padding-left:19px; color:var(--muted); line-height:1.55; }
+    ol { margin:0; padding-left:20px; color:var(--muted); line-height:1.55; }
+    table { width:100%; border-collapse:collapse; background:linear-gradient(180deg, rgba(15,23,42,.86), rgba(15,23,42,.72)); border:1px solid var(--line); border-radius:18px; overflow:hidden; box-shadow:0 22px 70px rgba(0,0,0,.28); }
+    th, td { padding:12px; border-bottom:1px solid rgba(148,163,184,.16); text-align:left; vertical-align:top; }
+    th { color:#b6c5dc; font-size:12px; text-transform:uppercase; letter-spacing:.06em; background:rgba(2,6,23,.38); }
+    td:nth-child(2), td:nth-child(3) { text-align:right; font-variant-numeric:tabular-nums; }
+    td span { color:var(--muted); font-size:12px; }
+    .tag { display:inline-flex; padding:5px 9px; border-radius:999px; background:rgba(20,184,166,.18); color:#99f6e4; font-weight:800; font-size:12px; }
+    .tag.warn { background:rgba(251,191,36,.16); color:#fde68a; }
+    .tag.red { background:rgba(251,113,133,.16); color:#fecdd3; }
+    .view { display:inline-flex; padding:7px 10px; border-radius:12px; color:white; background:linear-gradient(135deg,#2563eb,#14b8a6); text-decoration:none; font-weight:800; font-size:12px; white-space:nowrap; }
+    .section-title { margin-top:24px; }
+    .callout { border-left:4px solid var(--green); padding:14px 16px; background:rgba(20,184,166,.10); border-radius:14px; color:#c8fdf3; margin-top:14px; }
+    .small { color:var(--muted); font-size:12px; line-height:1.45; }
+    .formula { font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size:13px; color:#dbeafe; background:rgba(2,6,23,.45); padding:10px; border-radius:12px; overflow:auto; }
+    .result-list { display:grid; gap:9px; margin:12px 0 0; padding:0; list-style:none; color:var(--muted); }
+    .result-list li { display:grid; grid-template-columns:120px 1fr; gap:12px; padding-top:9px; border-top:1px solid rgba(148,163,184,.16); }
+    .result-list li:first-child { border-top:0; padding-top:0; }
+    .result-list strong { color:var(--ink); }
+    .term { position:relative; display:inline-flex; align-items:center; border-bottom:1px dotted rgba(153,246,228,.7); color:#dffcf7; cursor:help; }
+    .term::after { content:attr(data-tip); position:absolute; left:0; bottom:calc(100% + 9px); z-index:20; width:min(320px, 72vw); padding:10px 12px; border-radius:12px; background:rgba(2,6,23,.96); color:#e5edf8; border:1px solid rgba(148,163,184,.35); box-shadow:0 18px 45px rgba(0,0,0,.38); font-size:12px; line-height:1.4; opacity:0; pointer-events:none; transform:translateY(4px); transition:.15s ease; }
+    .term:hover::after, .term:focus::after { opacity:1; transform:translateY(0); }
+    .glossary { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+    .glossary-item { padding:12px; border:1px solid rgba(148,163,184,.16); border-radius:14px; background:rgba(2,6,23,.20); }
+    .glossary-item strong { display:block; color:var(--ink); margin-bottom:4px; }
+    .glossary-item span { display:block; color:var(--muted); font-size:13px; line-height:1.4; }
+    @media print { body { background:white; } main { padding:18px; } .panel,.metric,table { box-shadow:none; } }
+    @media (max-width:900px) { header,.grid,.grid3,.metrics,.glossary { grid-template-columns:1fr; } .result-list li { grid-template-columns:1fr; gap:2px; } }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <section>
+      <div class="eyebrow">AtomForge / MOF discovery report</div>
+      <h1>Informe general del proyecto AtomForge</h1>
+      <p>AtomForge es una plataforma computacional para disenar, construir y validar <span class="term" tabindex="0" data-tip="MOF: Metal-Organic Framework. Material poroso cristalino formado por nodos metalicos conectados por moleculas organicas llamadas linkers.">MOFs</span> orientados a captura y adsorcion de CO2. El sistema genera candidatos cristalinos, aplica filtros fisicos, relaja estructuras y prioriza materiales con evidencia trazable.</p>
+      <p>La pagina resume resultados, benchmarks, conceptos tecnicos, riesgos, economia preliminar y pasos de validacion experimental.</p>
+    </section>
+    <section class="panel">
+      <h2>Resultado principal</h2>
+      <p><strong>nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off410</strong></p>
+      <ul class="result-list">
+        <li><strong>q100</strong><span>388.04 mg/g</span></li>
+        <li><strong>ret_q050</strong><span>0.746</span></li>
+        <li><strong>Benchmark</strong><span>Cu-BTC q100=146.19 mg/g</span></li>
+      </ul>
+      <span class="tag">2.65x vs benchmark</span>
+      <p style="margin-top:14px"><a class="view" href="viewer.html?material_id=nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off410">Abrir estructura 3D del mejor lead</a></p>
+    </section>
+  </header>
+
+  <section class="metrics">
+    <div class="metric"><span>L3 total</span><strong>32</strong></div>
+    <div class="metric"><span>GREEN</span><strong>24</strong></div>
+    <div class="metric"><span>Buckets</span><strong>102</strong></div>
+    <div class="metric"><span>Estructuras 3D</span><strong>29</strong></div>
+  </section>
+
+  <section class="panel">
+    <h2>Estado del proyecto</h2>
+    <p>El sistema ya opera como un pipeline reproducible: genera <span class="term" tabindex="0" data-tip="CIF: Crystallographic Information File. Archivo estandar que describe celda, atomos y simetria de una estructura cristalina.">CIFs</span>, valida periodicidad, relaja estructuras con <span class="term" tabindex="0" data-tip="GFN2/PBC: metodo semiempirico usado aqui con condiciones periodicas de borde para relajar estructuras cristalinas antes de simular adsorcion.">GFN2/PBC</span>, ejecuta <span class="term" tabindex="0" data-tip="RASPA/GCMC: software y metodo Monte Carlo de gran canonico usados para estimar adsorcion en materiales porosos.">RASPA/GCMC</span> con cargas <span class="term" tabindex="0" data-tip="PACMOF: protocolo/modelo de asignacion de cargas usado para representar interacciones electrostaticas en MOFs.">PACMOF</span> y registra resultados en un ledger auditable. Estado actual: <strong>24 candidatos GREEN</strong>.</p>
+    <div class="callout">Lectura correcta: estos son resultados computacionales de priorizacion, no claims experimentales. El siguiente salto de valor es validar 1--2 candidatos con sintesis, <span class="term" tabindex="0" data-tip="PXRD: difraccion de rayos X de polvo. Confirma si la fase sintetizada coincide con la estructura cristalina esperada.">PXRD</span>, <span class="term" tabindex="0" data-tip="TGA: analisis termogravimetrico. Mide perdida de masa con temperatura y ayuda a estimar estabilidad termica/solvente residual.">TGA</span>, <span class="term" tabindex="0" data-tip="BET: metodo para estimar area superficial especifica usando isotermas de adsorcion, comunmente con N2.">BET</span> y adsorcion de CO2.</div>
+  </section>
+
+  <section class="grid">
+    <div class="panel">
+      <h2>Que problema aborda</h2>
+      <ul>
+        <li>La captura de CO2 requiere materiales con alta capacidad, estabilidad y costo razonable.</li>
+        <li>Probar materiales al azar en laboratorio es lento y caro; AtomForge prioriza candidatos antes de sintetizar.</li>
+        <li>El sistema genera tanto positivos como negativos utiles, evitando entrenar modelos con datos sesgados.</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h2>Por que es distinto</h2>
+      <ul>
+        <li>No es solo un ranking de adsorcion: integra geometria, periodicidad, relajacion y control de calidad.</li>
+        <li>El mecanismo ganador observado es confinamiento geometrico por redes interpenetradas pcu_mono_ip2.</li>
+        <li>La pagina permite inspeccionar estructuras 3D y evidencia sin ejecutar simulaciones pesadas.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="grid3">
+    <div class="panel">
+      <h2>Estados del ledger</h2>
+      <ul>
+        <li><strong>GREEN:</strong> pasa gates, tiene evidencia L3 y cumple criterios de desempeno.</li>
+        <li><strong>YELLOW:</strong> material valido o informativo, pero no cumple todos los objetivos de producto.</li>
+        <li><strong>RED:</strong> negativo util: fallo estructural, baja retencion o bajo loading con causa documentada.</li>
+      </ul>
+      <p class="small">Distribucion L3 actual: GREEN=24, YELLOW=8, RED=0.</p>
+    </div>
+    <div class="panel">
+      <h2>Niveles de evidencia</h2>
+      <ul>
+        <li><strong>L1:</strong> construido o prefiltrado.</li>
+        <li><strong>L2:</strong> screening corto o evidencia parcial.</li>
+        <li><strong>L3:</strong> relajacion PBC, gates post-relajacion y RASPA largo con replicas.</li>
+      </ul>
+      <p class="small">L3 es el nivel usado para comparar leads principales.</p>
+    </div>
+    <div class="panel">
+      <h2>Parametros clave</h2>
+      <ul>
+        <li><strong><span class="term" tabindex="0" data-tip="q100: cantidad de CO2 adsorbido usando cargas PACMOF completas. No representa presion experimental.">q100</span>:</strong> CO2 adsorbido con cargas PACMOF completas.</li>
+        <li><strong><span class="term" tabindex="0" data-tip="q075/q050: adsorcion simulada con cargas PACMOF escaladas al 75% y 50%. Se usa como stress test electrostatico.">q075/q050</span>:</strong> escalado de cargas al 75% y 50%.</li>
+        <li><strong><span class="term" tabindex="0" data-tip="ret_q050 = q050/q100. Valor alto indica que el candidato mantiene adsorcion cuando se debilitan las cargas, sugiriendo contribucion geometrica/van der Waals.">ret_q050</span>:</strong> q050/q100; robustez ante incertidumbre electrostatica.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="panel" style="margin-top:18px">
+    <h2>Glosario rapido</h2>
+    <div class="glossary">
+      <div class="glossary-item"><strong>MOF</strong><span>Red metal-organica porosa y cristalina formada por nodos metalicos y linkers organicos.</span></div>
+      <div class="glossary-item"><strong>CIF</strong><span>Archivo cristalografico que almacena celda, posiciones atomicas y estructura.</span></div>
+      <div class="glossary-item"><strong>GFN2/PBC</strong><span>Relajacion semiempirica con condiciones periodicas de borde.</span></div>
+      <div class="glossary-item"><strong>RASPA/GCMC</strong><span>Simulacion Monte Carlo para estimar adsorcion en materiales porosos.</span></div>
+      <div class="glossary-item"><strong>PACMOF</strong><span>Modelo/protocolo de cargas usado para interacciones electrostaticas.</span></div>
+      <div class="glossary-item"><strong>PXRD</strong><span>Difraccion de rayos X de polvo; valida fase cristalina sintetizada.</span></div>
+      <div class="glossary-item"><strong>TGA</strong><span>Analisis termogravimetrico; estima estabilidad termica y perdida de masa.</span></div>
+      <div class="glossary-item"><strong>BET</strong><span>Metodo de area superficial especifica basado en isotermas de adsorcion.</span></div>
+      <div class="glossary-item"><strong>SA score</strong><span>Proxy de facilidad sintetica; mas bajo suele ser mas favorable.</span></div>
+    </div>
+  </section>
+
+  <h2 class="section-title">Top AtomForge por capacidad q100</h2>
+  <table><thead><tr><th>Candidato</th><th>q100</th><th>ret q050</th><th>Econ score</th><th>3D</th></tr></thead><tbody><tr><td><strong>nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off410</strong><br><span>nh2_bpdc / cr_o6_mono</span></td><td>388.04</td><td>0.746</td><td>22</td><td><a class="view" href="viewer.html?material_id=nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off410">Ver 3D</a></td></tr><tr><td><strong>nh2_bpdc_v_o6_mono_pcu_mono_ip2_off400</strong><br><span>nh2_bpdc / v_o6_mono</span></td><td>355.82</td><td>0.729</td><td>27</td><td><a class="view" href="viewer.html?material_id=nh2_bpdc_v_o6_mono_pcu_mono_ip2_off400">Ver 3D</a></td></tr><tr><td><strong>nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off400</strong><br><span>nh2_bpdc / cr_o6_mono</span></td><td>354.78</td><td>0.733</td><td>20</td><td><a class="view" href="viewer.html?material_id=nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off400">Ver 3D</a></td></tr><tr><td><strong>nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off390</strong><br><span>nh2_bpdc / cr_o6_mono</span></td><td>333.04</td><td>0.693</td><td>17</td><td><a class="view" href="viewer.html?material_id=nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off390">Ver 3D</a></td></tr><tr><td><strong>nh2_bpdc_fe_o6_mono_pcu_mono_ip2_off400</strong><br><span>nh2_bpdc / fe_o6_mono</span></td><td>329.00</td><td>0.747</td><td>155</td><td><a class="view" href="viewer.html?material_id=nh2_bpdc_fe_o6_mono_pcu_mono_ip2_off400">Ver 3D</a></td></tr><tr><td><strong>nh2_bdc_al_o6_mono_pcu_mono_clean</strong><br><span>nh2_bdc / al_o6_mono</span></td><td>325.17</td><td>0.714</td><td>4485</td><td><a class="view" href="viewer.html?material_id=nh2_bdc_al_o6_mono_pcu_mono_clean">Ver 3D</a></td></tr><tr><td><strong>nh2_bpdc_v_o6_mono_pcu_mono_ip2_off390</strong><br><span>nh2_bpdc / v_o6_mono</span></td><td>323.38</td><td>0.698</td><td>24</td><td><a class="view" href="viewer.html?material_id=nh2_bpdc_v_o6_mono_pcu_mono_ip2_off390">Ver 3D</a></td></tr><tr><td><strong>bpdc_al_o6_mono_pcu_mono_ip2_off380</strong><br><span>bpdc / al_o6_mono</span></td><td>301.56</td><td>0.731</td><td>444</td><td><a class="view" href="viewer.html?material_id=bpdc_al_o6_mono_pcu_mono_ip2_off380">Ver 3D</a></td></tr><tr><td><strong>nh2_bpdc_fe_o6_mono_pcu_mono_ip2_off390</strong><br><span>nh2_bpdc / fe_o6_mono</span></td><td>294.60</td><td>0.720</td><td>134</td><td><a class="view" href="viewer.html?material_id=nh2_bpdc_fe_o6_mono_pcu_mono_ip2_off390">Ver 3D</a></td></tr><tr><td><strong>nh2_bpdc_v_o6_mono_pcu_mono_ip2_off380</strong><br><span>nh2_bpdc / v_o6_mono</span></td><td>290.32</td><td>0.698</td><td>21</td><td><a class="view" href="viewer.html?material_id=nh2_bpdc_v_o6_mono_pcu_mono_ip2_off380">Ver 3D</a></td></tr></tbody></table>
+
+  <h2 class="section-title">Top AtomForge por retencion frente a escalado de cargas</h2>
+  <table><thead><tr><th>Candidato</th><th>q100</th><th>ret q050</th><th>Econ score</th><th>3D</th></tr></thead><tbody><tr><td><strong>bdc_ti_o6_mono_pcu_mono_ip2_off380</strong><br><span>bdc / ti_o6_mono</span></td><td>111.95</td><td>0.938</td><td>2592</td><td><a class="view" href="viewer.html?material_id=bdc_ti_o6_mono_pcu_mono_ip2_off380">Ver 3D</a></td></tr><tr><td><strong>oh_bdc_fe_o6_mono_pcu_mono_ip2_off380</strong><br><span>oh_bdc / fe_o6_mono</span></td><td>120.59</td><td>0.925</td><td>1788</td><td><a class="view" href="viewer.html?material_id=oh_bdc_fe_o6_mono_pcu_mono_ip2_off380">Ver 3D</a></td></tr><tr><td><strong>nh2_bdc_al_o6_mono_pcu_mono_ip2_off038</strong><br><span>nh2_bdc / al_o6_mono</span></td><td>112.49</td><td>0.883</td><td>1919</td><td><a class="view" href="viewer.html?material_id=nh2_bdc_al_o6_mono_pcu_mono_ip2_off038">Ver 3D</a></td></tr><tr><td><strong>bdc_fe_o6_mono_pcu_mono_ip2_off380</strong><br><span>bdc / fe_o6_mono</span></td><td>124.65</td><td>0.858</td><td>13196</td><td><a class="view" href="viewer.html?material_id=bdc_fe_o6_mono_pcu_mono_ip2_off380">Ver 3D</a></td></tr><tr><td><strong>bdc_cr_o6_mono_pcu_mono_ip2_off380</strong><br><span>bdc / cr_o6_mono</span></td><td>118.03</td><td>0.849</td><td>1484</td><td><a class="view" href="viewer.html?material_id=bdc_cr_o6_mono_pcu_mono_ip2_off380">Ver 3D</a></td></tr><tr><td><strong>bdc_zn4o_pcu_ip2_off400</strong><br><span>bdc / zn4o</span></td><td>122.31</td><td>0.806</td><td>4567</td><td><a class="view" href="viewer.html?material_id=bdc_zn4o_pcu_ip2_off400">Ver 3D</a></td></tr><tr><td><strong>nh2_bdc_zn4o_pcu_ip2_off380</strong><br><span>nh2_bdc / zn4o</span></td><td>110.60</td><td>0.803</td><td>1073</td><td><a class="view" href="viewer.html?material_id=nh2_bdc_zn4o_pcu_ip2_off380">Ver 3D</a></td></tr><tr><td><strong>bdc_v_o6_mono_pcu_mono_ip2_off380</strong><br><span>bdc / v_o6_mono</span></td><td>128.55</td><td>0.778</td><td>2057</td><td><a class="view" href="viewer.html?material_id=bdc_v_o6_mono_pcu_mono_ip2_off380">Ver 3D</a></td></tr></tbody></table>
+
+  <h2 class="section-title">Benchmarks externos usados como referencia q100</h2>
+  <table><thead><tr><th>Benchmark</th><th>q100</th><th>ret q050</th><th>Econ score</th><th>3D</th></tr></thead><tbody><tr><td><strong>Cu-BTC</strong><br><span>benchmark externo</span></td><td>146.19</td><td>NA</td><td>NA</td><td><a class="view" href="viewer.html?material_id=Cu-BTC">Ver 3D</a></td></tr><tr><td><strong>UiO-66</strong><br><span>benchmark externo</span></td><td>96.52</td><td>NA</td><td>NA</td><td><a class="view" href="viewer.html?material_id=UiO-66">Ver 3D</a></td></tr><tr><td><strong>MgMOF-74</strong><br><span>benchmark externo</span></td><td>75.02</td><td>NA</td><td>NA</td><td><a class="view" href="viewer.html?material_id=MgMOF-74">Ver 3D</a></td></tr><tr><td><strong>MOF-177</strong><br><span>benchmark externo</span></td><td>56.08</td><td>NA</td><td>NA</td><td>sin CIF</td></tr><tr><td><strong>ZnMOF-74</strong><br><span>benchmark externo</span></td><td>53.51</td><td>NA</td><td>NA</td><td><a class="view" href="viewer.html?material_id=ZnMOF-74">Ver 3D</a></td></tr><tr><td><strong>IRMOF-1</strong><br><span>benchmark externo</span></td><td>30.22</td><td>NA</td><td>NA</td><td><a class="view" href="viewer.html?material_id=IRMOF-1">Ver 3D</a></td></tr></tbody></table>
+
+  <section class="grid">
+    <div class="panel">
+      <h2>Como leer los benchmarks</h2>
+      <p>Cu-BTC/HKUST-1, UiO-66, MOF-74, MOF-177 e IRMOF-1 son materiales de referencia. En esta pagina se usan como contexto interno de q100 bajo protocolo AtomForge. No reemplazan mediciones experimentales ni comparaciones de isotermas reales.</p>
+    </div>
+    <div class="panel">
+      <h2>Lectura actual</h2>
+      <p>El mejor candidato AtomForge tiene una capacidad q100 de 388.04 mg/g, equivalente a 2.65x el mejor benchmark q100 (Cu-BTC). La prioridad ahora es convertir esa ventaja computacional en evidencia experimental.</p>
+    </div>
+  </section>
+
+  <h2 class="section-title">Top por eficiencia economica preliminar</h2>
+  <table><thead><tr><th>Candidato</th><th>q100</th><th>ret q050</th><th>Econ score</th><th>3D</th></tr></thead><tbody><tr><td><strong>bdc_fe_o6_mono_pcu_mono_ip2_off380</strong><br><span>bdc / fe_o6_mono</span></td><td>124.65</td><td>0.858</td><td>13196</td><td><a class="view" href="viewer.html?material_id=bdc_fe_o6_mono_pcu_mono_ip2_off380">Ver 3D</a></td></tr><tr><td><strong>bdc_zn4o_pcu_ip2_off400</strong><br><span>bdc / zn4o</span></td><td>122.31</td><td>0.806</td><td>4567</td><td><a class="view" href="viewer.html?material_id=bdc_zn4o_pcu_ip2_off400">Ver 3D</a></td></tr><tr><td><strong>nh2_bdc_al_o6_mono_pcu_mono_clean</strong><br><span>nh2_bdc / al_o6_mono</span></td><td>325.17</td><td>0.714</td><td>4485</td><td><a class="view" href="viewer.html?material_id=nh2_bdc_al_o6_mono_pcu_mono_clean">Ver 3D</a></td></tr><tr><td><strong>bdc_zn4o_pcu_ip2_off380</strong><br><span>bdc / zn4o</span></td><td>109.60</td><td>0.776</td><td>3937</td><td><a class="view" href="viewer.html?material_id=bdc_zn4o_pcu_ip2_off380">Ver 3D</a></td></tr><tr><td><strong>bdc_ti_o6_mono_pcu_mono_ip2_off380</strong><br><span>bdc / ti_o6_mono</span></td><td>111.95</td><td>0.938</td><td>2592</td><td><a class="view" href="viewer.html?material_id=bdc_ti_o6_mono_pcu_mono_ip2_off380">Ver 3D</a></td></tr><tr><td><strong>bdc_v_o6_mono_pcu_mono_ip2_off380</strong><br><span>bdc / v_o6_mono</span></td><td>128.55</td><td>0.778</td><td>2057</td><td><a class="view" href="viewer.html?material_id=bdc_v_o6_mono_pcu_mono_ip2_off380">Ver 3D</a></td></tr><tr><td><strong>nh2_bdc_al_o6_mono_pcu_mono_ip2_off038</strong><br><span>nh2_bdc / al_o6_mono</span></td><td>112.49</td><td>0.883</td><td>1919</td><td><a class="view" href="viewer.html?material_id=nh2_bdc_al_o6_mono_pcu_mono_ip2_off038">Ver 3D</a></td></tr><tr><td><strong>oh_bdc_fe_o6_mono_pcu_mono_ip2_off380</strong><br><span>oh_bdc / fe_o6_mono</span></td><td>120.59</td><td>0.925</td><td>1788</td><td><a class="view" href="viewer.html?material_id=oh_bdc_fe_o6_mono_pcu_mono_ip2_off380">Ver 3D</a></td></tr></tbody></table>
+
+  <section class="grid">
+    <div class="panel">
+      <h2>Economia preliminar</h2>
+      <p>El econ score es una heuristica para ordenar candidatos antes de comprar reactivos. Combina capacidad, retencion, precio de linker, complejidad sintetica y costo de metal.</p>
+      <div class="formula">econ_score = (q100 * ret_q050) / (USD_g_linker * SA_score_linker * USD_g_metal)</div>
+      <ul style="margin-top:10px">
+        <li>Linkers simples como bdc son baratos y sintetica/economicamente atractivos.</li>
+        <li>nh2-bpdc y bpdc suben capacidad, pero pueden aumentar costo y complejidad.</li>
+        <li>Fe y Al son economicamente favorables; Cr/Ti/V aportan diversidad pero requieren mas analisis toxico-regulatorio.</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h2>Sintesis y caracterizacion necesarias</h2>
+      <ol>
+        <li>Elegir 1 candidato de alta capacidad y 1 candidato robusto/economico.</li>
+        <li>Definir precursores metalicos, solvente, temperatura y ventana hidro/solvotermal.</li>
+        <li>Confirmar fase por PXRD y estabilidad por TGA.</li>
+        <li>Medir area BET y adsorcion de CO2; comparar contra simulacion.</li>
+        <li>Evaluar humedad, regeneracion y estabilidad ciclica antes de comunicar aplicaciones.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="grid">
+    <div class="panel">
+      <h2>Riesgos tecnicos</h2>
+      <ul>
+        <li>Los nodos O6 son modelos computacionales idealizados; deben traducirse a quimica sintetizable.</li>
+        <li>Un candidato puede ser excelente en simulacion y fallar por colapso, humedad o mala cristalizacion.</li>
+        <li>La robustez q050 no equivale a retencion a baja presion; falta isoterma experimental.</li>
+        <li>Los costos de linkers especiales pueden cambiar la priorizacion comercial.</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h2>Activos del proyecto</h2>
+      <ul>
+        <li>Pipeline: construccion, validacion y ranking de MOFs.</li>
+        <li>Datos: ledger curado con positivos y negativos estructurales.</li>
+        <li>Candidatos: estructuras especificas con evidencia computacional.</li>
+        <li>Visualizacion: inspeccion 3D, benchmarks y metricas en una interfaz unica.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="panel" style="margin-top:18px">
+    <h2>Que falta para convertirlo en evidencia experimental</h2>
+    <ol>
+      <li><strong>Validacion experimental:</strong> sintetizar 1--2 MOFs priorizados y confirmar estructura por PXRD.</li>
+      <li><strong>Caracterizacion:</strong> TGA, BET, adsorcion CO2 y comparacion simulacion-experimento.</li>
+      <li><strong>Estabilidad:</strong> humedad, temperatura, ciclos de adsorcion/desorcion y regeneracion.</li>
+      <li><strong>Factibilidad:</strong> costo de reactivos, disponibilidad, seguridad, escalabilidad y residuos.</li>
+      <li><strong>Trazabilidad:</strong> mantener versiones de CIF, protocolo, cargas, replicas y resultados.</li>
+    </ol>
+  </section>
+
+  <section class="grid">
+    <div class="panel">
+      <h2>Necesidades inmediatas</h2>
+      <ul>
+        <li>Seleccionar 1--2 candidatos para prueba experimental inicial.</li>
+        <li>Definir ruta de sintesis y precursores disponibles.</li>
+        <li>Reservar caracterizacion minima: PXRD, TGA, BET y adsorcion de CO2.</li>
+        <li>Comparar estructura y adsorcion experimental contra la prediccion computacional.</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h2>Proximos 90 dias</h2>
+      <ul>
+        <li>Validacion de estabilidad hidrotermal y humedad para separar lead academico de oportunidad industrial.</li><li>Priorizacion de 2-3 candidatos por costo de linker/metal y factibilidad sintetica.</li><li>Paquete de evidencia: CIF validado, ledger trazable, protocolo RASPA, visualizador 3D y benchmark comparativo.</li>
+        <li>Preparar protocolo de sintesis piloto y presupuesto de reactivos.</li>
+        <li>Seleccionar candidatos por dos criterios: capacidad maxima y factibilidad economica.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="panel" style="margin-top:18px">
+    <h2>Proximos hitos registrados en el sistema</h2>
+    <ul>
+      <li>Validacion de estabilidad hidrotermal y humedad para separar lead academico de oportunidad industrial.</li><li>Priorizacion de 2-3 candidatos por costo de linker/metal y factibilidad sintetica.</li><li>Paquete de evidencia: CIF validado, ledger trazable, protocolo RASPA, visualizador 3D y benchmark comparativo.</li>
+    </ul>
+  </section>
+</main>
+</body>
+</html>

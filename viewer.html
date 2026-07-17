@@ -3,77 +3,148 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AtomForge 3D Viewer</title>
+  <title>AtomForge | Explorador 3D</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
   <style>
-    body { margin:0; font-family:"Aptos","Segoe UI",Arial,sans-serif; background:#10161d; color:#e5edf8; }
-    header { padding:14px 18px; display:flex; gap:12px; align-items:center; border-bottom:1px solid rgba(148,163,184,.22); background:rgba(15,23,42,.88); }
-    a { color:#99f6e4; text-decoration:none; font-weight:800; }
-    #title { font-weight:900; }
-    .metric { color:#9fb0c7; }
-    main { display:grid; grid-template-columns:1fr 310px; gap:14px; padding:14px; }
-    #viewer { height:calc(100vh - 96px); min-height:560px; border:1px solid rgba(148,163,184,.24); border-radius:16px; background:white; overflow:hidden; }
-    .viewer-wrap { position:relative; }
-    #loadStatus { position:absolute; left:18px; bottom:18px; z-index:10; max-width:560px; padding:10px 12px; border-radius:12px; background:rgba(15,23,42,.84); color:#e5edf8; border:1px solid rgba(148,163,184,.28); font-size:13px; }
-    aside { display:flex; flex-direction:column; gap:8px; }
-    button, select { min-height:38px; border:1px solid rgba(148,163,184,.28); border-radius:10px; background:rgba(15,23,42,.86); color:#e5edf8; padding:8px 10px; text-align:left; }
-    button:hover { border-color:#99f6e4; background:rgba(20,184,166,.16); }
-    label { display:flex; flex-direction:column; gap:4px; font-size:12px; color:#9fb0c7; }
-    input[type="range"] { width:100%; }
-    .panel { padding:12px; border:1px solid rgba(148,163,184,.22); border-radius:14px; background:rgba(15,23,42,.72); }
-    .legend { display:grid; grid-template-columns:repeat(2,1fr); gap:6px; color:#9fb0c7; font-size:12px; }
-    .swatch { display:inline-block; width:12px; height:12px; border-radius:3px; margin-right:6px; vertical-align:-2px; border:1px solid rgba(255,255,255,.35); }
-    @media(max-width:900px){ main{grid-template-columns:1fr;} #viewer{height:70vh;} }
+    :root { --bg:#07111f; --panel:#0d1929; --panel-2:#111f32; --line:#25364f; --muted:#91a3ba; --text:#eef5ff; --accent:#15c8bd; --accent-2:#0fa49b; }
+    * { box-sizing:border-box; }
+    body { margin:0; min-width:320px; font-family:"DM Sans","Segoe UI",Arial,sans-serif; background:var(--bg); color:var(--text); }
+    button, select, input { font:inherit; }
+    button { cursor:pointer; }
+    .app-shell { min-height:100vh; display:grid; grid-template-columns:200px minmax(0,1fr); background:radial-gradient(circle at 62% 0%,#102746 0%,var(--bg) 42%); }
+    .viewer-sidebar { padding:22px 12px; border-right:1px solid var(--line); background:rgba(5,14,28,.88); display:flex; flex-direction:column; gap:22px; }
+    .brand { display:flex; align-items:center; gap:10px; padding:0 8px; font:700 21px "Space Grotesk",sans-serif; letter-spacing:-.5px; }
+    .brand-mark { width:34px; height:34px; display:grid; place-items:center; color:var(--accent); border:1px solid #1b867e; border-radius:10px; background:rgba(21,200,189,.08); }
+    .workspace { border:1px solid var(--line); border-radius:10px; padding:11px; background:rgba(17,31,50,.7); font-size:12px; color:var(--muted); }
+    .workspace b { display:block; color:var(--text); margin-top:5px; font-size:13px; }
+    .nav-label { color:#71839a; font-size:10px; font-weight:700; letter-spacing:.08em; margin:2px 10px 0; }
+    .nav { display:grid; gap:4px; }
+    .nav a { color:#b8c7d9; text-decoration:none; padding:10px; border-radius:8px; display:flex; gap:10px; align-items:center; font-size:13px; }
+    .nav a:hover,.nav a.active { background:rgba(21,200,189,.13); color:#e9fffd; }
+    .nav i { width:17px; height:17px; color:var(--accent); }
+    .profile { margin-top:auto; border:1px solid var(--line); border-radius:10px; padding:10px; display:flex; align-items:center; gap:9px; color:var(--muted); font-size:11px; }
+    .avatar { width:29px; height:29px; border-radius:50%; display:grid; place-items:center; color:#fff; background:#253b58; font-size:11px; font-weight:700; }
+    .viewer-main { min-width:0; padding:20px 22px 14px; }
+    .breadcrumb { color:#8ca0b8; font-size:12px; display:flex; align-items:center; gap:8px; margin-bottom:14px; }
+    .breadcrumb i { width:14px; height:14px; }
+    .viewer-header { display:flex; gap:18px; align-items:flex-start; justify-content:space-between; padding-bottom:14px; border-bottom:1px solid var(--line); }
+    #title { font:700 clamp(21px,2.1vw,31px) "Space Grotesk",sans-serif; letter-spacing:-.8px; overflow-wrap:anywhere; }
+    #metrics { color:#aebed1; margin-top:9px; font-size:13px; }
+    .header-actions { display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end; }
+    .action { min-height:39px; border:1px solid var(--line); border-radius:8px; color:var(--text); background:var(--panel-2); padding:9px 12px; text-decoration:none; display:flex; align-items:center; gap:7px; font-size:12px; font-weight:700; }
+    .action:hover { border-color:var(--accent); background:#12343e; }
+    .action.primary { background:var(--accent); border-color:var(--accent); color:#04201e; }
+    .action i { width:15px; height:15px; }
+    main { display:grid; grid-template-columns:minmax(0,1fr) 315px; gap:14px; margin-top:14px; }
+    .stage-card { min-height:calc(100vh - 170px); border:1px solid var(--line); border-radius:12px; overflow:hidden; background:var(--panel); display:flex; flex-direction:column; }
+    .stage-toolbar { min-height:48px; padding:7px 10px; display:flex; align-items:center; gap:6px; border-bottom:1px solid var(--line); background:#0b1727; }
+    .stage-tab { border:0; color:#aebed1; background:transparent; min-height:32px; padding:7px 11px; border-radius:7px; font-size:12px; }
+    .stage-tab:hover,.stage-tab.active { color:#eaffff; background:rgba(21,200,189,.18); }
+    .viewer-wrap { position:relative; flex:1; min-height:620px; padding:10px; background:#0b1727; }
+    /* The molecular canvas is intentionally the only white region. */
+    #viewer { width:100%; height:100%; min-height:600px; border:1px solid #d8e1ea; border-radius:8px; background:#fff; overflow:hidden; }
+    #loadStatus { position:absolute; left:24px; right:24px; bottom:24px; z-index:10; padding:10px 12px; border-radius:7px; background:rgba(7,17,31,.88); color:#d9e6f3; border:1px solid rgba(148,163,184,.28); font-size:12px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+    aside { display:flex; flex-direction:column; gap:10px; min-width:0; }
+    .panel { padding:12px; border:1px solid var(--line); border-radius:10px; background:rgba(13,25,41,.92); }
+    .panel h2 { margin:0 0 10px; font:700 13px "Space Grotesk",sans-serif; }
+    .quick-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:7px; }
+    .quick-grid button { min-height:58px; padding:6px 4px; border:1px solid var(--line); border-radius:7px; background:#0b1727; color:#d9e5f3; font-size:10px; display:grid; gap:4px; place-items:center; }
+    .quick-grid button:hover,.quick-grid button.active { border-color:var(--accent); background:rgba(21,200,189,.12); }
+    .quick-grid i { width:18px; height:18px; color:var(--accent); }
+    label { display:flex; flex-direction:column; gap:5px; font-size:11px; color:#9fb0c7; margin-top:9px; }
+    select { width:100%; min-height:36px; border:1px solid var(--line); border-radius:7px; background:#0b1727; color:#eaf2fc; padding:7px; font-size:12px; }
+    input[type="range"] { width:100%; accent-color:var(--accent); }
+    .switch-row { display:flex; flex-wrap:wrap; gap:6px; margin-top:10px; }
+    .switch-row button { min-height:31px; border:1px solid var(--line); border-radius:6px; background:#0b1727; color:#c5d3e2; padding:6px 8px; font-size:11px; }
+    .switch-row button:hover { border-color:var(--accent); }
+    .info-grid { display:grid; gap:7px; font-size:11px; color:#9fb0c7; }
+    .info-grid div { display:flex; justify-content:space-between; gap:12px; }
+    .info-grid b { color:#eaf2fc; text-align:right; font-weight:600; overflow-wrap:anywhere; }
+    .legend { display:grid; grid-template-columns:repeat(2,1fr); gap:7px; color:#c0cfde; font-size:11px; }
+    .swatch { display:inline-block; width:11px; height:11px; border-radius:3px; margin-right:6px; vertical-align:-1px; border:1px solid rgba(255,255,255,.35); }
+    .load-footer { border:1px solid var(--line); margin-top:12px; border-radius:9px; padding:10px 12px; color:#a7b8cb; font-size:11px; }
+    .load-footer b { color:#dffcf8; }
+    @media(max-width:1120px){ .app-shell{grid-template-columns:68px minmax(0,1fr)} .brand span,.workspace,.nav-label,.nav span,.profile div{display:none}.brand{justify-content:center;padding:0}.nav a{justify-content:center}.profile{justify-content:center}.viewer-sidebar{padding:22px 8px} main{grid-template-columns:minmax(0,1fr) 280px} }
+    @media(max-width:850px){ .app-shell{display:block}.viewer-sidebar{display:none}.viewer-main{padding:14px}.viewer-header{display:block}.header-actions{justify-content:flex-start;margin-top:12px}main{grid-template-columns:1fr}.stage-card{min-height:650px}.viewer-wrap{min-height:580px}.quick-grid{grid-template-columns:repeat(3,1fr)} }
   </style>
 </head>
 <body>
-<header>
-  <a href="index.html">← Dashboard</a>
-  <div id="title">Cargando estructura...</div>
-  <div class="metric" id="metrics"></div>
-</header>
-<main>
-  <div class="viewer-wrap"><div id="viewer"></div><div id="loadStatus">Cargando modelo 3D...</div></div>
-  <aside>
-    <select id="candidateSelect"></select>
-    <button onclick="setStyle('stick')">Stick</button>
-    <button onclick="setStyle('inspection')">Inspection</button>
-    <button onclick="setStyle('ballstick')">Ball-stick</button>
-    <button onclick="setStyle('vdw')">VDW</button>
-    <button onclick="setStyle('sphere')">Sphere</button>
-    <button onclick="setStyle('surface')">Poro / surface</button>
-    <button onclick="loadStructure('unit')">Solo celda unitaria</button>
-    <button onclick="loadStructure('full')">Estructura completa</button>
-    <button onclick="loadStructure('super_2x2x1')">Supercelda 2x2x1</button>
-    <button onclick="toggleHydrogen()">Toggle H</button>
-    <button onclick="toggleCell()">Toggle celda</button>
-    <button onclick="toggleLabels()">Toggle labels</button>
-    <button onclick="resetView()">Reset zoom</button>
-    <label>Color
-      <select id="colorScheme" onchange="setColorScheme(this.value)">
-        <option value="atomforge">AtomForge metal</option>
-        <option value="jmol">Jmol/CPK</option>
-        <option value="rasmol">Rasmol/default</option>
-      </select>
-    </label>
-    <label>Zoom
-      <input type="range" min="0.1" max="3" step="0.1" value="1" oninput="setZoom(this.value)">
-    </label>
-    <label>Opacidad poro
-      <input type="range" min="0.1" max="0.95" step="0.05" value="0.6" oninput="setSurfOpacity(this.value)">
-    </label>
-    <div class="panel">
-      <strong>Leyenda AtomForge</strong>
-      <div class="legend" style="margin-top:8px">
-        <span><i class="swatch" style="background:#F2C94C"></i>C</span><span><i class="swatch" style="background:#FFFFFF"></i>H</span>
-        <span><i class="swatch" style="background:#E53935"></i>O</span><span><i class="swatch" style="background:#4169E1"></i>N</span>
-        <span><i class="swatch" style="background:#00A6D6"></i>Al</span><span><i class="swatch" style="background:#E8753A"></i>Fe</span>
-        <span><i class="swatch" style="background:#9B7EDE"></i>Cr</span><span><i class="swatch" style="background:#B8C0CC"></i>Ti</span>
-        <span><i class="swatch" style="background:#54B948"></i>Mg</span><span><i class="swatch" style="background:#6C63B5"></i>Zn</span>
-        <span><i class="swatch" style="background:#C47A44"></i>Cu</span><span><i class="swatch" style="background:#36B7B4"></i>Zr</span>
-      </div>
-    </div>
+<div class="app-shell">
+  <aside class="viewer-sidebar">
+    <div class="brand"><div class="brand-mark"><i data-lucide="atom"></i></div><span>AtomForge</span></div>
+    <div class="workspace">PROYECTO ACTUAL<b>MOF Discovery</b></div>
+    <div class="nav-label">NAVEGACION</div>
+    <nav class="nav">
+      <a href="index.html"><i data-lucide="house"></i><span>Resumen</span></a>
+      <a class="active" href="index.html#explorador"><i data-lucide="orbit"></i><span>Explorador</span></a>
+      <a href="index.html#ranking"><i data-lucide="scale"></i><span>Comparador</span></a>
+      <a href="index.html#explorador"><i data-lucide="bar-chart-3"></i><span>Referencias</span></a>
+      <a href="index.html#ranking"><i data-lucide="database"></i><span>Conjunto de datos</span></a>
+      <a href="report.html"><i data-lucide="file-text"></i><span>Informes</span></a>
+    </nav>
+    <div class="profile"><div class="avatar">AF</div><div><b style="color:#eaf2fc;display:block">Vista read-only</b>AtomForge MOFs</div></div>
   </aside>
-</main>
+  <section class="viewer-main">
+    <div class="breadcrumb"><a href="index.html">Explorador</a><i data-lucide="chevron-right"></i><span>Estructuras</span><i data-lucide="chevron-right"></i><span id="crumbMaterial">Cargando</span></div>
+    <header class="viewer-header">
+      <div><div id="title">Cargando estructura...</div><div id="metrics">Preparando informacion del candidato</div></div>
+      <div class="header-actions">
+        <a id="downloadLink" class="action" href="#"><i data-lucide="download"></i>Descargar estructura</a>
+        <button class="action" onclick="shareView()"><i data-lucide="share-2"></i>Compartir</button>
+        <button class="action primary" onclick="saveView()"><i data-lucide="bookmark"></i>Guardar vista</button>
+      </div>
+    </header>
+    <main>
+      <section class="stage-card">
+        <div class="stage-toolbar">
+          <button class="stage-tab active" onclick="setStyle('inspection')">3D</button>
+          <button class="stage-tab" onclick="setStyle('stick')">Malla</button>
+          <button class="stage-tab" onclick="setStyle('surface')">Poros</button>
+          <button class="stage-tab" onclick="toggleCell()">Celdas</button>
+          <button class="stage-tab" onclick="loadStructure('super_2x2x1')">Supercelda</button>
+        </div>
+        <div class="viewer-wrap"><div id="viewer"></div><div id="loadStatus">Cargando modelo 3D...</div></div>
+      </section>
+      <aside>
+        <section class="panel">
+          <h2>Visualizacion rapida</h2>
+          <div class="quick-grid">
+            <button onclick="setStyle('stick')"><i data-lucide="git-branch"></i>Stick</button>
+            <button onclick="setStyle('ballstick')"><i data-lucide="circles-three-plus"></i>Ball-stick</button>
+            <button onclick="setStyle('vdw')"><i data-lucide="circle-dot-dashed"></i>Spacefill</button>
+            <button onclick="setStyle('sphere')"><i data-lucide="circle"></i>Esferas</button>
+            <button onclick="setStyle('surface')"><i data-lucide="waves"></i>Superficie</button>
+            <button onclick="loadStructure('unit')"><i data-lucide="box"></i>Celda unitaria</button>
+            <button onclick="loadStructure('full')"><i data-lucide="network"></i>Estructura completa</button>
+            <button onclick="loadStructure('super_2x2x1')"><i data-lucide="boxes"></i>2x2x1</button>
+            <button onclick="resetView()"><i data-lucide="scan"></i>Reencuadrar</button>
+          </div>
+        </section>
+        <section class="panel">
+          <h2>Ajustes de visualizacion</h2>
+          <label>Candidato<select id="candidateSelect"></select></label>
+          <label>Color por<select id="colorScheme" onchange="setColorScheme(this.value)"><option value="atomforge">Elemento AtomForge</option><option value="jmol">Jmol / CPK</option><option value="rasmol">Rasmol</option></select></label>
+          <label>Zoom<input type="range" min="0.1" max="3" step="0.1" value="1" oninput="setZoom(this.value)"></label>
+          <label>Opacidad de poros<input type="range" min="0.1" max="0.95" step="0.05" value="0.6" oninput="setSurfOpacity(this.value)"></label>
+          <div class="switch-row"><button onclick="toggleHydrogen()">Mostrar H</button><button onclick="toggleCell()">Mostrar celda</button><button onclick="toggleLabels()">Etiquetas</button></div>
+        </section>
+        <section class="panel"><h2>Informacion estructural</h2><div class="info-grid" id="structInfo"><div><span>Estado</span><b>Cargando</b></div></div></section>
+        <section class="panel"><h2>Leyenda AtomForge</h2><div class="legend">
+          <span><i class="swatch" style="background:#F2C94C"></i>C</span><span><i class="swatch" style="background:#fff"></i>H</span>
+          <span><i class="swatch" style="background:#E53935"></i>O</span><span><i class="swatch" style="background:#4169E1"></i>N</span>
+          <span><i class="swatch" style="background:#00A6D6"></i>Al</span><span><i class="swatch" style="background:#E8753A"></i>Fe</span>
+          <span><i class="swatch" style="background:#9B7EDE"></i>Cr</span><span><i class="swatch" style="background:#B8C0CC"></i>Ti</span>
+          <span><i class="swatch" style="background:#54B948"></i>Mg</span><span><i class="swatch" style="background:#6C63B5"></i>Zn</span>
+          <span><i class="swatch" style="background:#C47A44"></i>Cu</span><span><i class="swatch" style="background:#36B7B4"></i>Zr</span>
+        </div></section>
+      </aside>
+    </main>
+    <div class="load-footer"><b>Archivo cargado</b> <span id="footerFile">Esperando estructura</span></div>
+  </section>
+</div>
 <script src="https://3dmol.org/build/3Dmol-min.js"></script>
 <script>
 let viewer = $3Dmol.createViewer("viewer", {backgroundColor:"white"});
@@ -117,6 +188,15 @@ function load(materialId, push){
   if(push) history.replaceState(null, '', `viewer.html?material_id=${encodeURIComponent(materialId)}`);
   document.getElementById('title').textContent = current.material_id;
   document.getElementById('metrics').textContent = `q100=${fmt(current.q100)} mg/g · ret_q050=${fmt(current.ret_q050,3)}`;
+  document.getElementById('crumbMaterial').textContent = current.material_id;
+  document.getElementById('structInfo').innerHTML = [
+    ['Topologia', current.topology || 'No especificada'],
+    ['Linker', current.linker || '--'],
+    ['Metal / SBU', current.sbu || '--'],
+    ['Estado', current.is_benchmark ? 'Referencia' : (current.validation_status || '--')],
+    ['q100', `${fmt(current.q100)} mg/g`],
+    ['ret q050', fmt(current.ret_q050,3)]
+  ].map(([key,value]) => `<div><span>${key}</span><b>${value}</b></div>`).join('');
   currentStructureKind = prefersCrystalView(current) ? "super_2x2x1" : "full";
   loadStructure(currentStructureKind);
 }
@@ -129,6 +209,10 @@ function loadStructure(kind){
   labelsOn = false;
   cellOn = true;
   const path = structurePath(current, kind);
+  const download = document.getElementById('downloadLink');
+  download.href = path;
+  download.download = `${current.material_id}_${kind}.${path.split('.').pop()}`;
+  document.getElementById('footerFile').textContent = path;
   document.getElementById('loadStatus').textContent = `Cargando ${path}...`;
   fetch(path).then(r=>{
     if(!r.ok) throw new Error(`HTTP ${r.status} al cargar ${path}`);
@@ -202,6 +286,16 @@ function toggleLabels(){
 function setZoom(value){ viewer.zoom(parseFloat(value), 200); viewer.render(); }
 function setSurfOpacity(value){ if(surfaceId !== null) viewer.setSurfaceMaterialStyle(surfaceId, {opacity:parseFloat(value)}); viewer.render(); }
 function resetView(){ viewer.zoomTo(); viewer.render(); }
+function shareView(){
+  const message = `Vista de AtomForge: ${current ? current.material_id : 'estructura MOF'}`;
+  if(navigator.clipboard){ navigator.clipboard.writeText(location.href).then(()=>{ document.getElementById('loadStatus').textContent = `${message}. Enlace copiado al portapapeles.`; }); }
+  else { prompt('Copia este enlace:', location.href); }
+}
+function saveView(){
+  if(!current) return;
+  localStorage.setItem('atomforge:last-view', JSON.stringify({material_id:current.material_id, style:currentMode, kind:currentStructureKind, saved_at:new Date().toISOString()}));
+  document.getElementById('loadStatus').textContent = `Vista guardada localmente para ${current.material_id}.`;
+}
 window.setStyle = setStyle;
 window.loadStructure = loadStructure;
 window.toggleHydrogen = toggleHydrogen;
@@ -211,6 +305,9 @@ window.setColorScheme = setColorScheme;
 window.setZoom = setZoom;
 window.setSurfOpacity = setSurfOpacity;
 window.resetView = resetView;
+window.shareView = shareView;
+window.saveView = saveView;
+lucide.createIcons();
 </script>
 </body>
 </html>

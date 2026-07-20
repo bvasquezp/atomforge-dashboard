@@ -25,7 +25,7 @@
     .grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px; }
     .grid3 { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:16px; }
     ul { margin:0; padding:8px 0 0 22px; color:var(--muted); line-height:1.55; }
-    ol { margin:0; padding:8px 0 0 22px; color:var(--muted); line-height:1.55; }
+    ol { margin:0; padding:8px 0 0 22px; color:var(--muted); line-height:1.55; list-style:disc; }
     table { width:100%; border-collapse:collapse; background:linear-gradient(180deg, rgba(15,23,42,.86), rgba(15,23,42,.72)); border:1px solid var(--line); border-radius:18px; overflow:hidden; box-shadow:0 22px 70px rgba(0,0,0,.28); }
     th, td { padding:12px; border-bottom:1px solid rgba(148,163,184,.16); text-align:left; vertical-align:top; }
     th { color:#b6c5dc; font-size:12px; background:rgba(2,6,23,.38); }
@@ -56,14 +56,14 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     :root { --shell-bg:#07111f; --shell-panel:#0d1929; --shell-panel-2:#111f32; --shell-line:#25364f; --shell-muted:#91a3ba; --shell-accent:#15c8bd; }
     body { background:var(--shell-bg) !important; color:#eef5ff !important; font-family:"DM Sans","Segoe UI",Arial,sans-serif !important; }
     .report-shell { min-height:100vh; display:grid; grid-template-columns:200px minmax(0,1fr); background:radial-gradient(circle at 62% 0%,#102746 0%,var(--shell-bg) 42%); }
     .report-sidebar { padding:22px 12px; border-right:1px solid var(--shell-line); background:rgba(5,14,28,.88); display:flex; flex-direction:column; gap:22px; }
-    .report-brand { display:flex; align-items:center; gap:10px; color:#eef5ff; text-decoration:none; font:700 21px "Space Grotesk",sans-serif; }
+    .report-brand { display:flex; align-items:center; gap:10px; color:#eef5ff; text-decoration:none; font:700 21px "Sora",sans-serif; }
     .report-mark { width:34px; height:34px; display:grid; place-items:center; color:var(--shell-accent); border:1px solid #1b867e; border-radius:10px; background:rgba(21,200,189,.08); }
     .report-mark i { width:20px; height:20px; }
     .report-workspace { border:1px solid var(--shell-line); border-radius:10px; padding:11px; background:rgba(17,31,50,.7); }
@@ -80,7 +80,7 @@
     .report-topbar { max-width:1280px; margin:0 auto 14px; display:flex; align-items:center; justify-content:space-between; color:var(--shell-muted); font-size:12px; }
     .report-topbar a { color:#dffcf8; text-decoration:none; display:flex; align-items:center; gap:7px; }.report-topbar i { width:15px; height:15px; }
     .report-main main { max-width:1280px !important; margin:0 auto !important; padding:22px 0 !important; }
-    .report-main h1 { font:700 42px "Space Grotesk",sans-serif !important; letter-spacing:-.025em !important; }
+    .report-main h1 { font:700 42px "Sora",sans-serif !important; letter-spacing:-.02em !important; }
     .report-main .eyebrow { color:#b8f7ef !important; text-transform:none !important; letter-spacing:0 !important; font-size:13px !important; font-weight:700 !important; }.report-main .panel,.report-main .metric { background:var(--shell-panel) !important; border:1px solid var(--shell-line) !important; border-radius:12px !important; box-shadow:0 18px 45px rgba(0,0,0,.2) !important; backdrop-filter:none !important; }
     .report-main table { background:var(--shell-panel) !important; border:1px solid var(--shell-line) !important; border-radius:12px !important; box-shadow:0 18px 45px rgba(0,0,0,.16) !important; }
     .report-main .view { background:var(--shell-accent) !important; color:#04201e !important; border-radius:7px !important; }.report-main .callout { border:1px solid rgba(21,200,189,.28) !important; background:rgba(21,200,189,.10) !important; padding:16px !important; }
@@ -112,9 +112,9 @@
       <h2>Resultado principal</h2>
       <p><strong>nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off410</strong></p>
       <ul class="result-list">
-        <li><strong>q100</strong><span>388.04 mg/g</span></li>
+        <li><strong>q100</strong><span>388.0 mg/g</span></li>
         <li><strong>ret_q050</strong><span>0.746</span></li>
-        <li><strong>Benchmark</strong><span>Cu-BTC q100=146.19 mg/g</span></li>
+        <li><strong>Benchmark</strong><span>Cu-BTC q100=146.2 mg/g</span></li>
       </ul>
       <span class="tag">2.65x vs benchmark</span>
       <p style="margin-top:14px"><a class="view" href="viewer.html?material_id=nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off410">Abrir estructura 3D del mejor lead</a></p>
@@ -198,13 +198,13 @@
   </section>
 
   <h2 class="section-title">Top AtomForge por capacidad q100</h2>
-  <table><thead><tr><th>Candidato</th><th>q100</th><th>ret q050</th><th>Econ score</th><th>3D</th></tr></thead><tbody><tr><td><strong>nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off410</strong><br><span>nh2_bpdc / cr_o6_mono</span></td><td>388.04</td><td>0.746</td><td>22</td><td><a class="view" href="viewer.html?material_id=nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off410">Ver 3D</a></td></tr><tr><td><strong>nh2_bpdc_v_o6_mono_pcu_mono_ip2_off400</strong><br><span>nh2_bpdc / v_o6_mono</span></td><td>355.82</td><td>0.729</td><td>27</td><td><a class="view" href="viewer.html?material_id=nh2_bpdc_v_o6_mono_pcu_mono_ip2_off400">Ver 3D</a></td></tr><tr><td><strong>nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off400</strong><br><span>nh2_bpdc / cr_o6_mono</span></td><td>354.78</td><td>0.733</td><td>20</td><td><a class="view" href="viewer.html?material_id=nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off400">Ver 3D</a></td></tr><tr><td><strong>nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off390</strong><br><span>nh2_bpdc / cr_o6_mono</span></td><td>333.04</td><td>0.693</td><td>17</td><td><a class="view" href="viewer.html?material_id=nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off390">Ver 3D</a></td></tr><tr><td><strong>nh2_bpdc_fe_o6_mono_pcu_mono_ip2_off400</strong><br><span>nh2_bpdc / fe_o6_mono</span></td><td>329.00</td><td>0.747</td><td>155</td><td><a class="view" href="viewer.html?material_id=nh2_bpdc_fe_o6_mono_pcu_mono_ip2_off400">Ver 3D</a></td></tr><tr><td><strong>nh2_bdc_al_o6_mono_pcu_mono_clean</strong><br><span>nh2_bdc / al_o6_mono</span></td><td>325.17</td><td>0.714</td><td>4485</td><td><a class="view" href="viewer.html?material_id=nh2_bdc_al_o6_mono_pcu_mono_clean">Ver 3D</a></td></tr><tr><td><strong>nh2_bpdc_v_o6_mono_pcu_mono_ip2_off390</strong><br><span>nh2_bpdc / v_o6_mono</span></td><td>323.38</td><td>0.698</td><td>24</td><td><a class="view" href="viewer.html?material_id=nh2_bpdc_v_o6_mono_pcu_mono_ip2_off390">Ver 3D</a></td></tr><tr><td><strong>bpdc_al_o6_mono_pcu_mono_ip2_off380</strong><br><span>bpdc / al_o6_mono</span></td><td>301.56</td><td>0.731</td><td>444</td><td><a class="view" href="viewer.html?material_id=bpdc_al_o6_mono_pcu_mono_ip2_off380">Ver 3D</a></td></tr><tr><td><strong>nh2_bpdc_fe_o6_mono_pcu_mono_ip2_off390</strong><br><span>nh2_bpdc / fe_o6_mono</span></td><td>294.60</td><td>0.720</td><td>134</td><td><a class="view" href="viewer.html?material_id=nh2_bpdc_fe_o6_mono_pcu_mono_ip2_off390">Ver 3D</a></td></tr><tr><td><strong>nh2_bpdc_v_o6_mono_pcu_mono_ip2_off380</strong><br><span>nh2_bpdc / v_o6_mono</span></td><td>290.32</td><td>0.698</td><td>21</td><td><a class="view" href="viewer.html?material_id=nh2_bpdc_v_o6_mono_pcu_mono_ip2_off380">Ver 3D</a></td></tr></tbody></table>
+  <table><thead><tr><th>Candidato</th><th>q100</th><th>ret q050</th><th>Econ score</th><th>3D</th></tr></thead><tbody><tr><td><strong>nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off410</strong><br><span>nh2_bpdc / cr_o6_mono</span></td><td>388.0</td><td>0.746</td><td>22</td><td><a class="view" href="viewer.html?material_id=nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off410">Ver 3D</a></td></tr><tr><td><strong>nh2_bpdc_v_o6_mono_pcu_mono_ip2_off400</strong><br><span>nh2_bpdc / v_o6_mono</span></td><td>355.8</td><td>0.729</td><td>27</td><td><a class="view" href="viewer.html?material_id=nh2_bpdc_v_o6_mono_pcu_mono_ip2_off400">Ver 3D</a></td></tr><tr><td><strong>nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off400</strong><br><span>nh2_bpdc / cr_o6_mono</span></td><td>354.8</td><td>0.733</td><td>20</td><td><a class="view" href="viewer.html?material_id=nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off400">Ver 3D</a></td></tr><tr><td><strong>nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off390</strong><br><span>nh2_bpdc / cr_o6_mono</span></td><td>333.0</td><td>0.693</td><td>17</td><td><a class="view" href="viewer.html?material_id=nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off390">Ver 3D</a></td></tr><tr><td><strong>nh2_bpdc_fe_o6_mono_pcu_mono_ip2_off400</strong><br><span>nh2_bpdc / fe_o6_mono</span></td><td>329.0</td><td>0.747</td><td>155</td><td><a class="view" href="viewer.html?material_id=nh2_bpdc_fe_o6_mono_pcu_mono_ip2_off400">Ver 3D</a></td></tr><tr><td><strong>nh2_bdc_al_o6_mono_pcu_mono_clean</strong><br><span>nh2_bdc / al_o6_mono</span></td><td>325.2</td><td>0.714</td><td>4485</td><td><a class="view" href="viewer.html?material_id=nh2_bdc_al_o6_mono_pcu_mono_clean">Ver 3D</a></td></tr><tr><td><strong>nh2_bpdc_v_o6_mono_pcu_mono_ip2_off390</strong><br><span>nh2_bpdc / v_o6_mono</span></td><td>323.4</td><td>0.698</td><td>24</td><td><a class="view" href="viewer.html?material_id=nh2_bpdc_v_o6_mono_pcu_mono_ip2_off390">Ver 3D</a></td></tr><tr><td><strong>bpdc_al_o6_mono_pcu_mono_ip2_off380</strong><br><span>bpdc / al_o6_mono</span></td><td>301.6</td><td>0.731</td><td>444</td><td><a class="view" href="viewer.html?material_id=bpdc_al_o6_mono_pcu_mono_ip2_off380">Ver 3D</a></td></tr><tr><td><strong>nh2_bpdc_fe_o6_mono_pcu_mono_ip2_off390</strong><br><span>nh2_bpdc / fe_o6_mono</span></td><td>294.6</td><td>0.720</td><td>134</td><td><a class="view" href="viewer.html?material_id=nh2_bpdc_fe_o6_mono_pcu_mono_ip2_off390">Ver 3D</a></td></tr><tr><td><strong>nh2_bpdc_v_o6_mono_pcu_mono_ip2_off380</strong><br><span>nh2_bpdc / v_o6_mono</span></td><td>290.3</td><td>0.698</td><td>21</td><td><a class="view" href="viewer.html?material_id=nh2_bpdc_v_o6_mono_pcu_mono_ip2_off380">Ver 3D</a></td></tr></tbody></table>
 
   <h2 class="section-title">Top AtomForge por retencion frente a escalado de cargas</h2>
-  <table><thead><tr><th>Candidato</th><th>q100</th><th>ret q050</th><th>Econ score</th><th>3D</th></tr></thead><tbody><tr><td><strong>bdc_ti_o6_mono_pcu_mono_ip2_off380</strong><br><span>bdc / ti_o6_mono</span></td><td>111.95</td><td>0.938</td><td>2592</td><td><a class="view" href="viewer.html?material_id=bdc_ti_o6_mono_pcu_mono_ip2_off380">Ver 3D</a></td></tr><tr><td><strong>oh_bdc_fe_o6_mono_pcu_mono_ip2_off380</strong><br><span>oh_bdc / fe_o6_mono</span></td><td>120.59</td><td>0.925</td><td>1788</td><td><a class="view" href="viewer.html?material_id=oh_bdc_fe_o6_mono_pcu_mono_ip2_off380">Ver 3D</a></td></tr><tr><td><strong>nh2_bdc_al_o6_mono_pcu_mono_ip2_off038</strong><br><span>nh2_bdc / al_o6_mono</span></td><td>112.49</td><td>0.883</td><td>1919</td><td><a class="view" href="viewer.html?material_id=nh2_bdc_al_o6_mono_pcu_mono_ip2_off038">Ver 3D</a></td></tr><tr><td><strong>bdc_fe_o6_mono_pcu_mono_ip2_off380</strong><br><span>bdc / fe_o6_mono</span></td><td>124.65</td><td>0.858</td><td>13196</td><td><a class="view" href="viewer.html?material_id=bdc_fe_o6_mono_pcu_mono_ip2_off380">Ver 3D</a></td></tr><tr><td><strong>bdc_cr_o6_mono_pcu_mono_ip2_off380</strong><br><span>bdc / cr_o6_mono</span></td><td>118.03</td><td>0.849</td><td>1484</td><td><a class="view" href="viewer.html?material_id=bdc_cr_o6_mono_pcu_mono_ip2_off380">Ver 3D</a></td></tr><tr><td><strong>bdc_zn4o_pcu_ip2_off400</strong><br><span>bdc / zn4o</span></td><td>122.31</td><td>0.806</td><td>4567</td><td><a class="view" href="viewer.html?material_id=bdc_zn4o_pcu_ip2_off400">Ver 3D</a></td></tr><tr><td><strong>nh2_bdc_zn4o_pcu_ip2_off380</strong><br><span>nh2_bdc / zn4o</span></td><td>110.60</td><td>0.803</td><td>1073</td><td><a class="view" href="viewer.html?material_id=nh2_bdc_zn4o_pcu_ip2_off380">Ver 3D</a></td></tr><tr><td><strong>bdc_v_o6_mono_pcu_mono_ip2_off380</strong><br><span>bdc / v_o6_mono</span></td><td>128.55</td><td>0.778</td><td>2057</td><td><a class="view" href="viewer.html?material_id=bdc_v_o6_mono_pcu_mono_ip2_off380">Ver 3D</a></td></tr></tbody></table>
+  <table><thead><tr><th>Candidato</th><th>q100</th><th>ret q050</th><th>Econ score</th><th>3D</th></tr></thead><tbody><tr><td><strong>bdc_ti_o6_mono_pcu_mono_ip2_off380</strong><br><span>bdc / ti_o6_mono</span></td><td>112.0</td><td>0.938</td><td>2592</td><td><a class="view" href="viewer.html?material_id=bdc_ti_o6_mono_pcu_mono_ip2_off380">Ver 3D</a></td></tr><tr><td><strong>oh_bdc_fe_o6_mono_pcu_mono_ip2_off380</strong><br><span>oh_bdc / fe_o6_mono</span></td><td>120.6</td><td>0.925</td><td>1788</td><td><a class="view" href="viewer.html?material_id=oh_bdc_fe_o6_mono_pcu_mono_ip2_off380">Ver 3D</a></td></tr><tr><td><strong>nh2_bdc_al_o6_mono_pcu_mono_ip2_off038</strong><br><span>nh2_bdc / al_o6_mono</span></td><td>112.5</td><td>0.883</td><td>1919</td><td><a class="view" href="viewer.html?material_id=nh2_bdc_al_o6_mono_pcu_mono_ip2_off038">Ver 3D</a></td></tr><tr><td><strong>bdc_fe_o6_mono_pcu_mono_ip2_off380</strong><br><span>bdc / fe_o6_mono</span></td><td>124.6</td><td>0.858</td><td>13196</td><td><a class="view" href="viewer.html?material_id=bdc_fe_o6_mono_pcu_mono_ip2_off380">Ver 3D</a></td></tr><tr><td><strong>bdc_cr_o6_mono_pcu_mono_ip2_off380</strong><br><span>bdc / cr_o6_mono</span></td><td>118.0</td><td>0.849</td><td>1484</td><td><a class="view" href="viewer.html?material_id=bdc_cr_o6_mono_pcu_mono_ip2_off380">Ver 3D</a></td></tr><tr><td><strong>bdc_zn4o_pcu_ip2_off400</strong><br><span>bdc / zn4o</span></td><td>122.3</td><td>0.806</td><td>4567</td><td><a class="view" href="viewer.html?material_id=bdc_zn4o_pcu_ip2_off400">Ver 3D</a></td></tr><tr><td><strong>nh2_bdc_zn4o_pcu_ip2_off380</strong><br><span>nh2_bdc / zn4o</span></td><td>110.6</td><td>0.803</td><td>1073</td><td><a class="view" href="viewer.html?material_id=nh2_bdc_zn4o_pcu_ip2_off380">Ver 3D</a></td></tr><tr><td><strong>bdc_v_o6_mono_pcu_mono_ip2_off380</strong><br><span>bdc / v_o6_mono</span></td><td>128.6</td><td>0.778</td><td>2057</td><td><a class="view" href="viewer.html?material_id=bdc_v_o6_mono_pcu_mono_ip2_off380">Ver 3D</a></td></tr></tbody></table>
 
   <h2 class="section-title">Benchmarks externos usados como referencia q100</h2>
-  <table><thead><tr><th>Benchmark</th><th>q100</th><th>ret q050</th><th>Econ score</th><th>3D</th></tr></thead><tbody><tr><td><strong>Cu-BTC</strong><br><span>benchmark externo</span></td><td>146.19</td><td>NA</td><td>NA</td><td><a class="view" href="viewer.html?material_id=Cu-BTC">Ver 3D</a></td></tr><tr><td><strong>UiO-66</strong><br><span>benchmark externo</span></td><td>96.52</td><td>NA</td><td>NA</td><td><a class="view" href="viewer.html?material_id=UiO-66">Ver 3D</a></td></tr><tr><td><strong>MgMOF-74</strong><br><span>benchmark externo</span></td><td>75.02</td><td>NA</td><td>NA</td><td><a class="view" href="viewer.html?material_id=MgMOF-74">Ver 3D</a></td></tr><tr><td><strong>MOF-177</strong><br><span>benchmark externo</span></td><td>56.08</td><td>NA</td><td>NA</td><td>sin CIF</td></tr><tr><td><strong>ZnMOF-74</strong><br><span>benchmark externo</span></td><td>53.51</td><td>NA</td><td>NA</td><td><a class="view" href="viewer.html?material_id=ZnMOF-74">Ver 3D</a></td></tr><tr><td><strong>IRMOF-1</strong><br><span>benchmark externo</span></td><td>30.22</td><td>NA</td><td>NA</td><td><a class="view" href="viewer.html?material_id=IRMOF-1">Ver 3D</a></td></tr></tbody></table>
+  <table><thead><tr><th>Benchmark</th><th>q100</th><th>ret q050</th><th>Econ score</th><th>3D</th></tr></thead><tbody><tr><td><strong>Cu-BTC</strong><br><span>benchmark externo</span></td><td>146.2</td><td>NA</td><td>NA</td><td><a class="view" href="viewer.html?material_id=Cu-BTC">Ver 3D</a></td></tr><tr><td><strong>UiO-66</strong><br><span>benchmark externo</span></td><td>96.5</td><td>NA</td><td>NA</td><td><a class="view" href="viewer.html?material_id=UiO-66">Ver 3D</a></td></tr><tr><td><strong>MgMOF-74</strong><br><span>benchmark externo</span></td><td>75.0</td><td>NA</td><td>NA</td><td><a class="view" href="viewer.html?material_id=MgMOF-74">Ver 3D</a></td></tr><tr><td><strong>MOF-177</strong><br><span>benchmark externo</span></td><td>56.1</td><td>NA</td><td>NA</td><td>sin CIF</td></tr><tr><td><strong>ZnMOF-74</strong><br><span>benchmark externo</span></td><td>53.5</td><td>NA</td><td>NA</td><td><a class="view" href="viewer.html?material_id=ZnMOF-74">Ver 3D</a></td></tr><tr><td><strong>IRMOF-1</strong><br><span>benchmark externo</span></td><td>30.2</td><td>NA</td><td>NA</td><td><a class="view" href="viewer.html?material_id=IRMOF-1">Ver 3D</a></td></tr></tbody></table>
 
   <section class="grid">
     <div class="panel">
@@ -213,12 +213,12 @@
     </div>
     <div class="panel">
       <h2>Lectura actual</h2>
-      <p>El mejor candidato AtomForge tiene una capacidad q100 de 388.04 mg/g, equivalente a 2.65x el mejor benchmark q100 (Cu-BTC). La prioridad ahora es convertir esa ventaja computacional en evidencia experimental.</p>
+      <p>El mejor candidato AtomForge tiene una capacidad q100 de 388.0 mg/g, equivalente a 2.65x el mejor benchmark q100 (Cu-BTC). La prioridad ahora es convertir esa ventaja computacional en evidencia experimental.</p>
     </div>
   </section>
 
   <h2 class="section-title">Top por eficiencia economica preliminar</h2>
-  <table><thead><tr><th>Candidato</th><th>q100</th><th>ret q050</th><th>Econ score</th><th>3D</th></tr></thead><tbody><tr><td><strong>bdc_fe_o6_mono_pcu_mono_ip2_off380</strong><br><span>bdc / fe_o6_mono</span></td><td>124.65</td><td>0.858</td><td>13196</td><td><a class="view" href="viewer.html?material_id=bdc_fe_o6_mono_pcu_mono_ip2_off380">Ver 3D</a></td></tr><tr><td><strong>bdc_zn4o_pcu_ip2_off400</strong><br><span>bdc / zn4o</span></td><td>122.31</td><td>0.806</td><td>4567</td><td><a class="view" href="viewer.html?material_id=bdc_zn4o_pcu_ip2_off400">Ver 3D</a></td></tr><tr><td><strong>nh2_bdc_al_o6_mono_pcu_mono_clean</strong><br><span>nh2_bdc / al_o6_mono</span></td><td>325.17</td><td>0.714</td><td>4485</td><td><a class="view" href="viewer.html?material_id=nh2_bdc_al_o6_mono_pcu_mono_clean">Ver 3D</a></td></tr><tr><td><strong>bdc_zn4o_pcu_ip2_off380</strong><br><span>bdc / zn4o</span></td><td>109.60</td><td>0.776</td><td>3937</td><td><a class="view" href="viewer.html?material_id=bdc_zn4o_pcu_ip2_off380">Ver 3D</a></td></tr><tr><td><strong>bdc_ti_o6_mono_pcu_mono_ip2_off380</strong><br><span>bdc / ti_o6_mono</span></td><td>111.95</td><td>0.938</td><td>2592</td><td><a class="view" href="viewer.html?material_id=bdc_ti_o6_mono_pcu_mono_ip2_off380">Ver 3D</a></td></tr><tr><td><strong>bdc_v_o6_mono_pcu_mono_ip2_off380</strong><br><span>bdc / v_o6_mono</span></td><td>128.55</td><td>0.778</td><td>2057</td><td><a class="view" href="viewer.html?material_id=bdc_v_o6_mono_pcu_mono_ip2_off380">Ver 3D</a></td></tr><tr><td><strong>nh2_bdc_al_o6_mono_pcu_mono_ip2_off038</strong><br><span>nh2_bdc / al_o6_mono</span></td><td>112.49</td><td>0.883</td><td>1919</td><td><a class="view" href="viewer.html?material_id=nh2_bdc_al_o6_mono_pcu_mono_ip2_off038">Ver 3D</a></td></tr><tr><td><strong>oh_bdc_fe_o6_mono_pcu_mono_ip2_off380</strong><br><span>oh_bdc / fe_o6_mono</span></td><td>120.59</td><td>0.925</td><td>1788</td><td><a class="view" href="viewer.html?material_id=oh_bdc_fe_o6_mono_pcu_mono_ip2_off380">Ver 3D</a></td></tr></tbody></table>
+  <table><thead><tr><th>Candidato</th><th>q100</th><th>ret q050</th><th>Econ score</th><th>3D</th></tr></thead><tbody><tr><td><strong>bdc_fe_o6_mono_pcu_mono_ip2_off380</strong><br><span>bdc / fe_o6_mono</span></td><td>124.6</td><td>0.858</td><td>13196</td><td><a class="view" href="viewer.html?material_id=bdc_fe_o6_mono_pcu_mono_ip2_off380">Ver 3D</a></td></tr><tr><td><strong>bdc_zn4o_pcu_ip2_off400</strong><br><span>bdc / zn4o</span></td><td>122.3</td><td>0.806</td><td>4567</td><td><a class="view" href="viewer.html?material_id=bdc_zn4o_pcu_ip2_off400">Ver 3D</a></td></tr><tr><td><strong>nh2_bdc_al_o6_mono_pcu_mono_clean</strong><br><span>nh2_bdc / al_o6_mono</span></td><td>325.2</td><td>0.714</td><td>4485</td><td><a class="view" href="viewer.html?material_id=nh2_bdc_al_o6_mono_pcu_mono_clean">Ver 3D</a></td></tr><tr><td><strong>bdc_zn4o_pcu_ip2_off380</strong><br><span>bdc / zn4o</span></td><td>109.6</td><td>0.776</td><td>3937</td><td><a class="view" href="viewer.html?material_id=bdc_zn4o_pcu_ip2_off380">Ver 3D</a></td></tr><tr><td><strong>bdc_ti_o6_mono_pcu_mono_ip2_off380</strong><br><span>bdc / ti_o6_mono</span></td><td>112.0</td><td>0.938</td><td>2592</td><td><a class="view" href="viewer.html?material_id=bdc_ti_o6_mono_pcu_mono_ip2_off380">Ver 3D</a></td></tr><tr><td><strong>bdc_v_o6_mono_pcu_mono_ip2_off380</strong><br><span>bdc / v_o6_mono</span></td><td>128.6</td><td>0.778</td><td>2057</td><td><a class="view" href="viewer.html?material_id=bdc_v_o6_mono_pcu_mono_ip2_off380">Ver 3D</a></td></tr><tr><td><strong>nh2_bdc_al_o6_mono_pcu_mono_ip2_off038</strong><br><span>nh2_bdc / al_o6_mono</span></td><td>112.5</td><td>0.883</td><td>1919</td><td><a class="view" href="viewer.html?material_id=nh2_bdc_al_o6_mono_pcu_mono_ip2_off038">Ver 3D</a></td></tr><tr><td><strong>oh_bdc_fe_o6_mono_pcu_mono_ip2_off380</strong><br><span>oh_bdc / fe_o6_mono</span></td><td>120.6</td><td>0.925</td><td>1788</td><td><a class="view" href="viewer.html?material_id=oh_bdc_fe_o6_mono_pcu_mono_ip2_off380">Ver 3D</a></td></tr></tbody></table>
 
   <section class="grid">
     <div class="panel">
@@ -233,13 +233,13 @@
     </div>
     <div class="panel">
       <h2>Sintesis y caracterizacion necesarias</h2>
-      <ol>
+      <ul>
         <li>Elegir 1 candidato de alta capacidad y 1 candidato robusto/economico.</li>
         <li>Definir precursores metalicos, solvente, temperatura y ventana hidro/solvotermal.</li>
         <li>Confirmar fase por PXRD y estabilidad por TGA.</li>
         <li>Medir area BET y adsorcion de CO2; comparar contra simulacion.</li>
         <li>Evaluar humedad, regeneracion y estabilidad ciclica antes de comunicar aplicaciones.</li>
-      </ol>
+      </ul>
     </div>
   </section>
 
@@ -266,13 +266,13 @@
 
   <section class="panel" style="margin-top:18px">
     <h2>Que falta para convertirlo en evidencia experimental</h2>
-    <ol>
+    <ul>
       <li><strong>Validacion experimental:</strong> sintetizar 1--2 MOFs priorizados y confirmar estructura por PXRD.</li>
       <li><strong>Caracterizacion:</strong> TGA, BET, adsorcion CO2 y comparacion simulacion-experimento.</li>
       <li><strong>Estabilidad:</strong> humedad, temperatura, ciclos de adsorcion/desorcion y regeneracion.</li>
       <li><strong>Factibilidad:</strong> costo de reactivos, disponibilidad, seguridad, escalabilidad y residuos.</li>
       <li><strong>Trazabilidad:</strong> mantener versiones de CIF, protocolo, cargas, replicas y resultados.</li>
-    </ol>
+    </ul>
   </section>
 
   <section class="grid">
@@ -286,7 +286,7 @@
       </ul>
     </div>
     <div class="panel">
-      <h2>Proximos 90 dias</h2>
+      <h2>Proximos hitos</h2>
       <ul>
         <li>Validacion de estabilidad hidrotermal y humedad para separar lead academico de oportunidad industrial.</li><li>Priorizacion de 2-3 candidatos por costo de linker/metal y factibilidad sintetica.</li><li>Paquete de evidencia: CIF validado, ledger trazable, protocolo RASPA, visualizador 3D y benchmark comparativo.</li>
         <li>Preparar protocolo de sintesis piloto y presupuesto de reactivos.</li>

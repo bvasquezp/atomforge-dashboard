@@ -46,12 +46,27 @@
       ]
     },
     "export_error": "",
+    "viewer_sdf_2x2x2": "",
     "viewer_n_sites": 624,
     "visual_supercell": [
       1,
       1,
       1
-    ]
+    ],
+    "rho_gcm3": 0.879096,
+    "min_vdw_clearance_ang": -0.982,
+    "zeopp_status": "OK",
+    "zeopp_di_ang": 13.19714,
+    "zeopp_df_ang": 6.74621,
+    "zeopp_d_pore_ang": 13.19714,
+    "zeopp_asa_m2_g": 2787.06,
+    "zeopp_nasa_m2_g": 0.0,
+    "zeopp_av_cm3_g": 0.462748,
+    "zeopp_nav_cm3_g": 0.0,
+    "zeopp_void_frac": 0.4068,
+    "zeopp_rho_gcm3": 0.879097,
+    "zeopp_output_dir": "E:\\AtomForge\\results\\_visual_dashboard_zeopp",
+    "zeopp_error": ""
   },
   {
     "material_id": "UiO-66",
@@ -100,12 +115,27 @@
       ]
     },
     "export_error": "",
+    "viewer_sdf_2x2x2": "",
     "viewer_n_sites": 432,
     "visual_supercell": [
       1,
       1,
       1
-    ]
+    ],
+    "rho_gcm3": 1.219089,
+    "min_vdw_clearance_ang": -1.041,
+    "zeopp_status": "OK",
+    "zeopp_di_ang": 8.45524,
+    "zeopp_df_ang": 3.78568,
+    "zeopp_d_pore_ang": 8.45524,
+    "zeopp_asa_m2_g": 2074.34,
+    "zeopp_nasa_m2_g": 0.0,
+    "zeopp_av_cm3_g": 0.151588,
+    "zeopp_nav_cm3_g": 0.0,
+    "zeopp_void_frac": 0.1848,
+    "zeopp_rho_gcm3": 1.21909,
+    "zeopp_output_dir": "E:\\AtomForge\\results\\_visual_dashboard_zeopp",
+    "zeopp_error": ""
   },
   {
     "material_id": "MgMOF-74",
@@ -154,12 +184,27 @@
       ]
     },
     "export_error": "",
+    "viewer_sdf_2x2x2": "",
     "viewer_n_sites": 162,
     "visual_supercell": [
       1,
       1,
       1
-    ]
+    ],
+    "rho_gcm3": 0.883247,
+    "min_vdw_clearance_ang": -0.931,
+    "zeopp_status": "OK",
+    "zeopp_di_ang": 11.85872,
+    "zeopp_df_ang": 11.12074,
+    "zeopp_d_pore_ang": 11.85872,
+    "zeopp_asa_m2_g": 2036.18,
+    "zeopp_nasa_m2_g": 0.0,
+    "zeopp_av_cm3_g": 0.442232,
+    "zeopp_nav_cm3_g": 0.0,
+    "zeopp_void_frac": 0.3906,
+    "zeopp_rho_gcm3": 0.883247,
+    "zeopp_output_dir": "E:\\AtomForge\\results\\_visual_dashboard_zeopp",
+    "zeopp_error": ""
   },
   {
     "material_id": "MOF-177",
@@ -183,12 +228,14 @@
     "n_bonds": null,
     "lattice": null,
     "export_error": "Invalid CIF file with no structures!",
+    "viewer_sdf_2x2x2": "",
     "viewer_n_sites": null,
     "visual_supercell": [
       1,
       1,
       1
-    ]
+    ],
+    "min_vdw_clearance_ang": null
   },
   {
     "material_id": "ZnMOF-74",
@@ -237,12 +284,27 @@
       ]
     },
     "export_error": "",
+    "viewer_sdf_2x2x2": "",
     "viewer_n_sites": 162,
     "visual_supercell": [
       1,
       1,
       1
-    ]
+    ],
+    "rho_gcm3": 1.17873,
+    "min_vdw_clearance_ang": -0.932,
+    "zeopp_status": "OK",
+    "zeopp_di_ang": 11.88791,
+    "zeopp_df_ang": 11.15281,
+    "zeopp_d_pore_ang": 11.88791,
+    "zeopp_asa_m2_g": 1548.38,
+    "zeopp_nasa_m2_g": 0.0,
+    "zeopp_av_cm3_g": 0.334806,
+    "zeopp_nav_cm3_g": 0.0,
+    "zeopp_void_frac": 0.3946,
+    "zeopp_rho_gcm3": 1.17859,
+    "zeopp_output_dir": "E:\\AtomForge\\results\\_visual_dashboard_zeopp",
+    "zeopp_error": ""
   },
   {
     "material_id": "IRMOF-1",
@@ -291,11 +353,26 @@
       ]
     },
     "export_error": "",
+    "viewer_sdf_2x2x2": "",
     "viewer_n_sites": 424,
     "visual_supercell": [
       1,
       1,
       1
-    ]
+    ],
+    "rho_gcm3": 0.593396,
+    "min_vdw_clearance_ang": -0.996,
+    "zeopp_status": "OK",
+    "zeopp_di_ang": 15.06732,
+    "zeopp_df_ang": 8.16197,
+    "zeopp_d_pore_ang": 15.06729,
+    "zeopp_asa_m2_g": 3749.52,
+    "zeopp_nasa_m2_g": 0.0,
+    "zeopp_av_cm3_g": 0.915496,
+    "zeopp_nav_cm3_g": 0.0,
+    "zeopp_void_frac": 0.5432,
+    "zeopp_rho_gcm3": 0.593339,
+    "zeopp_output_dir": "E:\\AtomForge\\results\\_visual_dashboard_zeopp",
+    "zeopp_error": ""
   }
 ]

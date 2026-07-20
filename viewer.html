@@ -32,7 +32,9 @@
     .breadcrumb i { width:14px; height:14px; }
     .viewer-header { display:flex; gap:18px; align-items:flex-start; justify-content:space-between; padding-bottom:14px; border-bottom:1px solid var(--line); }
     #title { font:700 29px "Sora",sans-serif; letter-spacing:-.015em; overflow-wrap:anywhere; }
-    #metrics { color:#aebed1; margin-top:9px; font-size:13px; }
+    #metrics { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+    .metric-pill { display:inline-flex; align-items:baseline; gap:6px; min-height:28px; padding:5px 9px; border:1px solid var(--line); border-radius:999px; background:#0b1727; color:#d9e7f5; font-size:12px; }
+    .metric-pill b { color:#8ee9dc; font-size:10px; font-weight:900; letter-spacing:.075em; text-transform:uppercase; }
     .header-actions { display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end; }
     .action { min-height:39px; border:1px solid var(--line); border-radius:8px; color:var(--text); background:var(--panel-2); padding:9px 12px; text-decoration:none; display:flex; align-items:center; gap:7px; font-size:12px; font-weight:700; }
     .action:hover { border-color:var(--accent); background:#12343e; }
@@ -49,7 +51,7 @@
     #loadStatus { position:absolute; left:24px; right:24px; bottom:24px; z-index:10; padding:10px 12px; border-radius:7px; background:rgba(7,17,31,.88); color:#d9e6f3; border:1px solid rgba(148,163,184,.28); font-size:12px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
     aside { display:flex; flex-direction:column; gap:10px; min-width:0; }
     .panel { padding:12px; border:1px solid var(--line); border-radius:10px; background:rgba(13,25,41,.92); }
-    .panel h2 { margin:0 0 10px; font:700 13px "Sora",sans-serif; }
+    .panel h2 { margin:0 0 10px; font:700 12px "Sora",sans-serif; letter-spacing:.06em; text-transform:uppercase; color:#eaf2fc; }
     .quick-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:7px; }
     .quick-grid button { min-height:58px; padding:6px 4px; border:1px solid var(--line); border-radius:7px; background:#0b1727; color:#d9e5f3; font-size:12px; display:grid; gap:4px; place-items:center; }
     .quick-grid button:hover,.quick-grid button.active { border-color:var(--accent); background:rgba(21,200,189,.12); }
@@ -203,7 +205,7 @@ function load(materialId, push){
   if(!current) return;
   if(push) history.replaceState(null, '', `viewer.html?material_id=${encodeURIComponent(materialId)}`);
   document.getElementById('title').textContent = current.material_id;
-  document.getElementById('metrics').textContent = `q100=${fmt(current.q100)} mg/g · ret_q050=${fmt(current.ret_q050,3)}`;
+  document.getElementById('metrics').innerHTML = `<span class="metric-pill"><b>q100</b>${fmt(current.q100)} mg/g</span><span class="metric-pill"><b>ret q050</b>${fmt(current.ret_q050,3)}</span><span class="metric-pill"><b>estado</b>${current.is_benchmark ? 'Referencia' : (current.validation_status || '--')}</span>`;
   document.getElementById('crumbMaterial').textContent = current.material_id;
   document.getElementById('structInfo').innerHTML = [
     ['Topologia', current.topology || 'No especificada'],

@@ -15,7 +15,8 @@
   "l3_bucket_count": 41,
   "candidate_count": 24,
   "benchmark_count": 6,
-  "green_count": 24,
+  "green_count": 26,
+  "visible_green_count": 24,
   "structure_ready_count": 29,
   "best_candidate": {
     "material_id": "nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off410",

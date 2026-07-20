@@ -1,18 +1,18 @@
 {
-  "ledger_rows": 446,
-  "l3_total": 32,
+  "ledger_rows": 455,
+  "l3_total": 49,
   "l3_status_counts": {
-    "GREEN": 24,
-    "YELLOW": 8
+    "GREEN": 26,
+    "YELLOW": 23
   },
   "application_label_counts": {
-    "ROBUST_LEAD_CANDIDATE": 24,
-    "SILENT_ROBUST": 6,
-    "HIGH_LOADING_CHARGE_DEPENDENT": 1,
-    "LOW_VALUE_DISCARD": 1
+    "ROBUST_LEAD_CANDIDATE": 26,
+    "SILENT_ROBUST": 17,
+    "LOW_VALUE_DISCARD": 4,
+    "HIGH_LOADING_CHARGE_DEPENDENT": 2
   },
-  "bucket_count": 102,
-  "l3_bucket_count": 24,
+  "bucket_count": 110,
+  "l3_bucket_count": 41,
   "candidate_count": 24,
   "benchmark_count": 6,
   "green_count": 24,

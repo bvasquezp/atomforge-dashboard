@@ -53,8 +53,54 @@
     @media print { body { background:white; } main { padding:18px; } .panel,.metric,table { box-shadow:none; } }
     @media (max-width:900px) { header,.grid,.grid3,.metrics,.glossary { grid-template-columns:1fr; } .result-list li { grid-template-columns:1fr; gap:2px; } }
   </style>
-</head>
-<body>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root { --shell-bg:#07111f; --shell-panel:#0d1929; --shell-panel-2:#111f32; --shell-line:#25364f; --shell-muted:#91a3ba; --shell-accent:#15c8bd; }
+    body { background:var(--shell-bg) !important; color:#eef5ff !important; font-family:"DM Sans","Segoe UI",Arial,sans-serif !important; }
+    .report-shell { min-height:100vh; display:grid; grid-template-columns:200px minmax(0,1fr); background:radial-gradient(circle at 62% 0%,#102746 0%,var(--shell-bg) 42%); }
+    .report-sidebar { padding:22px 12px; border-right:1px solid var(--shell-line); background:rgba(5,14,28,.88); display:flex; flex-direction:column; gap:22px; }
+    .report-brand { display:flex; align-items:center; gap:10px; color:#eef5ff; text-decoration:none; font:700 21px "Space Grotesk",sans-serif; }
+    .report-mark { width:34px; height:34px; display:grid; place-items:center; color:var(--shell-accent); border:1px solid #1b867e; border-radius:10px; background:rgba(21,200,189,.08); }
+    .report-mark i { width:20px; height:20px; }
+    .report-workspace { border:1px solid var(--shell-line); border-radius:10px; padding:11px; background:rgba(17,31,50,.7); }
+    .report-workspace small,.report-nav-label { color:#71839a; font-size:10px; font-weight:700; letter-spacing:.08em; }
+    .report-workspace strong { display:block; color:#eef5ff; margin-top:5px; font-size:13px; }
+    .report-nav { display:grid; gap:4px; }
+    .report-nav a { color:#b8c7d9; text-decoration:none; padding:10px; border-radius:8px; display:flex; gap:10px; align-items:center; font-size:13px; }
+    .report-nav a:hover,.report-nav a.active { background:rgba(21,200,189,.13); color:#e9fffd; }
+    .report-nav i { width:17px; height:17px; color:var(--shell-accent); }
+    .report-account { margin-top:auto; border:1px solid var(--shell-line); border-radius:10px; padding:10px; display:flex; align-items:center; gap:9px; color:var(--shell-muted); font-size:11px; }
+    .report-account b,.report-account small { display:block; }.report-account b { color:#eaf2fc; }.report-account small { margin-top:3px; }
+    .report-avatar { width:29px; height:29px; display:grid; place-items:center; border-radius:50%; color:var(--shell-accent); background:#253b58; }.report-avatar i { width:16px; height:16px; }
+    .report-main { min-width:0; padding:20px 22px; }
+    .report-topbar { max-width:1280px; margin:0 auto 14px; display:flex; align-items:center; justify-content:space-between; color:var(--shell-muted); font-size:12px; }
+    .report-topbar a { color:#dffcf8; text-decoration:none; display:flex; align-items:center; gap:7px; }.report-topbar i { width:15px; height:15px; }
+    .report-main main { max-width:1280px !important; margin:0 auto !important; padding:22px 0 !important; }
+    .report-main h1 { font:700 clamp(29px,3vw,46px) "Space Grotesk",sans-serif !important; letter-spacing:-.04em !important; }
+    .report-main .eyebrow { color:var(--shell-accent) !important; }.report-main .panel,.report-main .metric { background:var(--shell-panel) !important; border:1px solid var(--shell-line) !important; border-radius:12px !important; box-shadow:0 18px 45px rgba(0,0,0,.2) !important; backdrop-filter:none !important; }
+    .report-main table { background:var(--shell-panel) !important; border:1px solid var(--shell-line) !important; border-radius:12px !important; box-shadow:0 18px 45px rgba(0,0,0,.16) !important; }
+    .report-main .view { background:var(--shell-accent) !important; color:#04201e !important; border-radius:7px !important; }.report-main .callout { border-left-color:var(--shell-accent) !important; background:rgba(21,200,189,.10) !important; }
+    @media(max-width:800px) { .report-shell { display:block; }.report-sidebar { display:none; }.report-main { padding:14px; }.report-topbar { margin-bottom:4px; } }
+  </style></head>
+<body><div class="report-shell">
+<aside class="report-sidebar">
+  <a class="report-brand" href="index.html"><span class="report-mark"><i data-lucide="atom"></i></span><span>AtomForge</span></a>
+  <div class="report-workspace"><small>PROYECTO ACTUAL</small><strong>MOF Discovery</strong></div>
+  <div class="report-nav-label">NAVEGACION</div>
+  <nav class="report-nav">
+    <a href="index.html"><i data-lucide="house"></i>Resumen</a>
+    <a href="index.html#explorador"><i data-lucide="orbit"></i>Explorador</a>
+    <a href="index.html#ranking"><i data-lucide="scale"></i>Comparador</a>
+    <a href="index.html#explorador"><i data-lucide="bar-chart-3"></i>Referencias</a>
+    <a href="index.html#ranking"><i data-lucide="database"></i>Conjunto de datos</a>
+    <a class="active" href="report.html"><i data-lucide="file-text"></i>Informes</a>
+  </nav>
+  <div class="report-account"><span class="report-avatar"><i data-lucide="atom"></i></span><span><b>Vista read-only</b><small>AtomForge MOFs</small></span></div>
+</aside><section class="report-main"><div class="report-topbar"><span>Informe cientifico del proyecto</span><a href="index.html"><i data-lucide="arrow-left"></i>Volver al resumen</a></div>
 <main>
   <header>
     <section>
@@ -77,15 +123,15 @@
   </header>
 
   <section class="metrics">
-    <div class="metric"><span>L3 total</span><strong>32</strong></div>
-    <div class="metric"><span>GREEN</span><strong>24</strong></div>
-    <div class="metric"><span>Buckets</span><strong>102</strong></div>
+    <div class="metric"><span>L3 total</span><strong>49</strong></div>
+    <div class="metric"><span>GREEN</span><strong>26</strong></div>
+    <div class="metric"><span>Buckets</span><strong>110</strong></div>
     <div class="metric"><span>Estructuras 3D</span><strong>29</strong></div>
   </section>
 
   <section class="panel">
     <h2>Estado del proyecto</h2>
-    <p>El sistema ya opera como un pipeline reproducible: genera <span class="term" tabindex="0" data-tip="CIF: Crystallographic Information File. Archivo estandar que describe celda, atomos y simetria de una estructura cristalina.">CIFs</span>, valida periodicidad, relaja estructuras con <span class="term" tabindex="0" data-tip="GFN2/PBC: metodo semiempirico usado aqui con condiciones periodicas de borde para relajar estructuras cristalinas antes de simular adsorcion.">GFN2/PBC</span>, ejecuta <span class="term" tabindex="0" data-tip="RASPA/GCMC: software y metodo Monte Carlo de gran canonico usados para estimar adsorcion en materiales porosos.">RASPA/GCMC</span> con cargas <span class="term" tabindex="0" data-tip="PACMOF: protocolo/modelo de asignacion de cargas usado para representar interacciones electrostaticas en MOFs.">PACMOF</span> y registra resultados en un ledger auditable. Estado actual: <strong>24 candidatos GREEN</strong>.</p>
+    <p>El sistema ya opera como un pipeline reproducible: genera <span class="term" tabindex="0" data-tip="CIF: Crystallographic Information File. Archivo estandar que describe celda, atomos y simetria de una estructura cristalina.">CIFs</span>, valida periodicidad, relaja estructuras con <span class="term" tabindex="0" data-tip="GFN2/PBC: metodo semiempirico usado aqui con condiciones periodicas de borde para relajar estructuras cristalinas antes de simular adsorcion.">GFN2/PBC</span>, ejecuta <span class="term" tabindex="0" data-tip="RASPA/GCMC: software y metodo Monte Carlo de gran canonico usados para estimar adsorcion en materiales porosos.">RASPA/GCMC</span> con cargas <span class="term" tabindex="0" data-tip="PACMOF: protocolo/modelo de asignacion de cargas usado para representar interacciones electrostaticas en MOFs.">PACMOF</span> y registra resultados en un ledger auditable. Estado actual: <strong>26 candidatos GREEN</strong>.</p>
     <div class="callout">Lectura correcta: estos son resultados computacionales de priorizacion, no claims experimentales. El siguiente salto de valor es validar 1--2 candidatos con sintesis, <span class="term" tabindex="0" data-tip="PXRD: difraccion de rayos X de polvo. Confirma si la fase sintetizada coincide con la estructura cristalina esperada.">PXRD</span>, <span class="term" tabindex="0" data-tip="TGA: analisis termogravimetrico. Mide perdida de masa con temperatura y ayuda a estimar estabilidad termica/solvente residual.">TGA</span>, <span class="term" tabindex="0" data-tip="BET: metodo para estimar area superficial especifica usando isotermas de adsorcion, comunmente con N2.">BET</span> y adsorcion de CO2.</div>
   </section>
 
@@ -116,7 +162,7 @@
         <li><strong>YELLOW:</strong> material valido o informativo, pero no cumple todos los objetivos de producto.</li>
         <li><strong>RED:</strong> negativo util: fallo estructural, baja retencion o bajo loading con causa documentada.</li>
       </ul>
-      <p class="small">Distribucion L3 actual: GREEN=24, YELLOW=8, RED=0.</p>
+      <p class="small">Distribucion L3 actual: GREEN=26, YELLOW=23, RED=0.</p>
     </div>
     <div class="panel">
       <h2>Niveles de evidencia</h2>
@@ -257,5 +303,5 @@
     </ul>
   </section>
 </main>
-</body>
+</section></div><script>lucide.createIcons();</script></body>
 </html>

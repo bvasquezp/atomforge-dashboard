@@ -19,10 +19,10 @@
     .brand { display:flex; align-items:center; gap:10px; padding:0 8px; font:700 21px "Sora",sans-serif; letter-spacing:-.3px; }
     .brand-mark { width:34px; height:34px; display:grid; place-items:center; color:var(--accent); border:1px solid #1b867e; border-radius:10px; background:rgba(21,200,189,.08); }
     .workspace { border:1px solid var(--line); border-radius:10px; padding:11px; background:rgba(17,31,50,.7); font-size:12px; color:var(--muted); }
-    .workspace b { display:block; color:var(--text); margin-top:5px; font-size:13px; }
+    .workspace b { display:block; color:var(--text); margin-top:5px; font-size:15px; }
     .nav-label { color:#9aadc4; font-size:12px; font-weight:700; margin:2px 10px 0; }
     .nav { display:grid; gap:4px; }
-    .nav a { color:#b8c7d9; text-decoration:none; padding:10px; border-radius:8px; display:flex; gap:10px; align-items:center; font-size:13px; }
+    .nav a { color:#b8c7d9; text-decoration:none; padding:10px; border-radius:8px; display:flex; gap:10px; align-items:center; font-size:15px; }
     .nav a:hover,.nav a.active { background:rgba(21,200,189,.13); color:#e9fffd; }
     .nav i { width:17px; height:17px; color:var(--accent); }
     .profile { margin-top:auto; border:1px solid var(--line); border-radius:10px; padding:10px; display:flex; align-items:center; gap:9px; color:var(--muted); font-size:12px; }
@@ -31,10 +31,10 @@
     .breadcrumb { color:#8ca0b8; font-size:12px; display:flex; align-items:center; gap:8px; margin-bottom:14px; }
     .breadcrumb i { width:14px; height:14px; }
     .viewer-header { display:flex; gap:18px; align-items:flex-start; justify-content:space-between; padding-bottom:14px; border-bottom:1px solid var(--line); }
-    #title { font:700 29px "Sora",sans-serif; letter-spacing:-.015em; overflow-wrap:anywhere; }
+    #title { font:700 32px "Sora",sans-serif; letter-spacing:-.015em; line-height:1.12; overflow-wrap:anywhere; }
     #metrics { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
     .metric-pill { display:inline-flex; align-items:baseline; gap:6px; min-height:28px; padding:5px 9px; border:1px solid var(--line); border-radius:999px; background:#0b1727; color:#d9e7f5; font-size:12px; }
-    .metric-pill b { color:#8ee9dc; font-size:10px; font-weight:900; letter-spacing:.075em; text-transform:uppercase; }
+    .metric-pill b { color:#8ee9dc; font-size:12px; font-weight:900; letter-spacing:.075em; text-transform:uppercase; }
     .header-actions { display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end; }
     .action { min-height:39px; border:1px solid var(--line); border-radius:8px; color:var(--text); background:var(--panel-2); padding:9px 12px; text-decoration:none; display:flex; align-items:center; gap:7px; font-size:12px; font-weight:700; }
     .action:hover { border-color:var(--accent); background:#12343e; }
@@ -51,11 +51,14 @@
     #loadStatus { position:absolute; left:24px; right:24px; bottom:24px; z-index:10; padding:10px 12px; border-radius:7px; background:rgba(7,17,31,.88); color:#d9e6f3; border:1px solid rgba(148,163,184,.28); font-size:12px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
     aside { display:flex; flex-direction:column; gap:10px; min-width:0; }
     .panel { padding:12px; border:1px solid var(--line); border-radius:10px; background:rgba(13,25,41,.92); }
-    .panel h2 { margin:0 0 10px; font:700 12px "Sora",sans-serif; letter-spacing:.06em; text-transform:uppercase; color:#eaf2fc; }
+    .panel h2 { margin:0 0 10px; font:700 13px "Sora",sans-serif; letter-spacing:.05em; text-transform:uppercase; color:#eaf2fc; }
     .quick-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:7px; }
     .quick-grid button { min-height:58px; padding:6px 4px; border:1px solid var(--line); border-radius:7px; background:#0b1727; color:#d9e5f3; font-size:12px; display:grid; gap:4px; place-items:center; }
     .quick-grid button:hover,.quick-grid button.active { border-color:var(--accent); background:rgba(21,200,189,.12); }
+    .quick-grid button:disabled { cursor:not-allowed; opacity:.45; border-color:#1b2a40; background:#091321; }
     .quick-grid i { width:18px; height:18px; color:var(--accent); }
+    .compat-strip { margin-top:10px; padding:10px; border:1px solid rgba(21,200,189,.24); border-radius:8px; background:rgba(21,200,189,.08); color:#c9fff7; font-size:12px; line-height:1.35; }
+    .compat-strip b { color:#ffffff; }
     label { display:flex; flex-direction:column; gap:5px; font-size:12px; color:#b0bfd2; margin-top:9px; }
     select { width:100%; min-height:36px; border:1px solid var(--line); border-radius:7px; background:#0b1727; color:#eaf2fc; padding:7px; font-size:12px; }
     input[type="range"] { width:100%; accent-color:var(--accent); }
@@ -125,6 +128,7 @@
             <button onclick="loadStructure('super_2x2x2')"><i data-lucide="layers-3"></i>2x2x2</button>
             <button onclick="resetView()"><i data-lucide="scan"></i>Reencuadrar</button>
           </div>
+          <div class="compat-strip" id="viewHealth">Compatibilidad estructural pendiente.</div>
         </section>
         <section class="panel">
           <h2>Ajustes de visualizacion</h2>
@@ -164,17 +168,26 @@ const params = new URLSearchParams(location.search);
 const requested = params.get("material_id");
 
 function fmt(v, d=2){ const n = Number(v); return Number.isFinite(n) ? n.toFixed(d) : "NA"; }
+function normalizePath(path){
+  return path && path.startsWith('structures/') ? `static/${path}` : path;
+}
 function structurePath(c, kind){
-  if(kind === "unit" && c.unit_cif) return c.unit_cif;
-  if(kind === "super_2x2x2" && c.viewer_sdf_2x2x2) return c.viewer_sdf_2x2x2;
-  if(kind === "super_2x2x1" && c.viewer_sdf_2x2x1) return c.viewer_sdf_2x2x1;
-  return c.viewer_sdf || c.viewer_mol2 || c.cif || `static/structures/${c.material_id}.cif`;
+  if(kind === "unit" && c.unit_cif) return normalizePath(c.unit_cif);
+  if(kind === "super_2x2x2" && c.viewer_sdf_2x2x2) return normalizePath(c.viewer_sdf_2x2x2);
+  if(kind === "super_2x2x1" && c.viewer_sdf_2x2x1) return normalizePath(c.viewer_sdf_2x2x1);
+  return normalizePath(c.viewer_sdf || c.viewer_mol2 || c.cif || `static/structures/${c.material_id}.cif`);
 }
 function modelFormat(path){ if(path.endsWith('.sdf')) return 'sdf'; if(path.endsWith('.mol2')) return 'mol2'; return 'cif'; }
 function prefersCrystalView(c){
   const topology = String(c.topology || "").toLowerCase();
   const mid = String(c.material_id || "").toLowerCase();
   return Boolean(c.viewer_sdf_2x2x1) && !c.is_benchmark && (topology.includes("ip2") || topology.includes("interpenetrated") || mid.includes("_ip2_"));
+}
+function viewLabel(kind){
+  if(kind === 'super_2x2x2') return 'periodizacion 2x2x2';
+  if(kind === 'super_2x2x1') return 'periodizacion 2x2x1 compatibilizada';
+  if(kind === 'unit') return 'CIF de celda unitaria';
+  return 'modelo conectado completo';
 }
 function finiteMetric(value, digits=2, suffix='', allowNegative=false){
   const parsed = Number(value);
@@ -223,6 +236,8 @@ function load(materialId, push){
     ['Separacion minima entre redes (A)', finiteMetric(current.inter_net_distance_ang, 3)],
     ['Contacto VdW minimo (A)', finiteMetric(current.min_vdw_clearance_ang, 3, '', true)]
   ].map(([key,value]) => `<div><span>${key}</span><b>${value}</b></div>`).join('');
+  const views = current.available_structure_views || [];
+  document.getElementById('viewHealth').innerHTML = `<b>${current.structure_compatibility || 'COMPATIBLE'}</b> · ${views.length ? views.join(' · ') : 'CIF disponible'} · vista inicial: ${prefersCrystalView(current) ? 'periodica' : 'conectada'}`;
   currentStructureKind = prefersCrystalView(current) ? "super_2x2x1" : "full";
   loadStructure(currentStructureKind);
 }
@@ -239,6 +254,7 @@ function loadStructure(kind){
   labelsOn = false;
   cellOn = true;
   const path = structurePath(current, kind);
+  refreshControls(kind);
   const download = document.getElementById('downloadLink');
   download.href = path;
   download.download = `${current.material_id}_${kind}.${path.split('.').pop()}`;
@@ -257,9 +273,18 @@ function loadStructure(kind){
     if(cellOn) viewer.addUnitCell();
     viewer.zoomTo();
     viewer.render();
-    document.getElementById('loadStatus').textContent = `Modelo cargado: ${path}`;
+    document.getElementById('loadStatus').textContent = `Modelo cargado: ${path} · ${viewLabel(kind)}`;
   }).catch(err=>{
     document.getElementById('loadStatus').textContent = `No se pudo cargar el modelo 3D: ${err.message}`;
+  });
+}
+
+function refreshControls(kind){
+  document.querySelectorAll('button[onclick*="loadStructure"]').forEach(button => {
+    const onclick = button.getAttribute('onclick') || '';
+    button.classList.toggle('active', onclick.includes(`'${kind}'`));
+    if(onclick.includes("'super_2x2x2'")) button.disabled = !current?.viewer_sdf_2x2x2;
+    if(onclick.includes("'super_2x2x1'")) button.disabled = !current?.viewer_sdf_2x2x1;
   });
 }
 

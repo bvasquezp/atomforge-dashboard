@@ -76,7 +76,14 @@
     "linker_sa_score": 2.3,
     "metal_usd_g": 0.05,
     "econ_score": 1918.7418357487923,
-    "econ_label": "cost_favorable"
+    "econ_label": "cost_favorable",
+    "available_structure_views": [
+      "unit_cif",
+      "connected_model",
+      "periodic_2x2x1"
+    ],
+    "structure_compatibility": "COMPATIBLE",
+    "viewer_primary_mode": "periodic_2x2x1"
   },
   {
     "material_id": "oh_bdc_fe_o6_mono_pcu_mono_ip2_off380",
@@ -158,7 +165,14 @@
     "linker_sa_score": 2.6,
     "metal_usd_g": 0.03,
     "econ_score": 1788.04296474359,
-    "econ_label": "cost_favorable"
+    "econ_label": "cost_favorable",
+    "available_structure_views": [
+      "unit_cif",
+      "connected_model",
+      "periodic_2x2x1"
+    ],
+    "structure_compatibility": "COMPATIBLE",
+    "viewer_primary_mode": "periodic_2x2x1"
   },
   {
     "material_id": "bpdc_al_o6_mono_pcu_mono_ip2_off380",
@@ -240,7 +254,14 @@
     "linker_sa_score": 3.1,
     "metal_usd_g": 0.05,
     "econ_score": 444.20555645161284,
-    "econ_label": "balanced"
+    "econ_label": "balanced",
+    "available_structure_views": [
+      "unit_cif",
+      "connected_model",
+      "periodic_2x2x1"
+    ],
+    "structure_compatibility": "COMPATIBLE",
+    "viewer_primary_mode": "periodic_2x2x1"
   },
   {
     "material_id": "bdc_cr_o6_mono_pcu_mono_ip2_off380",
@@ -322,7 +343,15 @@
     "linker_sa_score": 1.8,
     "metal_usd_g": 0.25,
     "econ_score": 1483.6996444444444,
-    "econ_label": "cost_favorable"
+    "econ_label": "cost_favorable",
+    "available_structure_views": [
+      "unit_cif",
+      "connected_model",
+      "periodic_2x2x1",
+      "periodic_2x2x2"
+    ],
+    "structure_compatibility": "COMPATIBLE",
+    "viewer_primary_mode": "periodic_2x2x1"
   },
   {
     "material_id": "bdc_ti_o6_mono_pcu_mono_ip2_off380",
@@ -404,7 +433,15 @@
     "linker_sa_score": 1.8,
     "metal_usd_g": 0.15,
     "econ_score": 2591.85837037037,
-    "econ_label": "cost_favorable"
+    "econ_label": "cost_favorable",
+    "available_structure_views": [
+      "unit_cif",
+      "connected_model",
+      "periodic_2x2x1",
+      "periodic_2x2x2"
+    ],
+    "structure_compatibility": "COMPATIBLE",
+    "viewer_primary_mode": "periodic_2x2x1"
   },
   {
     "material_id": "bdc_fe_o6_mono_pcu_mono_ip2_off380",
@@ -486,7 +523,15 @@
     "linker_sa_score": 1.8,
     "metal_usd_g": 0.03,
     "econ_score": 13196.200246913582,
-    "econ_label": "cost_favorable"
+    "econ_label": "cost_favorable",
+    "available_structure_views": [
+      "unit_cif",
+      "connected_model",
+      "periodic_2x2x1",
+      "periodic_2x2x2"
+    ],
+    "structure_compatibility": "COMPATIBLE",
+    "viewer_primary_mode": "periodic_2x2x1"
   },
   {
     "material_id": "bdc_v_o6_mono_pcu_mono_ip2_off380",
@@ -568,7 +613,15 @@
     "linker_sa_score": 1.8,
     "metal_usd_g": 0.18,
     "econ_score": 2057.456172839506,
-    "econ_label": "cost_favorable"
+    "econ_label": "cost_favorable",
+    "available_structure_views": [
+      "unit_cif",
+      "connected_model",
+      "periodic_2x2x1",
+      "periodic_2x2x2"
+    ],
+    "structure_compatibility": "COMPATIBLE",
+    "viewer_primary_mode": "periodic_2x2x1"
   },
   {
     "material_id": "nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off390",
@@ -650,7 +703,14 @@
     "linker_sa_score": 4.4,
     "metal_usd_g": 0.25,
     "econ_score": 17.477972727272725,
-    "econ_label": "premium_precursor"
+    "econ_label": "premium_precursor",
+    "available_structure_views": [
+      "unit_cif",
+      "connected_model",
+      "periodic_2x2x1"
+    ],
+    "structure_compatibility": "COMPATIBLE",
+    "viewer_primary_mode": "periodic_2x2x1"
   },
   {
     "material_id": "nh2_bpdc_fe_o6_mono_pcu_mono_ip2_off380",
@@ -732,7 +792,14 @@
     "linker_sa_score": 4.4,
     "metal_usd_g": 0.03,
     "econ_score": 121.80225757575757,
-    "econ_label": "premium_precursor"
+    "econ_label": "premium_precursor",
+    "available_structure_views": [
+      "unit_cif",
+      "connected_model",
+      "periodic_2x2x1"
+    ],
+    "structure_compatibility": "COMPATIBLE",
+    "viewer_primary_mode": "periodic_2x2x1"
   },
   {
     "material_id": "nh2_bpdc_ti_o6_mono_pcu_mono_ip2_off380",
@@ -814,7 +881,14 @@
     "linker_sa_score": 4.4,
     "metal_usd_g": 0.15,
     "econ_score": 25.530059343434345,
-    "econ_label": "premium_precursor"
+    "econ_label": "premium_precursor",
+    "available_structure_views": [
+      "unit_cif",
+      "connected_model",
+      "periodic_2x2x1"
+    ],
+    "structure_compatibility": "COMPATIBLE",
+    "viewer_primary_mode": "periodic_2x2x1"
   },
   {
     "material_id": "nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off400",
@@ -896,7 +970,14 @@
     "linker_sa_score": 4.4,
     "metal_usd_g": 0.25,
     "econ_score": 19.701447727272726,
-    "econ_label": "premium_precursor"
+    "econ_label": "premium_precursor",
+    "available_structure_views": [
+      "unit_cif",
+      "connected_model",
+      "periodic_2x2x1"
+    ],
+    "structure_compatibility": "COMPATIBLE",
+    "viewer_primary_mode": "periodic_2x2x1"
   },
   {
     "material_id": "nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off410",
@@ -978,7 +1059,14 @@
     "linker_sa_score": 4.4,
     "metal_usd_g": 0.25,
     "econ_score": 21.932759015151515,
-    "econ_label": "premium_precursor"
+    "econ_label": "premium_precursor",
+    "available_structure_views": [
+      "unit_cif",
+      "connected_model",
+      "periodic_2x2x1"
+    ],
+    "structure_compatibility": "COMPATIBLE",
+    "viewer_primary_mode": "periodic_2x2x1"
   },
   {
     "material_id": "nh2_bpdc_fe_o6_mono_pcu_mono_ip2_off390",
@@ -1060,7 +1148,14 @@
     "linker_sa_score": 4.4,
     "metal_usd_g": 0.03,
     "econ_score": 133.85683333333333,
-    "econ_label": "premium_precursor"
+    "econ_label": "premium_precursor",
+    "available_structure_views": [
+      "unit_cif",
+      "connected_model",
+      "periodic_2x2x1"
+    ],
+    "structure_compatibility": "COMPATIBLE",
+    "viewer_primary_mode": "periodic_2x2x1"
   },
   {
     "material_id": "nh2_bpdc_fe_o6_mono_pcu_mono_ip2_off400",
@@ -1142,7 +1237,14 @@
     "linker_sa_score": 4.4,
     "metal_usd_g": 0.03,
     "econ_score": 155.0954393939394,
-    "econ_label": "premium_precursor"
+    "econ_label": "premium_precursor",
+    "available_structure_views": [
+      "unit_cif",
+      "connected_model",
+      "periodic_2x2x1"
+    ],
+    "structure_compatibility": "COMPATIBLE",
+    "viewer_primary_mode": "periodic_2x2x1"
   },
   {
     "material_id": "nh2_bpdc_v_o6_mono_pcu_mono_ip2_off380",
@@ -1224,7 +1326,14 @@
     "linker_sa_score": 4.4,
     "metal_usd_g": 0.18,
     "econ_score": 21.32852504208754,
-    "econ_label": "premium_precursor"
+    "econ_label": "premium_precursor",
+    "available_structure_views": [
+      "unit_cif",
+      "connected_model",
+      "periodic_2x2x1"
+    ],
+    "structure_compatibility": "COMPATIBLE",
+    "viewer_primary_mode": "periodic_2x2x1"
   },
   {
     "material_id": "nh2_bpdc_v_o6_mono_pcu_mono_ip2_off390",
@@ -1306,7 +1415,14 @@
     "linker_sa_score": 4.4,
     "metal_usd_g": 0.18,
     "econ_score": 23.758321548821552,
-    "econ_label": "premium_precursor"
+    "econ_label": "premium_precursor",
+    "available_structure_views": [
+      "unit_cif",
+      "connected_model",
+      "periodic_2x2x1"
+    ],
+    "structure_compatibility": "COMPATIBLE",
+    "viewer_primary_mode": "periodic_2x2x1"
   },
   {
     "material_id": "nh2_bpdc_v_o6_mono_pcu_mono_ip2_off400",
@@ -1388,7 +1504,14 @@
     "linker_sa_score": 4.4,
     "metal_usd_g": 0.18,
     "econ_score": 27.311899305555556,
-    "econ_label": "premium_precursor"
+    "econ_label": "premium_precursor",
+    "available_structure_views": [
+      "unit_cif",
+      "connected_model",
+      "periodic_2x2x1"
+    ],
+    "structure_compatibility": "COMPATIBLE",
+    "viewer_primary_mode": "periodic_2x2x1"
   },
   {
     "material_id": "bdc_zn4o_pcu_ip2_off380",
@@ -1467,7 +1590,15 @@
     "linker_sa_score": 1.8,
     "metal_usd_g": 0.08,
     "econ_score": 3936.5064814814814,
-    "econ_label": "cost_favorable"
+    "econ_label": "cost_favorable",
+    "available_structure_views": [
+      "unit_cif",
+      "connected_model",
+      "periodic_2x2x1",
+      "periodic_2x2x2"
+    ],
+    "structure_compatibility": "COMPATIBLE",
+    "viewer_primary_mode": "periodic_2x2x1"
   },
   {
     "material_id": "bdc_zn4o_pcu_ip2_off400",
@@ -1546,7 +1677,15 @@
     "linker_sa_score": 1.8,
     "metal_usd_g": 0.08,
     "econ_score": 4566.522037037037,
-    "econ_label": "cost_favorable"
+    "econ_label": "cost_favorable",
+    "available_structure_views": [
+      "unit_cif",
+      "connected_model",
+      "periodic_2x2x1",
+      "periodic_2x2x2"
+    ],
+    "structure_compatibility": "COMPATIBLE",
+    "viewer_primary_mode": "periodic_2x2x1"
   },
   {
     "material_id": "bpdc_zn4o_pcu_ip2_off380",
@@ -1625,7 +1764,14 @@
     "linker_sa_score": 3.1,
     "metal_usd_g": 0.08,
     "econ_score": 153.63021295362898,
-    "econ_label": "premium_precursor"
+    "econ_label": "premium_precursor",
+    "available_structure_views": [
+      "unit_cif",
+      "connected_model",
+      "periodic_2x2x1"
+    ],
+    "structure_compatibility": "COMPATIBLE",
+    "viewer_primary_mode": "periodic_2x2x1"
   },
   {
     "material_id": "bpdc_zn4o_pcu_ip2_off400",
@@ -1704,7 +1850,14 @@
     "linker_sa_score": 3.1,
     "metal_usd_g": 0.08,
     "econ_score": 164.8185811491935,
-    "econ_label": "premium_precursor"
+    "econ_label": "premium_precursor",
+    "available_structure_views": [
+      "unit_cif",
+      "connected_model",
+      "periodic_2x2x1"
+    ],
+    "structure_compatibility": "COMPATIBLE",
+    "viewer_primary_mode": "periodic_2x2x1"
   },
   {
     "material_id": "nh2_bdc_zn4o_pcu_ip2_off380",
@@ -1783,7 +1936,14 @@
     "linker_sa_score": 2.3,
     "metal_usd_g": 0.08,
     "econ_score": 1073.0861352657005,
-    "econ_label": "cost_favorable"
+    "econ_label": "cost_favorable",
+    "available_structure_views": [
+      "unit_cif",
+      "connected_model",
+      "periodic_2x2x1"
+    ],
+    "structure_compatibility": "COMPATIBLE",
+    "viewer_primary_mode": "periodic_2x2x1"
   },
   {
     "material_id": "oh_bdc_zn4o_pcu_ip2_off400",
@@ -1862,7 +2022,15 @@
     "linker_sa_score": 2.6,
     "metal_usd_g": 0.08,
     "econ_score": 575.3837379807692,
-    "econ_label": "balanced"
+    "econ_label": "balanced",
+    "available_structure_views": [
+      "unit_cif",
+      "connected_model",
+      "periodic_2x2x1",
+      "periodic_2x2x2"
+    ],
+    "structure_compatibility": "COMPATIBLE",
+    "viewer_primary_mode": "periodic_2x2x1"
   },
   {
     "material_id": "nh2_bdc_al_o6_mono_pcu_mono_clean",
@@ -1941,7 +2109,15 @@
     "linker_sa_score": 2.3,
     "metal_usd_g": 0.05,
     "econ_score": 4484.792309178744,
-    "econ_label": "cost_favorable"
+    "econ_label": "cost_favorable",
+    "available_structure_views": [
+      "unit_cif",
+      "connected_model",
+      "periodic_2x2x1",
+      "periodic_2x2x2"
+    ],
+    "structure_compatibility": "COMPATIBLE",
+    "viewer_primary_mode": "connected_model"
   },
   {
     "material_id": "bdc_al_o6_mono_pcu_mono",
@@ -2020,7 +2196,15 @@
     "linker_sa_score": 1.8,
     "metal_usd_g": 0.05,
     "econ_score": 10488.320370370368,
-    "econ_label": "cost_favorable"
+    "econ_label": "cost_favorable",
+    "available_structure_views": [
+      "unit_cif",
+      "connected_model",
+      "periodic_2x2x1",
+      "periodic_2x2x2"
+    ],
+    "structure_compatibility": "COMPATIBLE",
+    "viewer_primary_mode": "connected_model"
   },
   {
     "material_id": "zn_btc_tbo_metal_control",
@@ -2041,17 +2225,17 @@
     "source_cif": "E:\\AtomForge\\results\\diversity_expansion\\designed_extension_v2\\gfn2\\zn_btc_tbo_metal_control\\relaxed_cifs\\zn_btc_tbo_metal_control_gfn2_pbc_relaxed.cif",
     "has_structure": true,
     "cif": "static/structures/zn_btc_tbo_metal_control.cif",
-    "unit_cif": "",
-    "viewer_mol2": "",
+    "unit_cif": "static/structures/zn_btc_tbo_metal_control_unit.cif",
+    "viewer_mol2": "static/structures/zn_btc_tbo_metal_control.mol2",
     "viewer_sdf": "",
     "viewer_sdf_2x2x1": "",
     "viewer_sdf_2x2x2": "",
-    "structure_json": "",
+    "structure_json": "static/structures/zn_btc_tbo_metal_control.json",
     "n_sites": null,
-    "n_bonds": null,
+    "n_bonds": 2016,
     "lattice": null,
-    "export_error": "SDF V2000 export supports at most 999 atoms/bonds",
-    "viewer_n_sites": null,
+    "export_error": "SDF exceeds V2000 budget; MOL2 fallback enabled for full viewer compatibility.",
+    "viewer_n_sites": 1752,
     "visual_supercell": [
       1,
       1,
@@ -2062,7 +2246,13 @@
     "linker_sa_score": null,
     "metal_usd_g": 0.08,
     "econ_score": null,
-    "econ_label": "not_priced"
+    "econ_label": "not_priced",
+    "available_structure_views": [
+      "unit_cif",
+      "connected_model"
+    ],
+    "structure_compatibility": "COMPATIBLE",
+    "viewer_primary_mode": "connected_model"
   },
   {
     "material_id": "Cu-BTC",
@@ -2131,7 +2321,13 @@
     "zeopp_void_frac": 0.4068,
     "zeopp_rho_gcm3": 0.879097,
     "zeopp_output_dir": "E:\\AtomForge\\results\\_visual_dashboard_zeopp",
-    "zeopp_error": ""
+    "zeopp_error": "",
+    "available_structure_views": [
+      "unit_cif",
+      "connected_model"
+    ],
+    "structure_compatibility": "COMPATIBLE",
+    "viewer_primary_mode": "connected_model"
   },
   {
     "material_id": "UiO-66",
@@ -2200,7 +2396,13 @@
     "zeopp_void_frac": 0.1848,
     "zeopp_rho_gcm3": 1.21909,
     "zeopp_output_dir": "E:\\AtomForge\\results\\_visual_dashboard_zeopp",
-    "zeopp_error": ""
+    "zeopp_error": "",
+    "available_structure_views": [
+      "unit_cif",
+      "connected_model"
+    ],
+    "structure_compatibility": "COMPATIBLE",
+    "viewer_primary_mode": "connected_model"
   },
   {
     "material_id": "MgMOF-74",
@@ -2269,7 +2471,14 @@
     "zeopp_void_frac": 0.3906,
     "zeopp_rho_gcm3": 0.883247,
     "zeopp_output_dir": "E:\\AtomForge\\results\\_visual_dashboard_zeopp",
-    "zeopp_error": ""
+    "zeopp_error": "",
+    "available_structure_views": [
+      "unit_cif",
+      "connected_model",
+      "periodic_2x2x1"
+    ],
+    "structure_compatibility": "COMPATIBLE",
+    "viewer_primary_mode": "connected_model"
   },
   {
     "material_id": "MOF-177",
@@ -2300,7 +2509,10 @@
       1,
       1
     ],
-    "min_vdw_clearance_ang": null
+    "min_vdw_clearance_ang": null,
+    "available_structure_views": [],
+    "structure_compatibility": "UNAVAILABLE",
+    "viewer_primary_mode": "connected_model"
   },
   {
     "material_id": "ZnMOF-74",
@@ -2369,7 +2581,14 @@
     "zeopp_void_frac": 0.3946,
     "zeopp_rho_gcm3": 1.17859,
     "zeopp_output_dir": "E:\\AtomForge\\results\\_visual_dashboard_zeopp",
-    "zeopp_error": ""
+    "zeopp_error": "",
+    "available_structure_views": [
+      "unit_cif",
+      "connected_model",
+      "periodic_2x2x1"
+    ],
+    "structure_compatibility": "COMPATIBLE",
+    "viewer_primary_mode": "connected_model"
   },
   {
     "material_id": "IRMOF-1",
@@ -2438,6 +2657,12 @@
     "zeopp_void_frac": 0.5432,
     "zeopp_rho_gcm3": 0.593339,
     "zeopp_output_dir": "E:\\AtomForge\\results\\_visual_dashboard_zeopp",
-    "zeopp_error": ""
+    "zeopp_error": "",
+    "available_structure_views": [
+      "unit_cif",
+      "connected_model"
+    ],
+    "structure_compatibility": "COMPATIBLE",
+    "viewer_primary_mode": "connected_model"
   }
 ]

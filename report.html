@@ -127,13 +127,23 @@
     <div class="metric"><span>L3 total</span><strong>49</strong></div>
     <div class="metric"><span>GREEN</span><strong>26</strong></div>
     <div class="metric"><span>Buckets</span><strong>110</strong></div>
-    <div class="metric"><span>Estructuras 3D</span><strong>31</strong></div>
+    <div class="metric"><span>Estructuras compatibles</span><strong>31</strong></div>
   </section>
 
   <section class="panel">
     <h2>Estado del proyecto</h2>
     <p>El sistema ya opera como un pipeline reproducible: genera <span class="term" tabindex="0" data-tip="CIF: Crystallographic Information File. Archivo estandar que describe celda, atomos y simetria de una estructura cristalina.">CIFs</span>, valida periodicidad, relaja estructuras con <span class="term" tabindex="0" data-tip="GFN2/PBC: metodo semiempirico usado aqui con condiciones periodicas de borde para relajar estructuras cristalinas antes de simular adsorcion.">GFN2/PBC</span>, ejecuta <span class="term" tabindex="0" data-tip="RASPA/GCMC: software y metodo Monte Carlo de gran canonico usados para estimar adsorcion en materiales porosos.">RASPA/GCMC</span> con cargas <span class="term" tabindex="0" data-tip="PACMOF: protocolo/modelo de asignacion de cargas usado para representar interacciones electrostaticas en MOFs.">PACMOF</span> y registra resultados en un ledger auditable. Estado actual: <strong>26 candidatos GREEN</strong>.</p>
     <div class="callout">Lectura correcta: estos son resultados computacionales de priorizacion, no claims experimentales. El siguiente salto de valor es validar 1--2 candidatos con sintesis, <span class="term" tabindex="0" data-tip="PXRD: difraccion de rayos X de polvo. Confirma si la fase sintetizada coincide con la estructura cristalina esperada.">PXRD</span>, <span class="term" tabindex="0" data-tip="TGA: analisis termogravimetrico. Mide perdida de masa con temperatura y ayuda a estimar estabilidad termica/solvente residual.">TGA</span>, <span class="term" tabindex="0" data-tip="BET: metodo para estimar area superficial especifica usando isotermas de adsorcion, comunmente con N2.">BET</span> y adsorcion de CO2.</div>
+  </section>
+
+  <section class="panel" style="margin-top:18px">
+    <h2>Avance de compatibilizacion estructural</h2>
+    <p>El visualizador fue actualizado para comparar candidatos y benchmarks con una representacion mas consistente: los candidatos interpenetrados cargan una vista periodizada 2x2x1 cuando existe, los modelos grandes usan fallback MOL2 y las rutas del dashboard aceptan archivos publicados bajo <strong>static/structures</strong>.</p>
+    <ul>
+      <li><strong>31 estructuras compatibles:</strong> todos los registros con estructura tienen al menos CIF, SDF o MOL2 utilizable.</li>
+      <li><strong>27 vistas periodicas:</strong> superceldas 2x2x1/2x2x2 disponibles para inspeccionar continuidad cristalina.</li>
+      <li><strong>Fallback robusto:</strong> zn_btc_tbo_metal_control queda visualizable via MOL2 porque supera el limite SDF V2000.</li>
+    </ul>
   </section>
 
   <section class="grid">

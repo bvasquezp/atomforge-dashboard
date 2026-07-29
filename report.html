@@ -59,34 +59,58 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
-    :root { --shell-bg:#07111f; --shell-panel:#0d1929; --shell-panel-2:#111f32; --shell-line:#25364f; --shell-muted:#91a3ba; --shell-accent:#15c8bd; }
-    body { background:var(--shell-bg) !important; color:#eef5ff !important; font-family:"DM Sans","Segoe UI",Arial,sans-serif !important; }
-    .report-shell { min-height:100vh; display:grid; grid-template-columns:200px minmax(0,1fr); background:radial-gradient(circle at 62% 0%,#102746 0%,var(--shell-bg) 42%); }
-    .report-sidebar { padding:22px 12px; border-right:1px solid var(--shell-line); background:rgba(5,14,28,.88); display:flex; flex-direction:column; gap:22px; }
-    .report-brand { display:flex; align-items:center; gap:10px; color:#eef5ff; text-decoration:none; font:700 21px "Sora",sans-serif; }
-    .report-mark { width:34px; height:34px; display:grid; place-items:center; color:var(--shell-accent); border:1px solid #1b867e; border-radius:10px; background:rgba(21,200,189,.08); }
+    :root { --shell-bg:#0b1016; --shell-panel:#111820; --shell-panel-2:#161f29; --shell-line:#293642; --shell-muted:#9aabba; --shell-accent:#20c7b5; --shell-green:#48d597; --shell-amber:#e8a23a; }
+    html,body { overflow-x:clip; }
+    body { background:var(--shell-bg) !important; color:#f2f6fa !important; font-family:"DM Sans","Segoe UI",Arial,sans-serif !important; }
+    .report-shell { min-height:100vh; display:grid; grid-template-columns:224px minmax(0,1fr); background:#0e141b; }
+    .report-sidebar { position:sticky; top:0; height:100vh; padding:18px 12px; border-right:1px solid #202b35; background:#080c11; display:flex; flex-direction:column; gap:18px; }
+    .report-brand { display:flex; align-items:center; gap:10px; padding:6px 8px; color:#f2f6fa; text-decoration:none; font:700 17px "Sora",sans-serif; }
+    .report-mark { width:36px; height:36px; display:grid; place-items:center; color:#032b27; border:0; border-radius:8px; background:var(--shell-accent); }
     .report-mark i { width:20px; height:20px; }
-    .report-workspace { border:1px solid var(--shell-line); border-radius:10px; padding:11px; background:rgba(17,31,50,.7); }
-    .report-workspace small,.report-nav-label { color:#9aadc4; font-size:11px; font-weight:900; letter-spacing:.07em; text-transform:uppercase; }
-    .report-workspace strong { display:block; color:#eef5ff; margin-top:5px; font-size:13px; }
-    .report-nav { display:grid; gap:4px; }
-    .report-nav a { color:#b8c7d9; text-decoration:none; padding:10px; border-radius:8px; display:flex; gap:10px; align-items:center; font-size:13px; }
-    .report-nav a:hover,.report-nav a.active { background:rgba(21,200,189,.13); color:#e9fffd; }
+    .report-workspace { border-top:1px solid #202b35; border-bottom:1px solid #202b35; border-radius:0; padding:13px 10px; background:transparent; }
+    .report-workspace small,.report-nav-label { color:#748596; font-size:11px; font-weight:700; letter-spacing:0; text-transform:none; }
+    .report-workspace strong { display:block; color:#f2f6fa; margin-top:5px; font-size:13px; }
+    .report-nav { display:grid; gap:3px; }
+    .report-nav a { color:var(--shell-muted); text-decoration:none; padding:10px; border-radius:7px; display:flex; gap:10px; align-items:center; font-size:13px; font-weight:650; }
+    .report-nav a:hover,.report-nav a.active { background:rgba(32,199,181,.12); color:#baf7ef; }
     .report-nav i { width:17px; height:17px; color:var(--shell-accent); }
-    .report-account { margin-top:auto; border:1px solid var(--shell-line); border-radius:10px; padding:10px; display:flex; align-items:center; gap:9px; color:var(--shell-muted); font-size:12px; }
-    .report-account b,.report-account small { display:block; }.report-account b { color:#eaf2fc; }.report-account small { margin-top:3px; }
-    .report-avatar { width:29px; height:29px; display:grid; place-items:center; border-radius:50%; color:var(--shell-accent); background:#253b58; }.report-avatar i { width:16px; height:16px; }
-    .report-main { min-width:0; padding:20px 22px; }
-    .report-topbar { max-width:1280px; margin:0 auto 14px; display:flex; align-items:center; justify-content:space-between; color:var(--shell-muted); font-size:12px; }
-    .report-topbar a { color:#dffcf8; text-decoration:none; display:flex; align-items:center; gap:7px; }.report-topbar i { width:15px; height:15px; }
-    .report-main main { max-width:1280px !important; margin:0 auto !important; padding:22px 0 !important; }
-    .report-main h1 { font:700 42px "Sora",sans-serif !important; letter-spacing:-.02em !important; }
-    .report-main h2,.report-main .panel h2 { font-family:"Sora","DM Sans",sans-serif !important; letter-spacing:.01em !important; }
-    .report-main .eyebrow { color:#b8f7ef !important; text-transform:none !important; letter-spacing:0 !important; font-size:13px !important; font-weight:700 !important; }.report-main .panel,.report-main .metric { background:var(--shell-panel) !important; border:1px solid var(--shell-line) !important; border-radius:12px !important; box-shadow:0 18px 45px rgba(0,0,0,.2) !important; backdrop-filter:none !important; }
-    .report-main .metric span { color:#aebed1 !important; font-size:11px !important; font-weight:900 !important; letter-spacing:.07em !important; text-transform:uppercase !important; }
-    .report-main table { background:var(--shell-panel) !important; border:1px solid var(--shell-line) !important; border-radius:12px !important; box-shadow:0 18px 45px rgba(0,0,0,.16) !important; }
-    .report-main .view { background:var(--shell-accent) !important; color:#04201e !important; border-radius:7px !important; }.report-main .callout { border:1px solid rgba(21,200,189,.28) !important; background:rgba(21,200,189,.10) !important; padding:16px !important; }
-    @media(max-width:800px) { .report-shell { display:block; }.report-sidebar { display:none; }.report-main { padding:14px; }.report-topbar { margin-bottom:4px; } }
+    .report-account { margin-top:auto; border-top:1px solid #202b35; border-right:0; border-bottom:0; border-left:0; border-radius:0; padding:13px 10px; display:flex; align-items:center; gap:9px; color:var(--shell-muted); font-size:12px; }
+    .report-account b,.report-account small { display:block; }.report-account b { color:#f2f6fa; }.report-account small { margin-top:3px; }
+    .report-avatar { width:29px; height:29px; display:grid; place-items:center; border-radius:7px; color:var(--shell-accent); background:#1c2834; }.report-avatar i { width:16px; height:16px; }
+    .report-main { min-width:0; padding:0 24px 56px; }
+    .report-topbar { position:sticky; top:0; z-index:10; max-width:none; min-height:64px; margin:0 -24px 18px; padding:0 24px; border-bottom:1px solid #202b35; background:rgba(14,20,27,.96); display:flex; align-items:center; justify-content:space-between; color:var(--shell-muted); font-size:12px; }
+    .report-topbar a { min-height:36px; padding:8px 10px; border:1px solid var(--shell-line); border-radius:7px; color:#dffcf8; text-decoration:none; display:flex; align-items:center; gap:7px; font-weight:700; }.report-topbar i { width:15px; height:15px; }
+    .report-main main { max-width:1180px !important; margin:0 auto !important; padding:8px 0 !important; }
+    .report-main header { align-items:stretch !important; grid-template-columns:minmax(0,1.45fr) minmax(320px,.75fr) !important; gap:16px !important; margin-bottom:16px !important; }
+    .report-main h1 { font:700 30px/1.14 "Sora",sans-serif !important; letter-spacing:-.02em !important; text-wrap:balance; }
+    .report-main h2,.report-main .panel h2 { font:700 16px "Sora","DM Sans",sans-serif !important; letter-spacing:0 !important; }
+    .report-main p { color:var(--shell-muted) !important; max-width:72ch; }
+    .report-main header .panel p strong { display:block; overflow-wrap:anywhere; word-break:break-word; }
+    .report-main .panel,.report-main .metric { background:var(--shell-panel) !important; border:1px solid var(--shell-line) !important; border-radius:8px !important; box-shadow:none !important; backdrop-filter:none !important; }
+    .report-main .panel { padding:18px !important; }
+    .report-main .metrics { grid-template-columns:repeat(6,minmax(0,1fr)) !important; gap:0 !important; border:1px solid var(--shell-line); border-radius:8px; overflow:hidden; }
+    .report-main .metric { min-height:86px; padding:14px !important; border-width:0 1px 0 0 !important; border-radius:0 !important; }
+    .report-main .metric:last-child { border-right:0 !important; }
+    .report-main .metric span { color:#9aabba !important; font-size:10px !important; font-weight:800 !important; letter-spacing:0 !important; text-transform:none !important; }
+    .report-main .metric strong { font:700 24px "Sora",sans-serif !important; letter-spacing:-.02em !important; }
+    .report-main table { display:block; overflow-x:auto; background:var(--shell-panel) !important; border:1px solid var(--shell-line) !important; border-radius:8px !important; box-shadow:none !important; }
+    .report-main th { background:#121b24 !important; color:#a9bac8 !important; }
+    .report-main th,.report-main td { border-color:#202b35 !important; }
+    .report-main .view { background:var(--shell-accent) !important; color:#032b27 !important; border-radius:6px !important; }
+    .report-main .callout { border:1px solid rgba(32,199,181,.32) !important; background:rgba(32,199,181,.09) !important; padding:14px !important; border-radius:8px !important; }
+    .report-main .grid,.report-main .grid3 { gap:12px !important; margin-top:12px !important; }
+    .report-main .glossary { gap:8px !important; }
+    .report-main .glossary-item { border-radius:7px !important; background:#0e141b !important; }
+    .report-main .section-title { margin:26px 0 10px !important; }
+    .progress-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:0; margin-top:14px; border:1px solid var(--shell-line); border-radius:8px; overflow:hidden; }
+    .progress-item { padding:14px; border-right:1px solid #202b35; background:#0e141b; }
+    .progress-item:last-child { border-right:0; }
+    .progress-item b { display:block; color:#f2f6fa; font-size:13px; }
+    .progress-item span { display:block; margin-top:4px; color:var(--shell-muted); font-size:12px; }
+    .status-tag { display:inline-flex !important; width:max-content; margin-top:10px !important; padding:4px 8px; border-radius:999px; background:rgba(232,162,58,.13); color:#f4c77e !important; font-size:11px !important; font-weight:800; }
+    @media(max-width:1100px) { .report-main .metrics { grid-template-columns:repeat(3,1fr) !important; }.report-main .metric:nth-child(3) { border-right:0 !important; }.report-main .metric:nth-child(-n+3) { border-bottom:1px solid #202b35 !important; }.report-main header { grid-template-columns:1fr !important; } }
+    @media(max-width:800px) { .report-shell { display:block; }.report-sidebar { display:none; }.report-main { padding:0 14px 40px; }.report-topbar { margin:0 -14px 14px; padding:0 14px; }.report-main .metrics,.progress-grid { grid-template-columns:1fr 1fr !important; } }
+    @media(max-width:560px) { .report-main .metrics,.progress-grid { grid-template-columns:1fr !important; }.report-main .metric,.progress-item { border-right:0 !important; border-bottom:1px solid #202b35 !important; }.report-main .metric:last-child,.progress-item:last-child { border-bottom:0 !important; } }
   </style></head>
 <body><div class="report-shell">
 <aside class="report-sidebar">
@@ -124,27 +148,31 @@
   </header>
 
   <section class="metrics">
-    <div class="metric"><span>L3 total</span><strong>49</strong></div>
-    <div class="metric"><span>GREEN</span><strong>26</strong></div>
-    <div class="metric"><span>Buckets</span><strong>110</strong></div>
-    <div class="metric"><span>Estructuras compatibles</span><strong>31</strong></div>
+    <div class="metric"><span>L3 total</span><strong>56</strong></div>
+    <div class="metric"><span>GREEN</span><strong>29</strong></div>
+    <div class="metric"><span>YELLOW</span><strong>27</strong></div>
+    <div class="metric"><span>Familias L3</span><strong>7</strong></div>
+    <div class="metric"><span>3D compatible</span><strong>34</strong></div>
+    <div class="metric"><span>Periodicas</span><strong>27</strong></div>
   </section>
 
   <section class="panel">
     <h2>Estado del proyecto</h2>
-    <p>El sistema ya opera como un pipeline reproducible: genera <span class="term" tabindex="0" data-tip="CIF: Crystallographic Information File. Archivo estandar que describe celda, atomos y simetria de una estructura cristalina.">CIFs</span>, valida periodicidad, relaja estructuras con <span class="term" tabindex="0" data-tip="GFN2/PBC: metodo semiempirico usado aqui con condiciones periodicas de borde para relajar estructuras cristalinas antes de simular adsorcion.">GFN2/PBC</span>, ejecuta <span class="term" tabindex="0" data-tip="RASPA/GCMC: software y metodo Monte Carlo de gran canonico usados para estimar adsorcion en materiales porosos.">RASPA/GCMC</span> con cargas <span class="term" tabindex="0" data-tip="PACMOF: protocolo/modelo de asignacion de cargas usado para representar interacciones electrostaticas en MOFs.">PACMOF</span> y registra resultados en un ledger auditable. Estado actual: <strong>26 candidatos GREEN</strong>.</p>
+    <p>El sistema ya opera como un pipeline reproducible: genera <span class="term" tabindex="0" data-tip="CIF: Crystallographic Information File. Archivo estandar que describe celda, atomos y simetria de una estructura cristalina.">CIFs</span>, valida periodicidad, relaja estructuras con <span class="term" tabindex="0" data-tip="GFN2/PBC: metodo semiempirico usado aqui con condiciones periodicas de borde para relajar estructuras cristalinas antes de simular adsorcion.">GFN2/PBC</span>, ejecuta <span class="term" tabindex="0" data-tip="RASPA/GCMC: software y metodo Monte Carlo de gran canonico usados para estimar adsorcion en materiales porosos.">RASPA/GCMC</span> con cargas <span class="term" tabindex="0" data-tip="PACMOF: protocolo/modelo de asignacion de cargas usado para representar interacciones electrostaticas en MOFs.">PACMOF</span> y registra resultados en un ledger auditable. El corte actual contiene <strong>56 L3: 29 GREEN y 27 YELLOW</strong>.</p>
     <div class="callout">Lectura correcta: estos son resultados computacionales de priorizacion, no claims experimentales. El siguiente salto de valor es validar 1--2 candidatos con sintesis, <span class="term" tabindex="0" data-tip="PXRD: difraccion de rayos X de polvo. Confirma si la fase sintetizada coincide con la estructura cristalina esperada.">PXRD</span>, <span class="term" tabindex="0" data-tip="TGA: analisis termogravimetrico. Mide perdida de masa con temperatura y ayuda a estimar estabilidad termica/solvente residual.">TGA</span>, <span class="term" tabindex="0" data-tip="BET: metodo para estimar area superficial especifica usando isotermas de adsorcion, comunmente con N2.">BET</span> y adsorcion de CO2.</div>
+    <div class="progress-grid">
+      <div class="progress-item"><b>Compatibilidad estructural</b><span>34 estructuras con CIF y vista 3D; 27 incluyen supercelda periodica.</span></div>
+      <div class="progress-item"><b>Expansion TBO</b><span>Cu-NH2-BTC, Zn-F-BTC y Zn-NH2-BTC se incorporan como GREEN visualizables.</span></div>
+      <div class="progress-item"><b>MFBO en shadow</b><span>El holdout por familia aun no generaliza de forma estable.</span><span class="status-tag">PRODUCTIVO BLOQUEADO</span></div>
+    </div>
   </section>
 
-  <section class="panel" style="margin-top:18px">
-    <h2>Avance de compatibilizacion estructural</h2>
-    <p>El visualizador fue actualizado para comparar candidatos y benchmarks con una representacion mas consistente: los candidatos interpenetrados cargan una vista periodizada 2x2x1 cuando existe, los modelos grandes usan fallback MOL2 y las rutas del dashboard aceptan archivos publicados bajo <strong>static/structures</strong>.</p>
-    <ul>
-      <li><strong>31 estructuras compatibles:</strong> todos los registros con estructura tienen al menos CIF, SDF o MOL2 utilizable.</li>
-      <li><strong>27 vistas periodicas:</strong> superceldas 2x2x1/2x2x2 disponibles para inspeccionar continuidad cristalina.</li>
-      <li><strong>Fallback robusto:</strong> zn_btc_tbo_metal_control queda visualizable via MOL2 porque supera el limite SDF V2000.</li>
-    </ul>
-  </section>
+  <h2 class="section-title">Nuevas estructuras TBO incorporadas</h2>
+  <table><thead><tr><th>Candidato</th><th>q100</th><th>ret q050</th><th>Estado</th><th>3D</th></tr></thead><tbody>
+    <tr><td><strong>zn_nh2_btc_tbo</strong><br><span>NH2-BTC / Zn paddlewheel</span></td><td>132.1</td><td>0.765</td><td><span class="tag">GREEN</span></td><td><a class="view" href="viewer.html?material_id=zn_nh2_btc_tbo">Ver 3D</a></td></tr>
+    <tr><td><strong>cu_nh2_btc_tbo</strong><br><span>NH2-BTC / Cu paddlewheel</span></td><td>124.8</td><td>0.765</td><td><span class="tag">GREEN</span></td><td><a class="view" href="viewer.html?material_id=cu_nh2_btc_tbo">Ver 3D</a></td></tr>
+    <tr><td><strong>zn_f_btc_tbo</strong><br><span>F-BTC / Zn paddlewheel</span></td><td>107.8</td><td>0.756</td><td><span class="tag">GREEN</span></td><td><a class="view" href="viewer.html?material_id=zn_f_btc_tbo">Ver 3D</a></td></tr>
+  </tbody></table>
 
   <section class="grid">
     <div class="panel">
@@ -173,7 +201,7 @@
         <li><strong>YELLOW:</strong> material valido o informativo, pero no cumple todos los objetivos de producto.</li>
         <li><strong>RED:</strong> negativo util: fallo estructural, baja retencion o bajo loading con causa documentada.</li>
       </ul>
-      <p class="small">Distribucion L3 actual: GREEN=26, YELLOW=23, RED=0.</p>
+      <p class="small">Distribucion L3 actual: GREEN=29, YELLOW=27, RED=0.</p>
     </div>
     <div class="panel">
       <h2>Niveles de evidencia</h2>

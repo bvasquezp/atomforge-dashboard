@@ -118,7 +118,7 @@
           <h2>Visualizacion rapida</h2>
           <div class="quick-grid">
             <button onclick="setStyle('stick')"><i data-lucide="git-branch"></i>Stick</button>
-            <button onclick="setStyle('ballstick')"><i data-lucide="circles-three-plus"></i>Ball-stick</button>
+            <button onclick="setStyle('ballstick')"><i data-lucide="circle-dot"></i>Ball-stick</button>
             <button onclick="setStyle('vdw')"><i data-lucide="circle-dot-dashed"></i>Spacefill</button>
             <button onclick="setStyle('sphere')"><i data-lucide="circle"></i>Esferas</button>
             <button onclick="setStyle('surface')"><i data-lucide="waves"></i>Superficie</button>
@@ -167,7 +167,7 @@ let currentColorScheme = "atomforge";
 const params = new URLSearchParams(location.search);
 const requested = params.get("material_id");
 
-function fmt(v, d=2){ const n = Number(v); return Number.isFinite(n) ? n.toFixed(d) : "NA"; }
+function fmt(v, d=2){ if(v === null || v === "") return "NA"; const n = Number(v); return Number.isFinite(n) ? n.toFixed(d) : "NA"; }
 function normalizePath(path){
   return path && path.startsWith('structures/') ? `static/${path}` : path;
 }
@@ -204,10 +204,10 @@ function artifactOrLedger(candidate, artifactKey, ledgerKey){
   return candidate?.[ledgerKey];
 }
 
-fetch("data/candidates.json").then(r=>r.json()).then(data=>{
+fetch("data/candidates.json?v=20260730").then(r=>r.json()).then(data=>{
   candidates = data.filter(c => c.has_structure);
   const sel = document.getElementById("candidateSelect");
-  sel.innerHTML = candidates.map(c => `<option value="${c.material_id}">${c.material_id} (q100=${fmt(c.q100,1)})${c.is_benchmark?' [benchmark]':''}</option>`).join('');
+  sel.innerHTML = candidates.map(c => `<option value="${c.material_id}">${c.material_id} · ${c.wave || (c.is_benchmark?'Benchmark':'Historico')} · ${c.is_benchmark?'referencia':(c.validation_status || '--')} · q100=${fmt(c.q100,1)}</option>`).join('');
   sel.onchange = () => load(sel.value, true);
   const first = candidates.find(c => c.material_id === requested) || candidates[0];
   if(first) { sel.value = first.material_id; load(first.material_id, false); }

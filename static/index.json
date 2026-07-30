@@ -1669,7 +1669,7 @@
     "ret_q075": 0.8811261912603398,
     "ret_q050": 0.817997658142832,
     "d_pore_ang": 6.60561,
-    "rho_gcm3": 0.887219,
+    "rho_gcm3": 0.887137,
     "void_frac": 0.404,
     "source_cif": "E:\\AtomForge\\results\\diversity_expansion\\designed_extension_v2\\gfn2\\zn_btc_tbo_metal_control\\relaxed_cifs\\zn_btc_tbo_metal_control_gfn2_pbc_relaxed.cif",
     "has_structure": true,
@@ -1908,5 +1908,129 @@
       1
     ],
     "min_vdw_clearance_ang": -0.996
+  },
+  {
+    "material_id": "nh2_bpdc_zn4o_pcu_ip2_off400",
+    "linker": "nh2_bpdc",
+    "sbu": "zn4o",
+    "topology": "pcu_periodic_zn4o_ip2",
+    "campaign_id": "prospective_holdout_wave3_l3",
+    "validation_status": "GREEN",
+    "application_label": "ROBUST_LEAD_CANDIDATE",
+    "q100": 123.5758808954,
+    "q075": 109.730912527,
+    "q050": 100.37560319586667,
+    "ret_q075": 0.8879638302548781,
+    "ret_q050": 0.8122588523631804,
+    "d_pore_ang": 5.67625,
+    "rho_gcm3": 0.728614,
+    "void_frac": 0.3666,
+    "source_cif": "E:\\AtomForge\\results\\mfbo_extension_v3\\wave3_execution_v2\\gfn2_checkpoint_0001d4f9-d519-5788-bd36-69d9187e98d9\\relaxed_cifs\\nh2_bpdc_zn4o_pcu_ip2_off400_gfn2_pbc_relaxed.cif",
+    "has_structure": true,
+    "cif": "structures/nh2_bpdc_zn4o_pcu_ip2_off400.cif",
+    "unit_cif": "structures/nh2_bpdc_zn4o_pcu_ip2_off400_unit.cif",
+    "viewer_mol2": "structures/nh2_bpdc_zn4o_pcu_ip2_off400.mol2",
+    "viewer_sdf": "structures/nh2_bpdc_zn4o_pcu_ip2_off400.sdf",
+    "viewer_sdf_2x2x1": "structures/nh2_bpdc_zn4o_pcu_ip2_off400_2x2x1.sdf",
+    "viewer_sdf_2x2x2": "",
+    "structure_json": "structures/nh2_bpdc_zn4o_pcu_ip2_off400.json",
+    "n_sites": 178,
+    "n_bonds": 636,
+    "lattice": {
+      "@module": "pymatgen.core.lattice",
+      "@class": "Lattice",
+      "matrix": [
+        [
+          16.816,
+          0.0,
+          1.0296830287230946e-15
+        ],
+        [
+          2.704219047696232e-15,
+          16.816,
+          1.0296830287230946e-15
+        ],
+        [
+          0.0,
+          0.0,
+          16.816
+        ]
+      ],
+      "pbc": [
+        true,
+        true,
+        true
+      ]
+    },
+    "export_error": "",
+    "viewer_n_sites": 573,
+    "visual_supercell": [
+      1,
+      1,
+      1
+    ],
+    "min_vdw_clearance_ang": null
+  },
+  {
+    "material_id": "zn_oh_btc_tbo",
+    "linker": "oh_btc",
+    "sbu": "zn2_paddlewheel",
+    "topology": "tbo",
+    "campaign_id": "prospective_holdout_wave3_l3",
+    "validation_status": "GREEN",
+    "application_label": "ROBUST_LEAD_CANDIDATE",
+    "q100": 135.78076411533334,
+    "q075": 107.44382708046668,
+    "q050": 93.51100728343334,
+    "ret_q075": 0.7913037445363246,
+    "ret_q050": 0.6886911256737684,
+    "d_pore_ang": 6.86123,
+    "rho_gcm3": 0.933642,
+    "void_frac": 0.3838,
+    "source_cif": "E:\\AtomForge\\results\\mfbo_extension_v3\\wave3_execution_v2\\gfn2_checkpoint_0001d4f9-d519-5788-bd36-69d9187e98d9\\relaxed_cifs\\zn_oh_btc_tbo_gfn2_pbc_relaxed.cif",
+    "has_structure": true,
+    "cif": "structures/zn_oh_btc_tbo.cif",
+    "unit_cif": "structures/zn_oh_btc_tbo_unit.cif",
+    "viewer_mol2": "structures/zn_oh_btc_tbo.mol2",
+    "viewer_sdf": "",
+    "viewer_sdf_2x2x1": "",
+    "viewer_sdf_2x2x2": "",
+    "structure_json": "structures/zn_oh_btc_tbo.json",
+    "n_sites": 656,
+    "n_bonds": 2088,
+    "lattice": {
+      "@module": "pymatgen.core.lattice",
+      "@class": "Lattice",
+      "matrix": [
+        [
+          26.343,
+          0.0,
+          1.6130435314969364e-15
+        ],
+        [
+          4.2362774960431636e-15,
+          26.343,
+          1.6130435314969364e-15
+        ],
+        [
+          0.0,
+          0.0,
+          26.343
+        ]
+      ],
+      "pbc": [
+        true,
+        true,
+        true
+      ]
+    },
+    "export_error": "SDF visual export unavailable: SDF V2000 export supports at most 999 atoms/bonds",
+    "viewer_n_sites": 1824,
+    "visual_supercell": [
+      1,
+      1,
+      1
+    ],
+    "min_vdw_clearance_ang": null
   }
 ]

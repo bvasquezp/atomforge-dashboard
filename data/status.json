@@ -1,30 +1,171 @@
 {
-  "ledger_rows": 462,
-  "l3_total": 56,
+  "ledger_rows": 467,
+  "l3_total": 61,
   "l3_status_counts": {
-    "GREEN": 29,
-    "YELLOW": 27
+    "GREEN": 31,
+    "YELLOW": 30
   },
   "application_label_counts": {
-    "ROBUST_LEAD_CANDIDATE": 29,
-    "SILENT_ROBUST": 21,
+    "ROBUST_LEAD_CANDIDATE": 31,
+    "SILENT_ROBUST": 24,
     "LOW_VALUE_DISCARD": 4,
     "HIGH_LOADING_CHARGE_DEPENDENT": 2
   },
-  "bucket_count": 117,
-  "l3_bucket_count": 48,
-  "candidate_count": 29,
+  "bucket_count": 121,
+  "l3_bucket_count": 52,
+  "candidate_count": 31,
   "benchmark_count": 6,
-  "green_count": 29,
-  "visible_green_count": 29,
-  "structure_ready_count": 34,
-  "compatible_structure_count": 34,
-  "periodic_ready_count": 27,
+  "green_count": 31,
+  "visible_green_count": 31,
+  "structure_ready_count": 40,
+  "compatible_structure_count": 40,
+  "periodic_ready_count": 30,
   "l3_family_count": 7,
-  "ledger_snapshot": "2026-07-24",
-  "project_snapshot": "2026-07-29",
-  "mfbo_status": "SHADOW",
-  "mfbo_blocker": "Holdout por familia aun no generaliza de forma estable; MFBO productivo permanece bloqueado.",
+  "ledger_snapshot": "2026-07-30",
+  "project_snapshot": "2026-07-30",
+  "mfbo_status": "SHADOW REPLAY PASS",
+  "mfbo_blocker": "Replay shadow aprobado; el predictor seleccionado sigue siendo L2-identidad. Wave3 logro MAE q100=1.88 mg/g, con cobertura conjunta insuficiente (3/5).",
+  "mfbo_replay": {
+    "status": "PASS",
+    "top3_recall": 0.9433333333333335,
+    "cost_saving": 0.3827181514068914,
+    "l3_reduction": 0.5882360329728751,
+    "simple_regret": 0.0
+  },
+  "mfbo_predictor": {
+    "selected": "L2-identidad",
+    "wave3_mae_q100_mg_g": 1.8799314139266698,
+    "joint_coverage_count": 3,
+    "joint_coverage_total": 5,
+    "predictive_status": "FAIL"
+  },
+  "wave2": {
+    "status": "DIAGNOSTIC_HOLDOUT_FAIL",
+    "lead": {
+      "material_id": "ndc_zn4o_pcu_ip2_off380",
+      "family_id": "pcu",
+      "q100_mg_g": 149.33879880136666,
+      "q075_mg_g": 130.19455312686668,
+      "q075_stderr_mg_g": 0.506783791892944,
+      "q050_mg_g": 119.69591901543333,
+      "retention_q050": 0.8015058375729881,
+      "industrial_capture": true,
+      "high_dry_capacity": false
+    }
+  },
+  "wave3": {
+    "status": "PASS",
+    "promoted_l3": 5,
+    "green": 2,
+    "yellow": 3,
+    "subruns_pass": 45,
+    "subruns_total": 45,
+    "highlights": [
+      {
+        "material_id": "nh2_bpdc_zn4o_pcu_ip2_off400",
+        "family_id": "pcu",
+        "canonical_scaffold_id": "bpdc",
+        "selection_role": "exploitation",
+        "dataset_split_role": "future_train",
+        "l2_q100_mg_g": 123.1959346116,
+        "l2_q050_mg_g": 98.3646915663,
+        "predicted_q100_mg_g": 123.1959346116,
+        "predicted_q050_mg_g": 98.3646915663,
+        "actual_q100_mg_g": 123.5758808954,
+        "actual_q075_mg_g": 109.730912527,
+        "actual_q050_mg_g": 100.37560319586667,
+        "actual_ret_q050": 0.8122588523631804,
+        "predicted_ret_q050": 0.7984410514552652,
+        "joint_interval_covered": false,
+        "p_retention_ge_0_70": 1.0,
+        "industrial_capture_proxy": true,
+        "high_dry_capacity_proxy": false
+      },
+      {
+        "material_id": "zn_oh_btc_tbo",
+        "family_id": "tbo",
+        "canonical_scaffold_id": "btc",
+        "selection_role": "exploitation",
+        "dataset_split_role": "future_train",
+        "l2_q100_mg_g": 134.8841285846,
+        "l2_q050_mg_g": 93.2595154329,
+        "predicted_q100_mg_g": 134.8841285846,
+        "predicted_q050_mg_g": 93.2595154329,
+        "actual_q100_mg_g": 135.78076411533334,
+        "actual_q075_mg_g": 107.44382708046668,
+        "actual_q050_mg_g": 93.51100728343334,
+        "actual_ret_q050": 0.6886911256737684,
+        "predicted_ret_q050": 0.6914046627391537,
+        "joint_interval_covered": true,
+        "p_retention_ge_0_70": 0.3366,
+        "industrial_capture_proxy": false,
+        "high_dry_capacity_proxy": false
+      }
+    ]
+  },
+  "wave4": {
+    "status": "WAITING_FOR_GFN2",
+    "heartbeat_updated_at": "2026-07-30T07:10:18+00:00",
+    "active_gfn2_processes": 2,
+    "active_raspa_processes": 0,
+    "frozen": true,
+    "candidate_count": 7,
+    "static_pass": 7,
+    "gfn2_pass": 5,
+    "running": 1,
+    "pending": 1,
+    "candidates": [
+      {
+        "material_id": "ndc_zn4o_pcu_ip2_off400",
+        "family_id": "pcu",
+        "selection_role": "exploitation",
+        "stage": "GFN2_PASS",
+        "static_status": "STATIC_PASS"
+      },
+      {
+        "material_id": "tpdc_zn4o_pcu_ip2_off400",
+        "family_id": "pcu",
+        "selection_role": "boundary",
+        "stage": "GFN2_PASS",
+        "static_status": "STATIC_PASS"
+      },
+      {
+        "material_id": "no2_bdc_cu2_paddlewheel_pillared_sql_bipy",
+        "family_id": "pillared_sql",
+        "selection_role": "exploitation",
+        "stage": "GFN2_PASS",
+        "static_status": "STATIC_PASS"
+      },
+      {
+        "material_id": "dobdc_zn2_paddlewheel_pillared_sql_bipy",
+        "family_id": "pillared_sql",
+        "selection_role": "boundary",
+        "stage": "GFN2_PASS",
+        "static_status": "STATIC_PASS"
+      },
+      {
+        "material_id": "nh2_bpdc_cu2_paddlewheel_pillared_sql_bipy",
+        "family_id": "pillared_sql",
+        "selection_role": "boundary",
+        "stage": "GFN2_PASS",
+        "static_status": "STATIC_PASS"
+      },
+      {
+        "material_id": "cu_ch3_btc_tbo",
+        "family_id": "tbo",
+        "selection_role": "exploitation",
+        "stage": "RUNNING",
+        "static_status": "STATIC_PASS"
+      },
+      {
+        "material_id": "cu_oh_btc_tbo",
+        "family_id": "tbo",
+        "selection_role": "exploitation",
+        "stage": "PENDING",
+        "static_status": "STATIC_PASS"
+      }
+    ]
+  },
   "best_candidate": {
     "material_id": "nh2_bpdc_cr_o6_mono_pcu_mono_ip2_off410",
     "linker": "nh2_bpdc",
@@ -1233,8 +1374,9 @@
   "best_candidate_vs_benchmark_ratio": 2.654335652233395,
   "executive_insights": [
     "Pipeline reproducible: CIF -> gates fisicos -> GFN2/PBC -> RASPA -> QA L3 -> ledger.",
-    "La familia pcu_mono_ip2 concentra los mejores candidatos por confinamiento geometrico interpenetrado.",
-    "El mejor candidato actual supera al benchmark Cu-BTC en q100 bajo el protocolo interno.",
+    "Wave3 promovio cinco candidatos L3 con 45/45 subruns PASS: dos GREEN y tres YELLOW.",
+    "El lead global sigue siendo Cr/NH2-BPDC con q100=388.0 mg/g bajo el protocolo interno.",
+    "NDC-PCU de Wave2 queda registrado como lead prospectivo: q100=149.34 mg/g y retencion=0.802.",
     "q100/q075/q050 son escalas PACMOF; la retencion mide robustez frente a incertidumbre de carga, no presion."
   ],
   "dtt_next_milestones": [

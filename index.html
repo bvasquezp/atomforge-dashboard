@@ -51,6 +51,10 @@
     .overview{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:18px}
     .overview h1{margin:0;font:700 28px/1.15 "Sora",sans-serif;letter-spacing:-.02em;text-wrap:balance}
     .overview p{max-width:760px;margin:7px 0 0;color:var(--muted);font-size:14px;text-wrap:pretty}
+    .scope-tabs{display:flex;align-items:center;padding:3px;border:1px solid var(--line);border-radius:7px;background:var(--surface)}
+    .scope-tabs a{min-height:32px;padding:7px 10px;border-radius:5px;color:var(--muted);font-size:11px;font-weight:800}
+    .scope-tabs a:first-child{background:var(--surface-3);color:#baf7ef}
+    .scope-tabs a:hover{color:var(--ink)}
     .actions{display:flex;gap:8px;flex-wrap:wrap}
     .btn{min-height:38px;padding:8px 11px;border:1px solid var(--line);border-radius:7px;background:var(--surface-2);display:inline-flex;align-items:center;justify-content:center;gap:7px;font-weight:700;cursor:pointer}
     .btn:hover{background:var(--surface-3);border-color:#3a4b59}
@@ -64,6 +68,9 @@
     .signal svg{width:18px}
     .status-cell b{display:block;font-size:13px}
     .status-cell small{display:block;margin-top:3px;color:var(--muted);font-size:11px;line-height:1.35}
+    .section-label{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:22px 0 9px}
+    .section-label h2{margin:0;font:700 15px "Sora",sans-serif}
+    .section-label span{color:var(--quiet);font-size:11px}
     .metrics{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));margin-bottom:16px;border:1px solid var(--line);border-radius:8px;background:var(--surface);overflow:hidden}
     .metric{min-height:88px;padding:14px 16px;border-right:1px solid var(--line-soft)}
     .metric:last-child{border-right:0}
@@ -71,7 +78,36 @@
     .metric span svg{width:15px;color:var(--accent)}
     .metric strong{display:block;margin-top:8px;font:700 24px/1 "Sora",sans-serif;letter-spacing:-.02em}
     .metric small{display:block;margin-top:5px;color:var(--quiet);font-size:10px}
-    .toolbar{position:sticky;top:64px;z-index:12;display:flex;align-items:center;gap:8px;margin-bottom:16px;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+    .lead-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-bottom:16px;border:1px solid var(--line);border-radius:8px;background:#101821;overflow:hidden}
+    .lead-item{min-width:0;padding:14px 16px;border-right:1px solid var(--line-soft)}
+    .lead-item:last-child{border-right:0}
+    .lead-item span{display:flex;align-items:center;gap:6px;color:var(--quiet);font-size:10px;font-weight:800}
+    .lead-item span svg{width:14px;color:var(--accent)}
+    .lead-item strong{display:block;margin-top:7px;font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .lead-item small{display:block;margin-top:4px;color:var(--muted);font-size:11px}
+    .campaign-band{margin:22px 0 18px;border:1px solid #3c4650;border-radius:8px;background:#151a20;overflow:hidden}
+    .campaign-head{padding:16px 18px;border-bottom:1px solid #303943;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .campaign-title{display:flex;align-items:center;gap:11px}
+    .campaign-icon{width:34px;height:34px;border-radius:7px;background:rgba(232,162,58,.13);color:var(--amber);display:grid;place-items:center}
+    .campaign-icon svg{width:18px}
+    .campaign-title h2{margin:0;font:700 15px "Sora",sans-serif}
+    .campaign-title p{margin:3px 0 0;color:var(--muted);font-size:11px}
+    .campaign-progress{min-width:260px}
+    .campaign-progress div{height:6px;border-radius:4px;background:#303943;overflow:hidden}
+    .campaign-progress div span{display:block;height:100%;width:71.43%;background:var(--green)}
+    .campaign-progress small{display:block;margin-top:6px;color:var(--muted);font-size:10px;text-align:right}
+    .campaign-list{display:grid;grid-template-columns:repeat(7,minmax(135px,1fr))}
+    .campaign-row{min-width:0;padding:13px;border-right:1px solid #303943}
+    .campaign-row:last-child{border-right:0}
+    .campaign-row b{display:block;margin-top:7px;font-size:10px;line-height:1.35;overflow-wrap:anywhere}
+    .campaign-row a{display:inline-flex;align-items:center;gap:4px;margin-top:8px;color:var(--accent);font-size:10px;font-weight:800}
+    .campaign-row a svg{width:12px}
+    .stage{display:inline-flex;align-items:center;gap:5px;min-height:21px;padding:3px 6px;border-radius:999px;font-size:9px;font-weight:800}
+    .stage.pass{background:rgba(72,213,151,.12);color:#94edbd}
+    .stage.running{background:rgba(232,162,58,.14);color:#f4c77e}
+    .stage.pending{background:#252d36;color:#a6b3c0}
+    .stage::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+    .toolbar{position:sticky;top:64px;z-index:12;display:flex;align-items:center;gap:8px;max-width:100%;margin-bottom:16px;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--surface);overflow-x:auto}
     .search{position:relative;flex:1;min-width:230px}
     .search svg{position:absolute;left:11px;top:10px;width:16px;color:var(--quiet)}
     .search input,.toolbar select,.table-tools input,.table-tools select{width:100%;height:38px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);padding:0 10px}
@@ -108,6 +144,8 @@
     .badge.green{background:rgba(72,213,151,.12);color:#94edbd}
     .badge.yellow{background:rgba(232,162,58,.13);color:#f4c77e}
     .badge.bench{background:rgba(167,139,250,.13);color:#c9b8ff}
+    .badge.lead{background:rgba(56,189,248,.13);color:#9bdffc}
+    .badge.active{background:rgba(232,162,58,.13);color:#f4c77e}
     .structure-state{color:var(--muted);background:var(--bg)}
     .structure-state.periodic{color:#9af0e6}
     .structure-state svg{width:12px}
@@ -140,17 +178,21 @@
     @media(max-width:1300px){
       .metrics{grid-template-columns:repeat(3,1fr)}.metric:nth-child(3){border-right:0}.metric:nth-child(-n+3){border-bottom:1px solid var(--line-soft)}
       .status-band{grid-template-columns:1fr 1fr}.status-cell:first-child{grid-column:1/-1;border-right:0;border-bottom:1px solid var(--line-soft)}
+      .lead-strip{grid-template-columns:1fr 1fr}.lead-item:nth-child(2){border-right:0}.lead-item:nth-child(-n+2){border-bottom:1px solid var(--line-soft)}
+      .campaign-list{grid-template-columns:repeat(4,1fr)}.campaign-row:nth-child(4){border-right:0}.campaign-row:nth-child(-n+4){border-bottom:1px solid #303943}
     }
     @media(max-width:980px){
       .sidebar{width:68px;padding-inline:9px}.brand{padding:6px}.brand>span:last-child,.nav-label,.nav button span,.project-meta strong,.project-meta br{display:none}
       .nav button{width:48px;justify-content:center;padding:0}.project-meta{padding-inline:5px;text-align:center}.project-meta span{justify-content:center;font-size:0}
-      .main{margin-left:68px}.workspace{grid-template-columns:1fr}.filters{position:static}.toolbar{flex-wrap:wrap}.search{flex-basis:100%}.overview{align-items:flex-start}
+      .main{margin-left:68px}.workspace{grid-template-columns:1fr}.filters{position:static}.toolbar{flex-wrap:wrap}.search{flex-basis:100%}.overview{align-items:flex-start}.campaign-head{align-items:flex-start}.campaign-list{grid-template-columns:repeat(2,1fr)}.campaign-row:nth-child(even){border-right:0}.campaign-row:nth-child(-n+6){border-bottom:1px solid #303943}
     }
     @media(max-width:680px){
       .sidebar{display:none}.main{margin-left:0}.appbar{padding:0 14px}.mobile-brand{display:flex;align-items:center;gap:8px}.mobile-brand .brand-mark{width:31px;height:31px}.appbar-title span{display:none}
-      .content{padding:16px 12px 42px}.overview{display:block}.overview h1{font-size:23px}.actions{margin-top:14px}
+      .content{padding:16px 12px 42px}.overview{display:block}.overview h1{font-size:23px}.scope-tabs{margin-top:14px;width:max-content}.actions{margin-top:14px}
       .status-band,.metrics{grid-template-columns:1fr 1fr}.status-cell:first-child{grid-column:1/-1}.status-cell:nth-child(2){border-bottom:0}.status-cell:nth-child(3){border-right:0}
       .metric{border-bottom:1px solid var(--line-soft)}.metric:nth-child(odd){border-right:1px solid var(--line-soft)}.metric:nth-child(even){border-right:0}.metric:nth-last-child(-n+2){border-bottom:0}
+      .lead-strip{grid-template-columns:1fr}.lead-item{border-right:0;border-bottom:1px solid var(--line-soft)}.lead-item:last-child{border-bottom:0}
+      .campaign-head{display:block}.campaign-progress{min-width:0;margin-top:14px}.campaign-list{grid-template-columns:1fr}.campaign-row{border-right:0;border-bottom:1px solid #303943}.campaign-row:last-child{border-bottom:0}
       .toolbar{position:static}.toolbar select{flex:1;min-width:145px}.view-toggle{margin-left:auto}.grid{grid-template-columns:1fr}.table-tools{flex-wrap:wrap}.table-tools input{flex-basis:100%}.appbar-actions .btn span{display:none}
     }
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card{transition:none}}
@@ -191,14 +233,19 @@
         <section class="overview">
           <div>
             <h1>Estado del descubrimiento</h1>
-            <p>Lectura conjunta del ledger L3, compatibilidad estructural, robustez PACMOF y priorizacion economica.</p>
+            <p>Corte validado al 30-07-2026, resultados MFBO y seguimiento de la campaña activa sin mezclar niveles de evidencia.</p>
+          </div>
+          <div class="scope-tabs" aria-label="Secciones del estado">
+            <a href="#validated">Ledger validado</a>
+            <a href="#campaign">Campaña activa</a>
           </div>
         </section>
 
+        <div class="section-label" id="validated"><h2>Ledger validado</h2><span>Resultados consolidados y trazables</span></div>
         <section class="status-band" aria-label="Estado operativo">
           <div class="status-cell">
-            <span class="signal"><i data-lucide="flask-conical"></i></span>
-            <span><b id="mfboState">MFBO en evaluacion</b><small id="mfboBlocker">Cargando estado del modelo.</small></span>
+            <span class="signal good"><i data-lucide="brain-circuit"></i></span>
+            <span><b id="mfboState">MFBO shadow replay</b><small id="mfboBlocker">Cargando estado del modelo.</small></span>
           </div>
           <div class="status-cell">
             <span class="signal good"><i data-lucide="network"></i></span>
@@ -211,10 +258,24 @@
         </section>
 
         <section class="metrics" id="metrics" aria-label="Metricas del proyecto"></section>
+        <section class="lead-strip" id="leadStrip" aria-label="Leads destacados"></section>
+
+        <section class="campaign-band" id="campaign" aria-label="Campaña activa Wave4">
+          <div class="campaign-head">
+            <div class="campaign-title">
+              <span class="campaign-icon"><i data-lucide="activity"></i></span>
+              <div><h2>Campaña activa · Wave4</h2><p id="campaignSummary">Cargando estado operacional...</p></div>
+            </div>
+            <div class="campaign-progress"><div><span id="campaignProgress"></span></div><small id="campaignProgressText">--</small></div>
+          </div>
+          <div class="campaign-list" id="campaignList"></div>
+        </section>
 
         <section class="toolbar" aria-label="Filtros principales">
           <label class="search" aria-label="Buscar materiales"><i data-lucide="search"></i><input id="search" placeholder="Buscar material, linker, metal o topologia"></label>
-          <select id="statusFilter" aria-label="Filtrar por estado"><option value="all">Todos los estados</option><option value="GREEN">Validado</option><option value="YELLOW">En revision</option><option value="BENCHMARK">Referencia</option></select>
+          <select id="scopeFilter" aria-label="Filtrar por nivel de evidencia"><option value="validated">Evidencia validada</option><option value="active">Campaña activa</option><option value="all">Todo</option></select>
+          <select id="statusFilter" aria-label="Filtrar por estado"><option value="all">Todos los estados</option><option value="GREEN">GREEN</option><option value="YELLOW">YELLOW</option><option value="PROSPECTIVE_LEAD">Lead prospectivo</option><option value="GFN2_PASS">GFN2 PASS</option><option value="RUNNING">En ejecución</option><option value="PENDING">Pendiente</option><option value="BENCHMARK">Referencia</option></select>
+          <select id="waveFilter" aria-label="Filtrar por campaña"><option value="all">Todas las campañas</option></select>
           <select id="metalFilter" aria-label="Filtrar por metal"><option value="all">Todos los metales</option></select>
           <select id="linkerFilter" aria-label="Filtrar por linker"><option value="all">Todos los linkers</option></select>
           <select id="topologyFilter" aria-label="Filtrar por topologia"><option value="all">Todas las topologias</option></select>
@@ -233,7 +294,7 @@
           </aside>
 
           <div id="explorador">
-            <div class="section-head"><h2>Candidatos y referencias</h2><span class="count" id="count"></span></div>
+            <div class="section-head"><h2>Explorador de evidencia</h2><span class="count" id="count"></span></div>
             <div id="results" class="grid"></div>
             <div id="empty" class="empty hidden">No hay materiales que cumplan estos filtros.</div>
 
@@ -258,7 +319,8 @@
     let all = [], view = 'grid', tableSortKey = 'econ_score', tableAsc = false;
     const rangeMeta = {};
     const $ = id => document.getElementById(id);
-    const num = (value, digits = 1) => Number.isFinite(Number(value)) ? Number(value).toFixed(digits) : '--';
+    const hasNumber = value => value !== null && value !== '' && Number.isFinite(Number(value));
+    const num = (value, digits = 1) => hasNumber(value) ? Number(value).toFixed(digits) : '--';
     const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[char]));
     const val = (row, key) => Number.isFinite(Number(row[key])) ? Number(row[key]) : 0;
     const metal = row => String(row.sbu || '').split('_')[0].toUpperCase();
@@ -270,6 +332,10 @@
     function badge(row){
       if(row.is_benchmark) return '<span class="badge bench">REFERENCIA</span>';
       if(row.validation_status === 'GREEN') return '<span class="badge green">VALIDADO</span>';
+      if(row.validation_status === 'PROSPECTIVE_LEAD') return '<span class="badge lead">LEAD WAVE2</span>';
+      if(row.validation_status === 'GFN2_PASS') return '<span class="badge green">GFN2 PASS</span>';
+      if(row.validation_status === 'RUNNING') return '<span class="badge active">EN EJECUCION</span>';
+      if(row.validation_status === 'PENDING') return '<span class="badge active">PENDIENTE</span>';
       return '<span class="badge yellow">EN REVISION</span>';
     }
     function structureBadge(row){
@@ -282,12 +348,13 @@
     }
     function card(row){
       const mid = encodeURIComponent(row.material_id);
+      const q100 = hasNumber(row.q100) ? `${num(row.q100)} <span>mg/g q100</span>` : `<span>${esc(row.validation_status || 'Sin resultado L3')}</span>`;
       return `<article class="card">
         <div class="card-top">${badge(row)}${structureBadge(row)}</div>
         <h3>${esc(row.material_id)}</h3>
-        <div class="primary-metric">${num(row.q100)} <span>mg/g q100</span></div>
-        <div class="stats">${stat('RET Q050',num(row.ret_q050,3))}${stat('LINKER',row.linker || '--')}${stat('METAL',metal(row) || '--')}</div>
-        <div class="card-foot"><span>${row.econ_score ? `econ ${num(row.econ_score,0)}` : (row.is_benchmark ? 'benchmark externo' : 'sin precio completo')}</span>${row.has_structure ? `<a class="view3d" href="viewer.html?material_id=${mid}">Abrir 3D <i data-lucide="arrow-up-right"></i></a>` : '<span>3D pendiente</span>'}</div>
+        <div class="primary-metric">${q100}</div>
+        <div class="stats">${stat('RET Q050',hasNumber(row.ret_q050)?num(row.ret_q050,3):'--')}${stat('CAMPAÑA',row.wave || '--')}${stat('METAL',metal(row) || '--')}</div>
+        <div class="card-foot"><span>${row.data_scope==='active_campaign'?'sin resultado de adsorcion':(row.econ_score ? `econ ${num(row.econ_score,0)}` : (row.is_benchmark ? 'benchmark externo' : 'evidencia L3'))}</span>${row.has_structure ? `<a class="view3d" href="viewer.html?material_id=${mid}">Abrir 3D <i data-lucide="arrow-up-right"></i></a>` : '<span>3D pendiente</span>'}</div>
       </article>`;
     }
 
@@ -333,11 +400,12 @@
     }
 
     function filtered(){
-      const query=$('search').value.toLowerCase(), status=$('statusFilter').value, metalValue=$('metalFilter').value, linker=$('linkerFilter').value, topology=$('topologyFilter').value;
+      const query=$('search').value.toLowerCase(), scope=$('scopeFilter').value, status=$('statusFilter').value, wave=$('waveFilter').value, metalValue=$('metalFilter').value, linker=$('linkerFilter').value, topology=$('topologyFilter').value;
       const output=all.filter(row=>{
         const searchable=[row.material_id,row.linker,row.sbu,row.topology].join(' ').toLowerCase();
         const rowStatus=row.is_benchmark?'BENCHMARK':row.validation_status;
-        return (!query||searchable.includes(query))&&(status==='all'||rowStatus===status)&&(metalValue==='all'||metal(row)===metalValue)&&(linker==='all'||row.linker===linker)&&(topology==='all'||row.topology===topology)
+        const scopeMatch=scope==='all'||(scope==='active'&&row.data_scope==='active_campaign')||(scope==='validated'&&row.data_scope!=='active_campaign');
+        return scopeMatch&&(!query||searchable.includes(query))&&(status==='all'||rowStatus===status)&&(wave==='all'||row.wave===wave)&&(metalValue==='all'||metal(row)===metalValue)&&(linker==='all'||row.linker===linker)&&(topology==='all'||row.topology===topology)
           && ranges.every(([prefix,,key])=>val(row,key)>=Number($(rangeInputId(prefix,'min')).value)&&val(row,key)<=Number($(rangeInputId(prefix,'max')).value));
       });
       const sort=$('sort').value;
@@ -381,10 +449,10 @@
       link.href=url;link.download=excel?'atomforge_ranking.xls':'atomforge_ranking.csv';link.click();URL.revokeObjectURL(url);
     }
     function bind(){
-      ['search','statusFilter','sort','metalFilter','linkerFilter','topologyFilter','tableSearch','tableSort','rowLimit'].forEach(id=>$(id).addEventListener('input',event=>{if(event.target.id==='tableSort'){tableSortKey=event.target.value;tableAsc=false}render()}));
+      ['search','scopeFilter','statusFilter','waveFilter','sort','metalFilter','linkerFilter','topologyFilter','tableSearch','tableSort','rowLimit'].forEach(id=>$(id).addEventListener('input',event=>{if(event.target.id==='tableSort'){tableSortKey=event.target.value;tableAsc=false}render()}));
       ranges.forEach(([prefix])=>['min','max'].forEach(side=>$(rangeInputId(prefix,side)).addEventListener('input',()=>{updateRange(prefix);render()})));
       $('gridBtn').onclick=()=>setView('grid');$('listBtn').onclick=()=>setView('list');
-      $('clear').onclick=()=>{Object.entries(rangeMeta).forEach(([prefix,meta])=>setRange(prefix,meta.low,meta.high,meta.step,meta.digits,meta.suffix));$('search').value='';$('tableSearch').value='';['statusFilter','metalFilter','linkerFilter','topologyFilter'].forEach(id=>$(id).value='all');render()};
+      $('clear').onclick=()=>{Object.entries(rangeMeta).forEach(([prefix,meta])=>setRange(prefix,meta.low,meta.high,meta.step,meta.digits,meta.suffix));$('search').value='';$('tableSearch').value='';$('scopeFilter').value='validated';['statusFilter','waveFilter','metalFilter','linkerFilter','topologyFilter'].forEach(id=>$(id).value='all');render()};
       $('exportCsv').onclick=()=>download(filtered());$('exportExcel').onclick=()=>download(filtered(),true);
       document.querySelectorAll('.nav button').forEach(button=>button.onclick=()=>{
         document.querySelectorAll('.nav button').forEach(item=>item.classList.remove('active'));button.classList.add('active');
@@ -392,33 +460,49 @@
         if(target==='resumen')scrollTo({top:0,behavior:'smooth'});
         if(target==='explorador')$('explorador').scrollIntoView({behavior:'smooth'});
         if(target==='comparador')setView('list');
-        if(target==='referencias'){$('statusFilter').value='BENCHMARK';render();$('explorador').scrollIntoView({behavior:'smooth'})}
-        if(target==='datos'){$('statusFilter').value='all';setView('list')}
+        if(target==='referencias'){$('scopeFilter').value='validated';$('statusFilter').value='BENCHMARK';render();$('explorador').scrollIntoView({behavior:'smooth'})}
+        if(target==='datos'){$('scopeFilter').value='validated';$('statusFilter').value='all';setView('list')}
         if(target==='informe')location.href='report.html';
       });
     }
     function loadStatus(items,status){
-      const compatible=items.filter(row=>row.structure_compatibility==='COMPATIBLE').length, periodic=items.filter(row=>row.viewer_sdf_2x2x1||row.viewer_sdf_2x2x2).length, yellow=Number(status.l3_status_counts?.YELLOW||0);
+      const validated=items.filter(row=>row.data_scope!=='active_campaign'), compatible=validated.filter(row=>row.structure_compatibility==='COMPATIBLE').length, periodic=validated.filter(row=>row.viewer_sdf_2x2x1||row.viewer_sdf_2x2x2).length, yellow=Number(status.l3_status_counts?.YELLOW||0), wave3=status.wave3||{}, wave4=status.wave4||{};
       $('updated').textContent=`Ledger ${status.ledger_snapshot||'actual'} · corte ${status.project_snapshot||'actual'}`;
       $('mfboState').textContent=`MFBO ${status.mfbo_status||'SHADOW'}`;
       $('mfboBlocker').textContent=status.mfbo_blocker||'Evaluacion multifidelidad en curso.';
       $('familyState').textContent=`${status.l3_family_count||'--'} familias L3`;
-      $('structureState').textContent=`${compatible} estructuras compatibles`;
+      $('structureState').textContent=`${compatible} vistas 3D validadas`;
       $('metrics').innerHTML=[
+        ['Ledger',status.ledger_rows||0,'registros totales','database'],
         ['L3 total',status.l3_total||0,'evidencias consolidadas','layers-3'],
         ['GREEN',status.green_count||0,'leads validados','badge-check'],
         ['YELLOW',yellow,'materiales informativos','circle-dot'],
-        ['3D compatible',compatible,'de '+items.length+' registros','box'],
-        ['Periodicas',periodic,'vistas cristalinas','boxes'],
-        ['Mejor / Cu-BTC',status.best_candidate_vs_benchmark_ratio?`${num(status.best_candidate_vs_benchmark_ratio,2)}x`:'--','q100 interno','bar-chart-3']
+        ['Wave3',wave3.promoted_l3||0,`${wave3.subruns_pass||0}/${wave3.subruns_total||0} subruns PASS`,'waves'],
+        ['3D validado',compatible,`${periodic} vistas periodicas`,'boxes']
       ].map(metric=>`<div class="metric"><span>${metric[0]}<i data-lucide="${metric[3]}"></i></span><strong>${metric[1]}</strong><small>${metric[2]}</small></div>`).join('');
+      const wave2=status.wave2?.lead||{}, highlights=wave3.highlights||[], nh2=highlights[0]||{}, znoh=highlights[1]||{}, best=status.best_candidate||{};
+      $('leadStrip').innerHTML=[
+        ['Lead global',best.material_id||'Cr/NH2-BPDC',`${num(best.q100,1)} mg/g · ret ${num(best.ret_q050,3)}`,'trophy'],
+        ['Wave2 · NDC-PCU',wave2.material_id||'ndc_zn4o_pcu_ip2_off380',`${num(wave2.q100_mg_g,2)} mg/g · ret ${num(wave2.retention_q050,3)}`,'target'],
+        ['Wave3 · NH2-BPDC/Zn4O',nh2.material_id||'nh2_bpdc_zn4o_pcu_ip2_off400',`${num(nh2.actual_q100_mg_g,2)} mg/g · ret ${num(nh2.actual_ret_q050,3)}`,'sparkles'],
+        ['Wave3 · Zn-OH-BTC',znoh.material_id||'zn_oh_btc_tbo',`${num(znoh.actual_q100_mg_g,2)} mg/g · ret ${num(znoh.actual_ret_q050,3)}`,'hexagon']
+      ].map(lead=>`<div class="lead-item"><span><i data-lucide="${lead[3]}"></i>${lead[0]}</span><strong title="${esc(lead[1])}">${esc(lead[1])}</strong><small>${lead[2]}</small></div>`).join('');
+      $('campaignSummary').textContent=`${wave4.candidate_count||0} candidatos congelados · ${wave4.static_pass||0}/7 estaticos PASS · sin mutacion del ledger`;
+      const progress=Math.round((Number(wave4.gfn2_pass||0)/Math.max(Number(wave4.candidate_count||7),1))*100);
+      $('campaignProgress').style.width=`${progress}%`;
+      $('campaignProgressText').textContent=`GFN2 ${wave4.gfn2_pass||0}/7 PASS · ${wave4.running||0} en ejecucion · ${wave4.pending||0} pendiente`;
+      $('campaignList').innerHTML=(wave4.candidates||[]).map(candidate=>{
+        const cls=candidate.stage==='GFN2_PASS'?'pass':candidate.stage==='RUNNING'?'running':'pending', label=candidate.stage==='GFN2_PASS'?'GFN2 PASS':candidate.stage==='RUNNING'?'EN EJECUCION':'PENDIENTE', material=items.find(row=>row.material_id===candidate.material_id&&row.data_scope==='active_campaign');
+        return `<div class="campaign-row"><span class="stage ${cls}">${label}</span><b>${esc(candidate.material_id)}</b>${material?.has_structure?`<a href="viewer.html?material_id=${encodeURIComponent(candidate.material_id)}">Abrir 3D <i data-lucide="arrow-up-right"></i></a>`:'<span>3D pendiente</span>'}</div>`;
+      }).join('');
       if(status.best_candidate?.material_id)$('bestLink').href=`viewer.html?material_id=${encodeURIComponent(status.best_candidate.material_id)}`;
     }
 
     buildRanges();
-    Promise.all([fetch('data/candidates.json').then(response=>response.json()),fetch('data/status.json').then(response=>response.json())])
+    Promise.all([fetch('data/candidates.json?v=20260730').then(response=>response.json()),fetch('data/status.json?v=20260730').then(response=>response.json())])
       .then(([items,status])=>{
         all=items;
+        fill('waveFilter','Todas las campañas',values('wave'));
         fill('metalFilter','Todos los metales',values('metal'));
         fill('linkerFilter','Todos los linkers',values('linker'));
         fill('topologyFilter','Todas las topologias',values('topology'));
